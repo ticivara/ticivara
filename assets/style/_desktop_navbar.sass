@@ -1,0 +1,80 @@
+#app-nav-wrap .links-tablet-desktop
+  +from($widescreen)
+    display: none
+
+  &.navbar-start
+    justify-content: center
+    margin: 0 auto
+    padding: 0
+
+  div.navbar-item
+    align-items: start
+    //background-color: $navbar-dark
+
+  ul.s-nav-list
+    margin-top: 1em
+    text-align: center
+    padding-left: 2rem
+    list-style-type: none
+    +mobile
+      padding-left: 0
+
+    &:first-child
+      padding-left: 0
+
+    & > li.title-item
+      color: lighten(black, 5)
+      font-size: 1.1em
+      letter-spacing: 1px
+      border-bottom: 1px solid black
+      margin-bottom: 0.5em
+
+    & > li.link-item
+      padding-left: 1em
+      padding-right: 1em
+      a
+        color: $text
+      &.is-active
+        background: $navbar-active
+        a
+          color: white
+          text-decoration: none
+
+      &:hover, &:focus
+        background: $navbar-active
+        a
+          color: white
+          text-decoration: none
+
+// smaller size just before the mobile breakpoint
+@media screen and (min-width: $tablet) and (max-width: 960px)
+  #app-nav-wrap .links-tablet-desktop
+    ul.s-nav-list
+      padding-left: 0.5rem
+      & > li.title-item
+        font-size: 1.0em
+      & > li.link-item
+        font-size: 0.9em
+        padding-left: 0.5em
+        padding-right: 0.5em
+
+div.navbar-brand
+  +desktop-only
+    width: 7rem
+    margin: 0
+    padding: 0
+
+div.navbar-end
+  +desktop-only
+    width: 7rem
+    margin: 0
+    padding: 0
+
+#app-nav div.navbar-end
+  +mobile
+    height: 42px
+
+#app-nav div.navbar-item.flag-links .flag-wrap
+  +until($widescreen)
+    &.is-active
+      background-color: darken($navbar-dark, 10)

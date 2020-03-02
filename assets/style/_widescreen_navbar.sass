@@ -1,0 +1,15 @@
+#app-nav-wrap .links-widescreen
+  +until($widescreen)
+    display: none
+  +widescreen-only
+    font-size: 0.85em
+  a.navbar-item
+    &:hover, &:focus, &.is-active
+      color: white
+      text-decoration: none
+      background: $navbar-active
+  div.navbar-item
+    font-style: italic
+    background-color: $navbar-dark
+
+

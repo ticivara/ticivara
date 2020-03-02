@@ -1,17 +1,97 @@
 @charset "utf-8"
 
-@import url('https://fonts.googleapis.com/css?family=Lato:400,400i|Open+Sans:400,400i&display=swap&subset=latin-ext')
+@import "style/typefaces"
 
-$family-sans-serif: "Open Sans", sans-serif
+$family-sans-serif: "Fira Sans"
 $family-primary: $family-sans-serif
 $family-secondary: $family-sans-serif
 
-$heading-family: "Lato", sans-serif
+$body-size: 16px
 
-@import "colors"
-@import "mixins"
+@import "style/colors"
+@import "style/mixins"
 
-@import "~bulma/bulma"
+@import "style/custom_bulma_import"
 
-h1, h2, h3, h4
-  font-family: $heading-family
+// expand to fill page height when content is not enough
+html, body
+  height: 100%
+
+a:hover
+  text-decoration: underline
+
+// body bg will cover the page when content is not enough
+body
+  background-image: url("/img/bg-pattern.jpg")
+  background-repeat: repeat
+
+// #page-wrap will cover below the scroll
+#page-wrap
+  background-image: url("/img/bg-pattern.jpg")
+  background-repeat: repeat
+
+#page-wrap
+  h1
+    text-align: center
+    margin: 0 auto 0.5em auto
+    padding-bottom: 0.5em
+    max-width: 12em
+    border-bottom: 1px solid black
+  h1, h2, h3
+    color: lighten(black, 5%)
+    font-weight: normal
+
+#content-wrap .container .content
+  padding: 3rem 4rem
+  border-radius: 20px
+  background-color: rgba(255, 255, 255, 0.8)
+
+#content-wrap .narrow-container
+  +from($desktop)
+    max-width: 900px
+
+#page-wrap.thai
+  font-family: "Garuda", "Helvetica Neue", sans-serif
+  h1
+    font-size: 2.2em
+  h2
+    font-size: 1.6em
+  h3
+    font-size: 1.4em
+  #app-nav .site-brand h2
+    font-size: 1.4em
+
+#page-wrap.english
+  h1
+    font-size: 2.4em
+  h1, h2, h3
+    font-family: "Butler"
+
+.content figure
+  text-align: center
+  img
+    max-width: 500px
+
+.content table figure
+  text-align: left
+  img
+    max-width: 250px
+
+$bg-pattern-dark: #F9D092
+$bg-pattern-light: #FFDDBA
+
+$navbar-light: lighten($bg-pattern-light, 5)
+$navbar-dark: $bg-pattern-dark
+
+$navbar-active: #943855
+
+@import "style/navbar"
+@import "style/desktop_navbar"
+@import "style/widescreen_navbar"
+
+.landing-logo
+  text-align: center
+  img
+    width: 512px
+    background-color: rgba(255, 255, 255, 0.4)
+    border-radius: 256px

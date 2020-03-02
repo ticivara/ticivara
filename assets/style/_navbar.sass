@@ -1,0 +1,28 @@
+#app-nav-wrap
+  background: $navbar-light
+  color: $text
+
+#app-nav-wrap .navbar-brand
+  .navbar-item img
+    max-height: 2.2rem
+  a.navbar-item
+    padding-top: 0
+    padding-bottom: 0
+    background: $navbar-light
+    &:hover
+      background-color: $navbar-active
+      img
+        background-color: rgba(255, 255, 255, 0.4)
+        border-radius: 1.1rem
+
+#app-nav .flag-links .flag-wrap
+  padding: 7px
+  margin: 0 0 0 8.5px
+  border-radius: 20px
+  border: none
+  &.is-active
+    background-color: darken($navbar-dark, 10)
+  &:hover
+    background-color: $navbar-active
+
+
