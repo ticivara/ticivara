@@ -22,7 +22,7 @@ export default {
   head() {
     return {
       title: this.title.trim() + ' - Ticivara'
-    }
+    };
   }
-}
+};
 </script>

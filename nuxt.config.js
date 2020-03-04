@@ -72,7 +72,7 @@ export default {
       config.module.rules.push({
         test: /\.md$/,
         loader: 'url-loader'
-      })
+      });
     }
   }
-}
+};
