@@ -11,7 +11,18 @@ const appHelpers = (_context, inject) => {
     return md.toMarkup(atob(text.substring(26)))
   }
 
+  const mdTitle = (text) => {
+    const s = atob(text.substring(26))
+    const m = s.match(/^# (.*)$/m)
+    if (m != null && m.length > 1) {
+      return m[1]
+    } else {
+      return ''
+    }
+  }
+
   inject('mdParse', mdParse)
+  inject('mdTitle', mdTitle)
 }
 
 export default appHelpers

@@ -1,7 +1,9 @@
 # Tools Checklist
 
 <figure>
+
 ![sewing tools](/img/tools/sewing-tools_w500.jpg)
+
 </figure>
 
 ## Checklist before sewing

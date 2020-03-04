@@ -1,5 +1,5 @@
 <template>
   <div>
-    <h1>Title</h1>
+    <h1>Sabong Pattern</h1>
   </div>
 </template>

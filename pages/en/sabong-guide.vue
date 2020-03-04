@@ -1,18 +1,22 @@
 <template>
-  <div>
-    <h1>Sabong Sewing Guide</h1>
-    <div v-html="content" />
-  </div>
+  <MarkdownPage :title="title" :html-content="htmlContent" />
 </template>
 
 <script>
-import pageText from '@/assets/content/en/sabong.md'
+import pageText from '@/assets/content/en/sabong-guide.md'
+import MarkdownPage from '@/components/MarkdownPage.vue'
 
 export default {
+  components: {
+    MarkdownPage
+  },
+
   async asyncData(context) {
-    const a = await context.app.$mdParse(pageText)
+    const title = context.app.$mdTitle(pageText)
+    const content = await context.app.$mdParse(pageText)
     return {
-      content: a.html
+      title,
+      htmlContent: content.html
     }
   }
 }
