@@ -1,5 +1,5 @@
 <template>
-  <MarkdownPage :title="title" :html-content="htmlContent" />
+  <MarkdownPage :title="title" :html-content="htmlContent" :toc="toc" />
 </template>
 
 <script>
@@ -11,13 +11,8 @@ export default {
     MarkdownPage
   },
 
-  async asyncData(context) {
-    const title = context.app.$mdTitle(pageText);
-    const content = await context.app.$mdParse(pageText);
-    return {
-      title,
-      htmlContent: content.html
-    };
+  asyncData(context) {
+    return context.app.$mdParse(pageText);
   }
 };
 </script>
