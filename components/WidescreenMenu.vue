@@ -5,7 +5,7 @@
       <nuxt-link
         v-for="sub in top.sub"
         :key="sub.path + sub.label"
-        class="navbar-item"
+        :class="[isActive(sub.path) ? 'is-active' : '', 'navbar-item']"
         :to="menuLangPath(sub.path)"
       >
         {{ sub.label }}
@@ -28,6 +28,15 @@ export default {
     }
   },
   methods: {
+    isActive(menuPath) {
+      const menuName = menuPath.replace('/<lang>', '');
+      const urlName = this.$route.path.replace(/^\/(en|th)/, '');
+      if (menuName === urlName) {
+        return true;
+      } else {
+        return false;
+      }
+    },
     menuLangPath(path) {
       let lang = 'en';
       if (this.$props.lang === 'thai') {

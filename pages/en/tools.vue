@@ -11,6 +11,10 @@ export default {
     MarkdownPage
   },
 
+  fetch(context) {
+    context.store.commit('setLangFromPath', context.route.path);
+  },
+
   asyncData(context) {
     return context.app.$mdParse(pageText);
   }

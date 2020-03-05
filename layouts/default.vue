@@ -1,6 +1,6 @@
 <template>
   <div id="page-wrap" :class="[lang]">
-    <AppNav :lang="lang" />
+    <AppNav />
     <section id="content-wrap" class="section">
       <nuxt />
     </section>
@@ -14,15 +14,10 @@ export default {
   components: {
     AppNav
   },
-
-  data() {
-    let lang = 'english';
-    if (this.$route.path.startsWith('/th/')) {
-      lang = 'thai';
+  computed: {
+    lang() {
+      return this.$store.state.lang;
     }
-    return {
-      lang
-    };
   }
 };
 </script>

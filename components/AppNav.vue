@@ -56,26 +56,31 @@ export default {
     TabletMenu,
     WidescreenMenu
   },
-  props: {
-    lang: {
-      type: String,
-      required: true
-    }
-  },
   computed: {
+    lang() {
+      return this.$store.state.lang;
+    },
     langPrefix() {
       let lang = '/en';
-      if (this.$props.lang === 'thai') {
+      if (this.$store.state.lang === 'thai') {
         lang = '/th';
       }
       return lang;
     },
     englishUrl() {
-      const name = this.$route.path.replace(/^\/(th|en)/, '');
+      const path = this.$route.path;
+      if (path.length === 0 || path === '/') {
+        return '/en/landing';
+      }
+      const name = path.replace(/^\/(th|en)/, '');
       return '/en' + name;
     },
     thaiUrl() {
-      const name = this.$route.path.replace(/^\/(th|en)/, '');
+      const path = this.$route.path;
+      if (path.length === 0 || path === '/') {
+        return '/th/landing';
+      }
+      const name = path.replace(/^\/(th|en)/, '');
       return '/th' + name;
     }
   }

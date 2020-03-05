@@ -1,7 +1,7 @@
 <template>
   <div class="toc">
     <ul>
-      <li v-for="i in items" :key="i">
+      <li v-for="i in items" :key="i[2]">
         <a :href="i[2]">{{ i[1] }}</a>
       </li>
     </ul>
