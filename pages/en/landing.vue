@@ -12,6 +12,12 @@ export default {
 
   fetch(context) {
     context.store.commit('setLangFromPath', context.route.path);
+  },
+
+  head() {
+    return {
+      title: 'Ticivara'
+    };
   }
 };
 </script>
