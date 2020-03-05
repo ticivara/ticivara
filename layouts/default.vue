@@ -15,10 +15,13 @@ export default {
     AppNav
   },
 
-  data: () => {
-    // TODO parse from url
+  data() {
+    let lang = 'english';
+    if (this.$route.path.startsWith('/th/')) {
+      lang = 'thai';
+    }
     return {
-      lang: 'english'
+      lang
     };
   }
 };

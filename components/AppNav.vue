@@ -8,75 +8,8 @@
       ></nuxt-link>
     </div>
     <div id="app-nav" class="navbar-menu">
-      <div class="links-tablet-desktop navbar-start">
-        <div class="navbar-item">
-          <ul class="s-nav-list">
-            <li class="title-item">Sabong</li>
-            <li class="link-item">
-              <nuxt-link to="/en/sabong-pattern">Pattern</nuxt-link>
-            </li>
-            <li class="link-item">
-              <nuxt-link to="/en/sabong-guide">Guide</nuxt-link>
-            </li>
-          </ul>
-          <ul class="s-nav-list">
-            <li class="title-item">Civara</li>
-            <li class="link-item">
-              <nuxt-link to="/en/civara-pattern">Pattern</nuxt-link>
-            </li>
-            <li class="link-item">
-              <nuxt-link to="/en/civara-guide">Guide</nuxt-link>
-            </li>
-          </ul>
-          <ul class="s-nav-list">
-            <li class="title-item">Sanghati</li>
-            <li class="link-item">
-              <nuxt-link to="/en/sanghati-pattern">Pattern</nuxt-link>
-            </li>
-            <li class="link-item">
-              <nuxt-link to="/en/sanghati-guide">Guide</nuxt-link>
-            </li>
-          </ul>
-          <ul class="s-nav-list">
-            <li class="title-item">Borders</li>
-            <li class="link-item">
-              <nuxt-link to="/en/borders">Guide</nuxt-link>
-            </li>
-          </ul>
-          <ul class="s-nav-list">
-            <li class="title-item">Notes</li>
-            <li class="link-item">
-              <nuxt-link to="/en/dyeing">Dyeing Manual</nuxt-link>
-            </li>
-            <li class="link-item">
-              <nuxt-link to="/en/tools">Tools Checklist</nuxt-link>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="links-widescreen navbar-start">
-        <div class="navbar-item">Sabong</div>
-        <nuxt-link to="/en/sabong-pattern" class="navbar-item"
-          >Pattern</nuxt-link
-        ><nuxt-link to="/en/sabong-guide" class="navbar-item">Guide</nuxt-link>
-        <div class="navbar-item">Civara</div>
-        <nuxt-link to="/en/civara-pattern" class="navbar-item"
-          >Pattern</nuxt-link
-        ><nuxt-link to="/en/civara-guide" class="navbar-item">Guide</nuxt-link>
-        <div class="navbar-item">Sanghati</div>
-        <nuxt-link to="/en/sanghati-pattern" class="navbar-item"
-          >Pattern</nuxt-link
-        ><nuxt-link to="/en/sanghati-guide" class="navbar-item"
-          >Guide</nuxt-link
-        >
-        <div class="navbar-item">Borders</div>
-        <nuxt-link to="/en/borders" class="navbar-item">Guide</nuxt-link>
-        <div class="navbar-item">Notes</div>
-        <nuxt-link to="/en/dyeing" class="navbar-item">Dyeing Manual</nuxt-link
-        ><nuxt-link to="/en/tools" class="navbar-item"
-          >Tools Checklist</nuxt-link
-        >
-      </div>
+      <TabletMenu :lang="lang" />
+      <WidescreenMenu :lang="lang" />
       <div class="navbar-end">
         <div class="flag-links is-pulled-right navbar-item">
           <div class="flag-wrap is-pulled-left is-active">
@@ -96,7 +29,14 @@
 </template>
 
 <script>
+import TabletMenu from '@/components/TabletMenu.vue';
+import WidescreenMenu from '@/components/WidescreenMenu.vue';
+
 export default {
+  components: {
+    TabletMenu,
+    WidescreenMenu
+  },
   props: {
     lang: {
       type: String,
