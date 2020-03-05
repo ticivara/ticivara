@@ -16,7 +16,7 @@ export default {
 
   head() {
     return {
-      title: 'Ticivara'
+      title: 'Ticivara Robe Sewing'
     };
   }
 };

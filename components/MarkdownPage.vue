@@ -36,7 +36,7 @@ export default {
 
   head() {
     return {
-      title: this.title.trim() + ' - Ticivara'
+      title: this.title.trim() + ' - Ticivara Robe Sewing'
     };
   }
 };
