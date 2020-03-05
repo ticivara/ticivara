@@ -1,25 +1,44 @@
 <template>
   <nav id="app-nav-wrap" class="navbar is-light">
     <div class="navbar-brand">
-      <nuxt-link to="/en/landing" class="navbar-item"
+      <nuxt-link :to="langPrefix + '/landing'" class="navbar-item"
         ><img src="/img/logo-navbar-as-path.svg"/></nuxt-link
-      ><nuxt-link to="/en/landing" class="navbar-burger"
+      ><nuxt-link :to="langPrefix + '/landing'" class="navbar-burger"
         ><span></span><span></span><span></span
       ></nuxt-link>
     </div>
+
     <div id="app-nav" class="navbar-menu">
       <TabletMenu :lang="lang" />
       <WidescreenMenu :lang="lang" />
+
       <div class="navbar-end">
         <div class="flag-links is-pulled-right navbar-item">
-          <div class="flag-wrap is-pulled-left is-active">
+          <div
+            :class="[
+              lang === 'english' ? 'is-active' : '',
+              'flag-wrap',
+              'is-pulled-left'
+            ]"
+          >
             <figure class="image is-24x24">
-              <img src="/img/flag-united-kingdom.png" />
+              <nuxt-link :to="englishUrl">
+                <img src="/img/flag-united-kingdom.png" />
+              </nuxt-link>
             </figure>
           </div>
-          <div class="flag-wrap is-pulled-left">
+
+          <div
+            :class="[
+              lang === 'thai' ? 'is-active' : '',
+              'flag-wrap',
+              'is-pulled-left'
+            ]"
+          >
             <figure class="image is-24x24">
-              <img src="/img/flag-thailand.png" />
+              <nuxt-link :to="thaiUrl">
+                <img src="/img/flag-thailand.png" />
+              </nuxt-link>
             </figure>
           </div>
         </div>
@@ -41,6 +60,23 @@ export default {
     lang: {
       type: String,
       required: true
+    }
+  },
+  computed: {
+    langPrefix() {
+      let lang = '/en';
+      if (this.$props.lang === 'thai') {
+        lang = '/th';
+      }
+      return lang;
+    },
+    englishUrl() {
+      const name = this.$route.path.replace(/^\/(th|en)/, '');
+      return '/en' + name;
+    },
+    thaiUrl() {
+      const name = this.$route.path.replace(/^\/(th|en)/, '');
+      return '/th' + name;
     }
   }
 };

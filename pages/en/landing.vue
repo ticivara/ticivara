@@ -1,5 +1,13 @@
 <template>
-  <div>
-    <h1>Landing</h1>
-  </div>
+  <LandingHero />
 </template>
+
+<script>
+import LandingHero from '@/components/LandingHero.vue';
+
+export default {
+  components: {
+    LandingHero
+  }
+};
+</script>
