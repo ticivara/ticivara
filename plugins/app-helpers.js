@@ -1,4 +1,5 @@
 import Markdown from '@nuxt/markdown';
+import { Base64 } from 'js-base64';
 
 const appHelpers = (_context, inject) => {
   const md = new Markdown({ toc: true, sanitize: false });
@@ -6,7 +7,8 @@ const appHelpers = (_context, inject) => {
   const mdParse = (text) => {
     // First 26 characters of text are the type identifier
     // data:text/markdown;base64,...
-    let mdtext = atob(text.substring(26));
+    // NOTE: atob() can't decode utf8 (Thai)
+    let mdtext = Base64.decode(text.substring(26));
 
     // Find the lvl1 page title.
     let title = '';
@@ -30,7 +32,7 @@ const appHelpers = (_context, inject) => {
   };
 
   const mdTitle = (text) => {
-    const s = atob(text.substring(26));
+    const s = Base64.decode(text.substring(26));
     const m = s.match(/^# (.*)$/m);
     if (m != null && m.length > 1) {
       return m[1];
