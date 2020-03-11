@@ -1,8 +1,33 @@
 import Markdown from '@nuxt/markdown';
 import { Base64 } from 'js-base64';
 
+import all from 'mdast-util-to-hast/lib/all';
+import normalize from 'mdurl/encode';
+
+function linkHandler(h, node) {
+  const url = normalize(node.url);
+  const props = {};
+
+  if (node.title !== null && node.title !== undefined) {
+    props.title = node.title;
+  }
+
+  props.href = url;
+  const tagName = 'a';
+
+  return h(node, tagName, props, all(h, node));
+}
+
 const appHelpers = (_context, inject) => {
-  const md = new Markdown({ toc: true, sanitize: false });
+  const md = new Markdown({
+    toc: true,
+    sanitize: false,
+    // override the default link handler, which returns <nuxt-link></nuxt-link>
+    // instead of <a></a>
+    handlers: {
+      link: linkHandler
+    }
+  });
 
   const mdParse = (text) => {
     // First 26 characters of text are the type identifier

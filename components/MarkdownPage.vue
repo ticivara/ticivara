@@ -19,19 +19,25 @@ export default {
   },
 
   props: {
-    title: {
+    content: {
       type: String,
       required: true
     },
-    htmlContent: {
-      type: String,
-      required: true
-    },
-    toc: {
-      type: Array,
-      required: false,
-      default: () => []
-    }
+  },
+
+  data: () => {
+    return {
+      title: '',
+      toc: [],
+      htmlContent: ''
+    };
+  },
+
+  async created() {
+    const a = await this.$mdParse(this.content);
+    this.title = a.title;
+    this.htmlContent = a.htmlContent;
+    this.toc = a.toc;
   },
 
   head() {

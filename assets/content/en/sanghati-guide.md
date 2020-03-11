@@ -62,7 +62,7 @@ flipped on the vertical axis when marking, to produce a mirror image.
 
 ## Cutting the Borders
 
-See [the Border Sewing Guide](/#/en/borders)
+See [the Border Sewing Guide](/en/borders)
 
 ## First Sewing
 
@@ -299,6 +299,6 @@ until all the khandhas are joined.
 
 ## Sewing the Borders
 
-See [Borders](/#/en/borders).
+See [Borders](/en/borders).
 
 

@@ -34,4 +34,4 @@ are lower than the mandalas.
 
 Make a hem around the edges at 1cm.
 
-Add the [borders](/#/en/borders).
+Add the [borders](/en/borders).
