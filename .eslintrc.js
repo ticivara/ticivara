@@ -20,6 +20,7 @@ module.exports = {
   // add your custom rules here
   rules: {
     'prettier/prettier': 'warn', //  0 = off, 1 = warn, 2 = error
+    'camelcase': 'off',
     'max-len': ['error', {'code': 100, 'ignoreUrls': true}],
     'no-console': 'off',
     'space-before-function-paren': 'off',
