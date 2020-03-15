@@ -3,49 +3,66 @@
     <div id="simple_controls">
       <div class="columns">
         <div class="column">
-          <div class="field">
-            <label class="label">Title:</label>
-            <div class="control">
-              <input v-model="sabong.title" class="input" type="text" />
-            </div>
-          </div>
-        </div>
 
-        <div class="column">
-          <div class="field">
-            <label class="label">Border type:</label>
-            <div class="control">
-              <div class="field has-addons">
-                <p class="control">
-                  <button
-                    :class="[
-                      border_type === 0 ? 'is-info is-selected' : '',
-                      'button'
-                    ]"
-                    @click="setBorderType(0)"
-                  >
-                    <span>Overlapping</span>
-                  </button>
-                </p>
-                <p class="control">
-                  <button
-                    :class="[
-                      border_type === 1 ? 'is-info is-selected' : '',
-                      'button'
-                    ]"
-                    @click="setBorderType(1)"
-                  >
-                    <span>Joined</span>
-                  </button>
-                </p>
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
 
       <div class="columns">
-        <div class="column is-4">
+        <div class="column is-6">
+
+          <div class="field is-horizontal">
+            <div class="field-label">
+              <label class="label">Title:</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <input v-model="sabong.title" class="input" type="text" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="field is-horizontal is-pulled-right">
+            <div class="field-label">
+              <label class="label">Border type:</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <div class="field has-addons">
+                    <p class="control">
+                      <button
+                        :class="[
+                          border_type === 0 ? 'is-info is-selected' : '',
+                          'button'
+                          ]"
+                        @click="setBorderType(0)"
+                      >
+                        <span>Overlapping</span>
+                      </button>
+                    </p>
+                    <p class="control">
+                      <button
+                        :class="[
+                          border_type === 1 ? 'is-info is-selected' : '',
+                          'button'
+                          ]"
+                        @click="setBorderType(1)"
+                      >
+                        <span>Joined</span>
+                      </button>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="column is-3">
           <div class="field is-horizontal">
             <div class="field-label">
               <label class="label">Final width:</label>
@@ -84,7 +101,8 @@
             </div>
           </div>
         </div>
-        <div class="column is-4">
+
+        <div class="column is-3">
           <div class="field is-horizontal">
             <div class="field-label">
               <label class="label">Shrinking width %:</label>
@@ -128,6 +146,69 @@
 
     <div class="columns">
       <div class="column">
+        <div v-show="show_more_controls" class="field is-horizontal">
+          <div class="field-label">
+            <label class="label">Kusi width:</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <input
+                  v-model="sabong.kusi_width"
+                  class="input"
+                  type="number"
+                  step="1"
+                  min="0"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div v-show="show_more_controls" class="field is-horizontal">
+          <div class="field-label">
+            <label class="label">Border width:</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <input
+                  v-model="sabong.border_width"
+                  class="input"
+                  type="number"
+                  step="1"
+                  min="0"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div v-show="show_more_controls" class="field is-horizontal">
+          <div class="field-label">
+            <label class="label">Buffer width:</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <input
+                  v-model="sabong.buffer_width"
+                  class="input"
+                  type="number"
+                  step="1"
+                  min="0"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
         <div class="field is-pulled-right">
           <div class="control">
             <button
@@ -142,77 +223,12 @@
     </div>
 
     <div v-show="show_more_controls" id="advanced_controls">
-      <div class="columns">
-        <div class="column is-4">
-          <div class="field is-horizontal">
-            <div class="field-label">
-              <label class="label">Kusi width:</label>
-            </div>
-            <div class="field-body">
-              <div class="field">
-                <div class="control">
-                  <input
-                    v-model="sabong.kusi_width"
-                    class="input"
-                    type="number"
-                    step="1"
-                    min="0"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="column is-4">
-          <div class="field is-horizontal">
-            <div class="field-label">
-              <label class="label">Border width:</label>
-            </div>
-            <div class="field-body">
-              <div class="field">
-                <div class="control">
-                  <input
-                    v-model="sabong.border_width"
-                    class="input"
-                    type="number"
-                    step="1"
-                    min="0"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="column is-4">
-          <div class="field is-horizontal">
-            <div class="field-label">
-              <label class="label">Buffer width:</label>
-            </div>
-            <div class="field-body">
-              <div class="field">
-                <div class="control">
-                  <input
-                    v-model="sabong.buffer_width"
-                    class="input"
-                    type="number"
-                    step="1"
-                    min="0"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <p>
-        Additional kusi buffers for cutting or folding:
+        Kusi buffers widths:
       </p>
 
       <div class="columns">
-        <div class="column is-3" style="border-right: 1px solid black;">
+        <div class="column">
           <div class="field">
             <label class="label">k1-a:</label>
             <div class="control">
@@ -227,54 +243,7 @@
           </div>
         </div>
 
-        <div class="column is-3" style="border-right: 1px solid black;">
-          <div class="field">
-            <label class="label">k2-a:</label>
-            <div class="control">
-              <input
-                v-model="sabong.kusi_buffers.k2_a"
-                class="input"
-                type="number"
-                step="0.1"
-                min="0"
-              />
-            </div>
-          </div>
-        </div>
-
-        <div class="column is-3" style="border-right: 1px solid black;">
-          <div class="field">
-            <label class="label">k3-a:</label>
-            <div class="control">
-              <input
-                v-model="sabong.kusi_buffers.k3_a"
-                class="input"
-                type="number"
-                step="0.1"
-                min="0"
-              />
-            </div>
-          </div>
-        </div>
-
-        <div class="column is-3">
-          <div class="field">
-            <label class="label">k4-a:</label>
-            <div class="control">
-              <input
-                v-model="sabong.kusi_buffers.k4_a"
-                class="input"
-                type="number"
-                step="0.1"
-                min="0"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="columns">
-        <div class="column is-3" style="border-right: 1px solid black;">
+        <div class="column" style="border-right: 1px solid black;">
           <div class="field">
             <label class="label">k1-b:</label>
             <div class="control">
@@ -289,7 +258,22 @@
           </div>
         </div>
 
-        <div class="column is-3" style="border-right: 1px solid black;">
+        <div class="column">
+          <div class="field">
+            <label class="label">k2-a:</label>
+            <div class="control">
+              <input
+                v-model="sabong.kusi_buffers.k2_a"
+                class="input"
+                type="number"
+                step="0.1"
+                min="0"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="column" style="border-right: 1px solid black;">
           <div class="field">
             <label class="label">k2-b:</label>
             <div class="control">
@@ -304,7 +288,22 @@
           </div>
         </div>
 
-        <div class="column is-3" style="border-right: 1px solid black;">
+        <div class="column">
+          <div class="field">
+            <label class="label">k3-a:</label>
+            <div class="control">
+              <input
+                v-model="sabong.kusi_buffers.k3_a"
+                class="input"
+                type="number"
+                step="0.1"
+                min="0"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="column" style="border-right: 1px solid black;">
           <div class="field">
             <label class="label">k3-b:</label>
             <div class="control">
@@ -319,7 +318,22 @@
           </div>
         </div>
 
-        <div class="column is-3">
+        <div class="column">
+          <div class="field">
+            <label class="label">k4-a:</label>
+            <div class="control">
+              <input
+                v-model="sabong.kusi_buffers.k4_a"
+                class="input"
+                type="number"
+                step="0.1"
+                min="0"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
           <div class="field">
             <label class="label">k4-b:</label>
             <div class="control">
@@ -336,14 +350,25 @@
       </div>
     </div>
 
-    <p>
-      Cutting along the long kusi lines:
-    </p>
+    <p>Kusi cutting buffer, added after the cutting line:</p>
 
     <div class="columns">
-      <div class="column is-3">
+      <div class="column">
         <div class="field">
-          <label class="label">k1-a</label>
+          <div class="control">
+            <input
+              v-model="sabong.kusi_cutting_buffer"
+              class="input"
+              type="number"
+              step="0.1"
+              min="0"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="field">
           <div class="control">
             <button
               :class="[sabong.kusi_cuts.k1_a ? 'is-info' : '', 'button']"
@@ -356,14 +381,14 @@
                 />
                 <img v-else src="@/assets/img/scissors-black.svg" />
               </span>
+              <span>k1-a</span>
             </button>
           </div>
         </div>
       </div>
 
-      <div class="column is-3">
+      <div class="column">
         <div class="field">
-          <label class="label">k2-a</label>
           <div class="control">
             <button
               :class="[sabong.kusi_cuts.k2_a ? 'is-info' : '', 'button']"
@@ -376,14 +401,14 @@
                 />
                 <img v-else src="@/assets/img/scissors-black.svg" />
               </span>
+              <span>k2-a</span>
             </button>
           </div>
         </div>
       </div>
 
-      <div class="column is-3">
+      <div class="column">
         <div class="field">
-          <label class="label">k3-a</label>
           <div class="control">
             <button
               :class="[sabong.kusi_cuts.k3_a ? 'is-info' : '', 'button']"
@@ -396,14 +421,14 @@
                 />
                 <img v-else src="@/assets/img/scissors-black.svg" />
               </span>
+              <span>k3-a</span>
             </button>
           </div>
         </div>
       </div>
 
-      <div class="column is-3">
+      <div class="column">
         <div class="field">
-          <label class="label">k4-a</label>
           <div class="control">
             <button
               :class="[sabong.kusi_cuts.k4_a ? 'is-info' : '', 'button']"
@@ -416,6 +441,7 @@
                 />
                 <img v-else src="@/assets/img/scissors-black.svg" />
               </span>
+              <span>k4-a</span>
             </button>
           </div>
         </div>
@@ -445,6 +471,7 @@ const D = {
     buffer_width: 1,
     border_width: 12,
     kusi_width: 6,
+    kusi_cutting_buffer: 0.5,
     shrink_percent_width: 0,
     shrink_percent_height: 0,
     kusi_buffers: {
