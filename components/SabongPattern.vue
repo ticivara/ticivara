@@ -352,7 +352,7 @@
 
     <div class="columns">
       <div class="column">
-    <p>Kusi cutting buffer, added on the kusi side of the cutting line:</p>
+        <p>Kusi cutting buffer, added on the kusi side of the cutting line:</p>
       </div>
     </div>
 
