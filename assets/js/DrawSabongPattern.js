@@ -168,7 +168,7 @@ function DrawSabongPattern(
   textKusiHeight(ctx, D, 0);
   textKusiHeight(ctx, D, 1);
 
-  // kusi buffer additions
+  // kusi buffer additions and cutting buffer
   textKusiBuffer(ctx, D, 0, 1, 0, 1, 1, -0.2);
   textKusiBuffer(ctx, D, 1, 1, 1, 1, 1, 0);
   textKusiBuffer(ctx, D, 2, 2, 1, 1, 1, -0.2);
@@ -355,7 +355,40 @@ function textKusiHeight(ctx, D, n) {
             (D.pos_kusi_width / 2)) - y));
 }
 
+function hasCutBuffer(robe, i) {
+  let cut_idx = -1;
+
+  // determine lookup index based on kusi line index
+  switch (i) {
+    // left side of middle khandha:
+  case 0:
+    cut_idx = -1; break;
+  case 1:
+    cut_idx = 0; break;
+  case 2:
+    cut_idx = -1; break;
+  case 3:
+    cut_idx = 1; break;
+    // right side of middle khandha:
+  case 4:
+    cut_idx = -1; break;
+  case 5:
+    cut_idx = 2; break;
+  case 6:
+    cut_idx = -1; break;
+  case 7:
+    cut_idx = 3; break;
+  }
+
+  if (cut_idx >= 0) {
+    return robe.kusi_cuts[KC[cut_idx]];
+  } else {
+    return false;
+  }
+}
+
 function textKusiBuffer(ctx, D, nI, m, k, b, c, x_offset) {
+  // additional buffer
   textNumSigned(ctx, D,
                 D.sabong.kusi_buffers[KB[nI]],
                 (-5.5 + x_offset +
@@ -364,6 +397,18 @@ function textKusiBuffer(ctx, D, nI, m, k, b, c, x_offset) {
                  (b * D.pos_border_width) +
                  (c * D.pos_buffer_width)),
                 100.2);
+
+  // cutting buffer
+  if (hasCutBuffer(D.sabong, nI)) {
+    textNumSigned(ctx, D,
+                  D.sabong.kusi_cutting_buffer,
+                  (-5.5 + x_offset +
+                   (m * D.pos_mandala_width) +
+                   (k * D.pos_kusi_width) +
+                   (b * D.pos_border_width) +
+                   (c * D.pos_buffer_width)),
+                  90);
+  }
 }
 
 function textMandalaHeight(ctx, D, n) {
@@ -390,8 +435,16 @@ function kusiBuffersUntil(robe, n) {
   }
   let a = 0;
   let i = 0;
+
+  const robe_cb = Number(robe.kusi_cutting_buffer);
+
   while (i <= n && i < KB.length) {
     a += Number(robe.kusi_buffers[KB[i]]);
+
+    if (hasCutBuffer(robe, i)) {
+      a += robe_cb;
+    }
+
     i++;
   }
   return a;

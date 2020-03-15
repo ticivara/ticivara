@@ -215,7 +215,7 @@
               :class="[show_more_controls ? 'is-info' : '', 'button']"
               @click="show_more_controls = !show_more_controls"
             >
-              <span>Show more controls</span>
+              <span>Show more variables</span>
             </button>
           </div>
         </div>
@@ -350,7 +350,11 @@
       </div>
     </div>
 
-    <p>Kusi cutting buffer, added after the cutting line:</p>
+    <div class="columns">
+      <div class="column">
+    <p>Kusi cutting buffer, added on the kusi side of the cutting line:</p>
+      </div>
+    </div>
 
     <div class="columns">
       <div class="column">
