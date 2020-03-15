@@ -53,7 +53,13 @@
             <div class="field-body">
               <div class="field">
                 <div class="control">
-                  <input v-model="sabong.width" class="input" type="number" />
+                  <input
+                    v-model="sabong.width"
+                    class="input"
+                    type="number"
+                    step="1"
+                    min="0"
+                  />
                 </div>
               </div>
             </div>
@@ -66,16 +72,22 @@
             <div class="field-body">
               <div class="field">
                 <div class="control">
-                  <input v-model="sabong.height" class="input" type="number" />
+                  <input
+                    v-model="sabong.height"
+                    class="input"
+                    type="number"
+                    step="1"
+                    min="0"
+                  />
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="column is-8">
+        <div class="column is-4">
           <div class="field is-horizontal">
             <div class="field-label">
-              <label class="label">Shrinking width percent:</label>
+              <label class="label">Shrinking width %:</label>
             </div>
             <div class="field-body">
               <div class="field">
@@ -84,6 +96,8 @@
                     v-model="sabong.shrink_percent_width"
                     class="input"
                     type="number"
+                    step="1"
+                    min="0"
                   />
                 </div>
               </div>
@@ -92,7 +106,7 @@
 
           <div class="field is-horizontal">
             <div class="field-label">
-              <label class="label">Shrinking height percent:</label>
+              <label class="label">Shrinking height %:</label>
             </div>
             <div class="field-body">
               <div class="field">
@@ -101,6 +115,8 @@
                     v-model="sabong.shrink_percent_height"
                     class="input"
                     type="number"
+                    step="1"
+                    min="0"
                   />
                 </div>
               </div>
@@ -115,10 +131,7 @@
         <div class="field is-pulled-right">
           <div class="control">
             <button
-              :class="[
-                show_more_controls ? 'is-info' : '',
-                'button'
-              ]"
+              :class="[show_more_controls ? 'is-info' : '', 'button']"
               @click="show_more_controls = !show_more_controls"
             >
               <span>Show more controls</span>
@@ -142,6 +155,8 @@
                     v-model="sabong.kusi_width"
                     class="input"
                     type="number"
+                    step="1"
+                    min="0"
                   />
                 </div>
               </div>
@@ -161,6 +176,8 @@
                     v-model="sabong.border_width"
                     class="input"
                     type="number"
+                    step="1"
+                    min="0"
                   />
                 </div>
               </div>
@@ -180,6 +197,8 @@
                     v-model="sabong.buffer_width"
                     class="input"
                     type="number"
+                    step="1"
+                    min="0"
                   />
                 </div>
               </div>
@@ -193,7 +212,6 @@
       </p>
 
       <div class="columns">
-
         <div class="column is-3" style="border-right: 1px solid black;">
           <div class="field">
             <label class="label">k1-a:</label>
@@ -202,6 +220,8 @@
                 v-model="sabong.kusi_buffers.k1_a"
                 class="input"
                 type="number"
+                step="0.1"
+                min="0"
               />
             </div>
           </div>
@@ -215,6 +235,8 @@
                 v-model="sabong.kusi_buffers.k2_a"
                 class="input"
                 type="number"
+                step="0.1"
+                min="0"
               />
             </div>
           </div>
@@ -228,6 +250,8 @@
                 v-model="sabong.kusi_buffers.k3_a"
                 class="input"
                 type="number"
+                step="0.1"
+                min="0"
               />
             </div>
           </div>
@@ -241,15 +265,15 @@
                 v-model="sabong.kusi_buffers.k4_a"
                 class="input"
                 type="number"
+                step="0.1"
+                min="0"
               />
             </div>
           </div>
         </div>
-
       </div>
 
       <div class="columns">
-
         <div class="column is-3" style="border-right: 1px solid black;">
           <div class="field">
             <label class="label">k1-b:</label>
@@ -258,6 +282,8 @@
                 v-model="sabong.kusi_buffers.k1_b"
                 class="input"
                 type="number"
+                step="0.1"
+                min="0"
               />
             </div>
           </div>
@@ -271,6 +297,8 @@
                 v-model="sabong.kusi_buffers.k2_b"
                 class="input"
                 type="number"
+                step="0.1"
+                min="0"
               />
             </div>
           </div>
@@ -284,6 +312,8 @@
                 v-model="sabong.kusi_buffers.k3_b"
                 class="input"
                 type="number"
+                step="0.1"
+                min="0"
               />
             </div>
           </div>
@@ -297,11 +327,12 @@
                 v-model="sabong.kusi_buffers.k4_b"
                 class="input"
                 type="number"
+                step="0.1"
+                min="0"
               />
             </div>
           </div>
         </div>
-
       </div>
     </div>
 
@@ -319,7 +350,10 @@
               @click="sabong.kusi_cuts.k1_a = !sabong.kusi_cuts.k1_a"
             >
               <span class="icon is-small">
-                <img v-if="sabong.kusi_cuts.k1_a" src="@/assets/img/scissors-white.svg" />
+                <img
+                  v-if="sabong.kusi_cuts.k1_a"
+                  src="@/assets/img/scissors-white.svg"
+                />
                 <img v-else src="@/assets/img/scissors-black.svg" />
               </span>
             </button>
@@ -336,7 +370,10 @@
               @click="sabong.kusi_cuts.k2_a = !sabong.kusi_cuts.k2_a"
             >
               <span class="icon is-small">
-                <img v-if="sabong.kusi_cuts.k2_a" src="@/assets/img/scissors-white.svg" />
+                <img
+                  v-if="sabong.kusi_cuts.k2_a"
+                  src="@/assets/img/scissors-white.svg"
+                />
                 <img v-else src="@/assets/img/scissors-black.svg" />
               </span>
             </button>
@@ -353,7 +390,10 @@
               @click="sabong.kusi_cuts.k3_a = !sabong.kusi_cuts.k3_a"
             >
               <span class="icon is-small">
-                <img v-if="sabong.kusi_cuts.k3_a" src="@/assets/img/scissors-white.svg" />
+                <img
+                  v-if="sabong.kusi_cuts.k3_a"
+                  src="@/assets/img/scissors-white.svg"
+                />
                 <img v-else src="@/assets/img/scissors-black.svg" />
               </span>
             </button>
@@ -370,7 +410,10 @@
               @click="sabong.kusi_cuts.k4_a = !sabong.kusi_cuts.k4_a"
             >
               <span class="icon is-small">
-                <img v-if="sabong.kusi_cuts.k4_a" src="@/assets/img/scissors-white.svg" />
+                <img
+                  v-if="sabong.kusi_cuts.k4_a"
+                  src="@/assets/img/scissors-white.svg"
+                />
                 <img v-else src="@/assets/img/scissors-black.svg" />
               </span>
             </button>
@@ -405,13 +448,13 @@ const D = {
     shrink_percent_width: 0,
     shrink_percent_height: 0,
     kusi_buffers: {
-      k1_a: 0.5,
+      k1_a: 0.0,
       k1_b: 0.5,
-      k2_a: 0.5,
+      k2_a: 0.0,
       k2_b: 0.5,
-      k3_a: 0.5,
+      k3_a: 0.0,
       k3_b: 0.5,
-      k4_a: 0.5,
+      k4_a: 0.0,
       k4_b: 0.5
     },
     kusi_cuts: {
@@ -421,7 +464,7 @@ const D = {
       k4_a: false
     }
   },
-  border_type: 1, // 0 = overlapping, 1 = joined
+  border_type: 0, // 0 = overlapping, 1 = joined
   show_more_controls: false
 };
 

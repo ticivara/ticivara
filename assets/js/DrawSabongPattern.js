@@ -3,7 +3,20 @@ import ScissorsBlackDown from '@/assets/js/ScissorsBlackDown.js';
 const ScissorsImg = new Image();
 ScissorsImg.src = ScissorsBlackDown;
 
-function DrawSabongPattern(ctx, canvasWidth, canvasHeight, borderType, img, sabong) {
+// kusi buffer index to key
+const KB = ['k1_a', 'k1_b', 'k2_a', 'k2_b', 'k3_a', 'k3_b', 'k4_a', 'k4_b'];
+
+// kusi cut index to key
+const KC = ['k1_a', 'k2_a', 'k3_a', 'k4_a'];
+
+function DrawSabongPattern(
+  ctx,
+  canvasWidth,
+  canvasHeight,
+  borderType,
+  img,
+  sabong
+) {
   // shrinking lengths
   const a = calcSabongShrinkingLengths(sabong);
   const sl = {
@@ -53,11 +66,13 @@ function DrawSabongPattern(ctx, canvasWidth, canvasHeight, borderType, img, sabo
 
   const sc = D.pattern_scale;
 
-  ctx.drawImage(img,
-                D.pos_img_offset_x * sc,
-                D.pos_img_offset_y * sc,
-                D.pos_pattern_width * sc,
-                D.pos_pattern_height * sc);
+  ctx.drawImage(
+    img,
+    D.pos_img_offset_x * sc,
+    D.pos_img_offset_y * sc,
+    D.pos_pattern_width * sc,
+    D.pos_pattern_height * sc
+  );
 
   textTitle(ctx, D,
             D.title, "60px",
@@ -170,36 +185,41 @@ function DrawSabongPattern(ctx, canvasWidth, canvasHeight, borderType, img, sabo
 
   // horizontal accumulative length
   if (borderType === 0) {
-    textAccumulateHoriz(ctx, D, 0, 0, 0, 1, 1);
-    textAccumulateHoriz(ctx, D, 0, 0, 1, 1, 0);
+
+    textAccumulateHoriz(ctx, D, 0, -1, 0, 1, 1);
+    textAccumulateHoriz(ctx, D, 0, -1, 1, 1, 0);
     textAccumulateHoriz(ctx, D, 1, 0, 1, 1, -6);
     textAccumulateHoriz(ctx, D, 1, 1, 1, 1, -5.2);
-    textAccumulateHoriz(ctx, D, 2, 1, 1, 1, -6);
-    textAccumulateHoriz(ctx, D, 2, 2, 1, 1, -5.2);
-    textAccumulateHoriz(ctx, D, 3, 2, 1, 1, -7);
-    textAccumulateHoriz(ctx, D, 3, 3, 1, 1, -6.2);
-    textAccumulateHoriz(ctx, D, 4, 3, 1, 1, -7);
-    textAccumulateHoriz(ctx, D, 4, 4, 1, 1, -6.2);
-    textAccumulateHoriz(ctx, D, 5, 4, 1, 1, -7);
-    textAccumulateHoriz(ctx, D, 5, 4, 2, 1, -8);
-    textAccumulateHoriz(ctx, D, 5, 4, 2, 2, 0);
+    textAccumulateHoriz(ctx, D, 2, 2, 1, 1, -6);
+    textAccumulateHoriz(ctx, D, 2, 3, 1, 1, -5.2);
+    textAccumulateHoriz(ctx, D, 3, 4, 1, 1, -7);
+    textAccumulateHoriz(ctx, D, 3, 5, 1, 1, -6.2);
+    textAccumulateHoriz(ctx, D, 4, 6, 1, 1, -7);
+    textAccumulateHoriz(ctx, D, 4, 7, 1, 1, -6.2);
+    textAccumulateHoriz(ctx, D, 5, 7, 1, 1, -7);
+    textAccumulateHoriz(ctx, D, 5, 7, 2, 1, -8);
+    textAccumulateHoriz(ctx, D, 5, 7, 2, 2, 0);
+
   } else {
-    textAccumulateHoriz(ctx, D, 0, 0, 0, 0, -6);
-    textAccumulateHoriz(ctx, D, 0, 0, 0, 1, 0);
+
+    textAccumulateHoriz(ctx, D, 0, -1, 0, 0, -6);
+    textAccumulateHoriz(ctx, D, 0, -1, 0, 1, 0);
     textAccumulateHoriz(ctx, D, 1, 0, 0, 1, -6);
     textAccumulateHoriz(ctx, D, 1, 1, 0, 1, -5.2);
-    textAccumulateHoriz(ctx, D, 2, 1, 0, 1, -6);
-    textAccumulateHoriz(ctx, D, 2, 2, 0, 1, -5.2);
-    textAccumulateHoriz(ctx, D, 3, 2, 0, 1, -7);
-    textAccumulateHoriz(ctx, D, 3, 3, 0, 1, -6.2);
-    textAccumulateHoriz(ctx, D, 4, 3, 0, 1, -7);
-    textAccumulateHoriz(ctx, D, 4, 4, 0, 1, -6.2);
-    textAccumulateHoriz(ctx, D, 5, 4, 0, 1, -7);
-    textAccumulateHoriz(ctx, D, 5, 4, 0, 2, 1);
+    textAccumulateHoriz(ctx, D, 2, 2, 0, 1, -6);
+    textAccumulateHoriz(ctx, D, 2, 3, 0, 1, -5.2);
+    textAccumulateHoriz(ctx, D, 3, 4, 0, 1, -7);
+    textAccumulateHoriz(ctx, D, 3, 5, 0, 1, -6.2);
+    textAccumulateHoriz(ctx, D, 4, 6, 0, 1, -7);
+    textAccumulateHoriz(ctx, D, 4, 7, 0, 1, -6.2);
+    textAccumulateHoriz(ctx, D, 5, 7, 0, 1, -7);
+    textAccumulateHoriz(ctx, D, 5, 7, 0, 2, 1);
+
   }
 
   // vertical accumulative length
   if (borderType === 0) {
+
     textAccumulateVert(ctx, D, 0, 0, 0, 1, 1);
     textAccumulateVert(ctx, D, 0, 0, 1, 1, 0);
     textAccumulateVert(ctx, D, 1, 0, 1, 1, 0);
@@ -209,7 +229,9 @@ function DrawSabongPattern(ctx, canvasWidth, canvasHeight, borderType, img, sabo
     textAccumulateVert(ctx, D, 3, 2, 1, 1, 0);
     textAccumulateVert(ctx, D, 3, 2, 2, 1, -6.5);
     textAccumulateVert(ctx, D, 3, 2, 2, 2, 0);
+
   } else {
+
     textAccumulateVert(ctx, D, 0, 0, 0, 0, -4);
     textAccumulateVert(ctx, D, 0, 0, 0, 1, 1);
     textAccumulateVert(ctx, D, 1, 0, 0, 1, 0);
@@ -218,6 +240,7 @@ function DrawSabongPattern(ctx, canvasWidth, canvasHeight, borderType, img, sabo
     textAccumulateVert(ctx, D, 2, 2, 0, 1, 0);
     textAccumulateVert(ctx, D, 3, 2, 0, 1, -6.5);
     textAccumulateVert(ctx, D, 3, 2, 0, 2, 1);
+
   }
 }
 
@@ -293,18 +316,6 @@ function textMandalaWidth(ctx, D, n) {
           y);
 }
 
-// kusi buffer index to key
-const KB = [
-  'k1_a',
-  'k1_b',
-  'k2_a',
-  'k2_b',
-  'k3_a',
-  'k3_b',
-  'k4_a',
-  'k4_b'
-];
-
 function textKusiWidth(ctx, D, n) {
   let x, y;
   if (D.border_type === 0) {
@@ -374,21 +385,22 @@ function textMandalaHeight(ctx, D, n) {
 }
 
 function kusiBuffersUntil(robe, n) {
-  if (n < 1) {
+  if (n < 0) {
     return 0;
-  } else {
-    let a = 0;
-    if (n - 1 >= 0) {
-      a = robe.kusi_buffers[KB[n - 1]];
-    }
-    return a + kusiBuffersUntil(robe, n - 1);
   }
+  let a = 0;
+  let i = 0;
+  while (i <= n && i < KB.length) {
+    a += Number(robe.kusi_buffers[KB[i]]);
+    i++;
+  }
+  return a;
 };
 
 // mandala, kusi, border, cut buffer
 function textAccumulateHoriz(ctx, D, m, k, b, c, x_offset) {
   let x, y;
-  if (D.border_yype === 0) {
+  if (D.border_type === 0) {
     x = 0.0;
     y = 95.0;
   } else {
@@ -397,13 +409,13 @@ function textAccumulateHoriz(ctx, D, m, k, b, c, x_offset) {
   }
   textNum(ctx, D,
           ((m * D.val_mandala_width) +
-           (k * D.val_kusi_width) +
+           (Math.floor((k+1)/2) * D.val_kusi_width) +
            kusiBuffersUntil(D.sabong, k) +
            (b * D.val_border_width) +
            (c * D.val_buffer_width)),
           (x + x_offset +
            (m * D.pos_mandala_width) +
-           (k * D.pos_kusi_width) +
+           (Math.floor((k+1)/2) * D.pos_kusi_width) +
            (b * D.pos_border_width) +
            (c * D.pos_buffer_width)),
           y);
@@ -431,14 +443,6 @@ function textAccumulateVert(ctx, D, m, k, b, c, y_offset) {
            (b * D.pos_border_width) +
            (c * D.pos_buffer_width)));
 }
-
-// kusi cut index to key
-const KC = [
-  'k1_a',
-  'k2_a',
-  'k3_a',
-  'k4_a',
-];
 
 function cutKusi(ctx, D, n) {
   let xO = (((n + 1) * D.pos_mandala_width) +
