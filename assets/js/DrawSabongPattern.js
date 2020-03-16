@@ -13,7 +13,6 @@ function DrawSabongPattern(
   ctx,
   canvasWidth,
   canvasHeight,
-  borderType,
   img,
   sabong
 ) {
@@ -30,7 +29,6 @@ function DrawSabongPattern(
 
   const D = {
     sabong,
-    border_type: borderType,
     title: sabong.title,
     // values from the SVG for positioning
     pos_pattern_width: 232,
@@ -113,7 +111,7 @@ function DrawSabongPattern(
        40.0, -30.0);
 
   // buffer at the edges
-  if (borderType === 0) {
+  if (D.sabong.border_type === 0) {
     textNum(ctx, D,
             D.val_buffer_width,
             2.0, 5.0);
@@ -184,7 +182,7 @@ function DrawSabongPattern(
   textMandalaHeight(ctx, D, 2);
 
   // horizontal accumulative length
-  if (borderType === 0) {
+  if (D.sabong.border_type === 0) {
 
     textAccumulateHoriz(ctx, D, 0, -1, 0, 1, 1);
     textAccumulateHoriz(ctx, D, 0, -1, 1, 1, 0);
@@ -218,7 +216,7 @@ function DrawSabongPattern(
   }
 
   // vertical accumulative length
-  if (borderType === 0) {
+  if (D.sabong.border_type === 0) {
 
     textAccumulateVert(ctx, D, 0, 0, 0, 1, 1);
     textAccumulateVert(ctx, D, 0, 0, 1, 1, 0);
@@ -300,7 +298,7 @@ function textNumSigned(ctx, D, s, x, y) {
 
 function textMandalaWidth(ctx, D, n) {
   let x, y;
-  if (D.border_type === 0) {
+  if (D.sabong.border_type === 0) {
     x = 2.0;
     y = 8.0;
   } else {
@@ -318,7 +316,7 @@ function textMandalaWidth(ctx, D, n) {
 
 function textKusiWidth(ctx, D, n) {
   let x, y;
-  if (D.border_type === 0) {
+  if (D.sabong.border_type === 0) {
     x = 2.0;
     y = 8.0;
   } else {
@@ -338,7 +336,7 @@ function textKusiWidth(ctx, D, n) {
 
 function textKusiHeight(ctx, D, n) {
   let x, y;
-  if (D.border_type === 0) {
+  if (D.sabong.border_type === 0) {
     x = 8.8;
     y = 3.5;
   } else {
@@ -413,7 +411,7 @@ function textKusiBuffer(ctx, D, nI, m, k, b, c, x_offset) {
 
 function textMandalaHeight(ctx, D, n) {
   let x, y;
-  if (D.border_type === 0) {
+  if (D.sabong.border_type === 0) {
     x = 8.0;
     y = 3.5;
   } else {
@@ -453,7 +451,7 @@ function kusiBuffersUntil(robe, n) {
 // mandala, kusi, border, cut buffer
 function textAccumulateHoriz(ctx, D, m, k, b, c, x_offset) {
   let x, y;
-  if (D.border_type === 0) {
+  if (D.sabong.border_type === 0) {
     x = 0.0;
     y = 95.0;
   } else {
@@ -477,7 +475,7 @@ function textAccumulateHoriz(ctx, D, m, k, b, c, x_offset) {
 // mandala, kusi, border, cut buffer
 function textAccumulateVert(ctx, D, m, k, b, c, y_offset) {
   let x, y;
-  if (D.border_type === 0) {
+  if (D.sabong.border_type === 0) {
     x = 223;
     y = -2.0;
   } else {
@@ -530,7 +528,7 @@ function cutKusi(ctx, D, n) {
     // restore default width
     ctx.lineWidth = 1;
 
-    if (D.border_type === 0) {
+    if (D.sabong.border_type === 0) {
       ctx.drawImage(ScissorsImg,
                     x - 3*sc,
                     (D.pos_img_offset_y + 21.5) * sc,

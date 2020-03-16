@@ -28,7 +28,7 @@
                     <p class="control">
                       <button
                         :class="[
-                          border_type === 0 ? 'is-info is-selected' : '',
+                          sabong.border_type === 0 ? 'is-info is-selected' : '',
                           'button'
                           ]"
                         @click="setBorderType(0)"
@@ -39,7 +39,7 @@
                     <p class="control">
                       <button
                         :class="[
-                          border_type === 1 ? 'is-info is-selected' : '',
+                          sabong.border_type === 1 ? 'is-info is-selected' : '',
                           'button'
                           ]"
                         @click="setBorderType(1)"
@@ -483,8 +483,10 @@ import DrawSabongPattern from '@/assets/js/DrawSabongPattern.js';
 const D = {
   width: 3500,
   height: 2400,
+  show_more_controls: false,
   sabong: {
     title: 'Sabong ' + new Date().getFullYear(),
+    border_type: 0, // 0 = overlapping, 1 = joined
     width: 228,
     height: 99,
     buffer_width: 1,
@@ -509,9 +511,7 @@ const D = {
       k3_a: false,
       k4_a: false
     }
-  },
-  border_type: 0, // 0 = overlapping, 1 = joined
-  show_more_controls: false
+  }
 };
 
 function dataUrlToBuf(dataurl) {
@@ -582,9 +582,9 @@ export default {
       const img = new Image();
       const a = this;
       img.onload = function() {
-        DrawSabongPattern(ctx, a.width, a.height, a.border_type, img, a.sabong);
+        DrawSabongPattern(ctx, a.width, a.height, img, a.sabong);
       };
-      if (this.border_type === 0) {
+      if (this.sabong.border_type === 0) {
         img.src = '/img/sabong-pattern-overlapping-border.svg';
       } else {
         img.src = '/img/sabong-pattern-joined-border.svg';
@@ -592,7 +592,7 @@ export default {
     },
 
     setBorderType(type_id) {
-      this.border_type = type_id;
+      this.sabong.border_type = type_id;
     },
 
     downloadPdf() {
