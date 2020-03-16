@@ -206,7 +206,7 @@
               :class="[show_more_controls ? 'is-info' : '', 'button']"
               @click="show_more_controls = !show_more_controls"
             >
-              <span>Show more variables</span>
+              <span>Show more parameters</span>
             </button>
           </div>
         </div>
@@ -453,8 +453,7 @@
           </div>
 
           <div class="control">
-            <a class="button is-link is-light" :href="robeDataUrl">Link</a>
-            <span>(Copy the link to share the robe parameters)</span>
+            <a class="button is-text" :href="robeDataUrl">Parameters Link</a>
           </div>
         </div>
       </div>
@@ -622,9 +621,9 @@ export default {
         .add('Ticivara Robe Sewing ', {
           fontSize: 9
         })
-        .add('https://ticivara.github.io', {
+        .add('[parameters link]', {
           fontSize: 9,
-          link: 'https://ticivara.github.io',
+          link: this.robeDataUrl,
           color: '0x569cd6'
         });
 
