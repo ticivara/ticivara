@@ -448,11 +448,16 @@
     <div class="columns">
       <div class="column">
 
-        <div class="field is-pulled-right">
+        <div class="field is-grouped">
           <div class="control">
             <button class="button is-primary" @click="downloadPdf()">
               <span>Download PDF</span>
             </button>
+          </div>
+
+          <div class="control">
+            <a class="button is-link is-light" :href="robeDataUrl">Link</a>
+            <span>(Copy the link to share the robe parameters)</span>
           </div>
         </div>
 
@@ -524,7 +529,21 @@ function dataUrlToBuf(dataurl) {
 
 export default {
   data() {
-    return D;
+    const d = D;
+    const keys = Object.keys(this.$route.query);
+    if (keys.length > 0 && keys.includes('robe')) {
+      const robeData = decodeURIComponent(this.$route.query.robe);
+      let a;
+      try {
+        a = JSON.parse(robeData);
+      } catch(e) {
+        console.log('Parse error: Robe data is not well-formatted JSON string.');
+      }
+      if (typeof a !== 'undefined' && Object.keys(a).includes('title')) {
+        d.sabong = a;
+      }
+    };
+    return d;
   },
 
   mounted() {
@@ -533,6 +552,27 @@ export default {
 
   updated() {
     this.updateCanvas();
+  },
+
+  computed: {
+    robeDataUrl() {
+      const robeData = encodeURIComponent(JSON.stringify(this.sabong));
+      const p = window.location.port;
+      let port = '';
+      if (p !== 80 || p !== 443) {
+        port = ':' + p;
+      }
+      const url =
+        window.location.protocol +
+        '//' +
+        window.location.hostname +
+        port +
+        this.$route.path +
+        '?robe=' +
+        robeData;
+
+      return url;
+    }
   },
 
   methods: {
@@ -581,14 +621,14 @@ export default {
 
       const textCell = doc.cell('', { paddingLeft: 10 * pdf.mm });
       textCell.text()
-         .add('Ticivara Robe Sewing ', {
-           fontSize: 9
-         })
-         .add('https://ticivara.github.io', {
-           fontSize: 9,
-           link: 'https://ticivara.github.io',
-           color: '0x569cd6'
-         });
+              .add('Ticivara Robe Sewing ', {
+                fontSize: 9
+              })
+              .add('https://ticivara.github.io', {
+                fontSize: 9,
+                link: 'https://ticivara.github.io',
+                color: '0x569cd6'
+              });
 
       doc.asBuffer().then(buf => {
         const pdf_blob = new Blob([buf], { type: 'application/pdf' });
@@ -601,8 +641,10 @@ export default {
 
         document.body.appendChild(link);
         link.click();
-        URL.revokeObjectURL(link.href);
-        document.body.removeChild(link);
+        setTimeout(function() {
+          document.body.removeChild(link);
+          URL.revokeObjectURL(link.href);
+        }, 100);
       });
     }
   }
