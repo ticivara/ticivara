@@ -56,6 +56,10 @@ body
   +from($desktop)
     max-width: 1344px
 
+#content-wrap .markdown-container
+  +from($widescreen)
+    max-width: 900px
+
 #content-wrap .pattern-container .content
   +until($widescreen)
     padding-left: 1rem

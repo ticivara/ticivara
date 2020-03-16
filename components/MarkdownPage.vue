@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="markdown-container container">
     <div class="content">
       <h1 class="page-title">{{ title }}</h1>
       <Toc :items="toc" />
