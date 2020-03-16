@@ -589,7 +589,7 @@ export default {
     },
 
     setBorderType(type_id) {
-      this.robe.border_type = type_id;
+      this.robe.border_type = Number(type_id);
     },
 
     downloadPdf() {

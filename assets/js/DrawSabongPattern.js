@@ -23,7 +23,6 @@ function DrawSabongPattern(ctx, canvasWidth, canvasHeight, img, robe) {
 
   const D = {
     robe,
-    title: robe.title,
     // values from the SVG for positioning
     pos_pattern_width: 232,
     pos_pattern_height: 145,
@@ -66,7 +65,7 @@ function DrawSabongPattern(ctx, canvasWidth, canvasHeight, img, robe) {
     D.pos_pattern_height * sc
   );
 
-  textTitle(ctx, D, D.title, '60px', 0, -8.0);
+  textTitle(ctx, D, D.robe.title, '60px', 0, -8.0);
 
   text(
     ctx,
@@ -263,6 +262,8 @@ function text(ctx, D, s, x, y) {
   drawText(
     ctx,
     s,
+    x,
+    y,
     D.pattern_scale,
     D.pos_text_offset_x,
     D.pos_text_offset_y,
