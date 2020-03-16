@@ -3,7 +3,6 @@
     <div id="simple_controls">
       <div class="columns">
         <div class="column is-6">
-
           <div class="field is-horizontal">
             <div class="field-label">
               <label class="label">Title:</label>
@@ -30,7 +29,7 @@
                         :class="[
                           robe.border_type === 0 ? 'is-info is-selected' : '',
                           'button'
-                          ]"
+                        ]"
                         @click="setBorderType(0)"
                       >
                         <span>Overlapping</span>
@@ -41,7 +40,7 @@
                         :class="[
                           robe.border_type === 1 ? 'is-info is-selected' : '',
                           'button'
-                          ]"
+                        ]"
                         @click="setBorderType(1)"
                       >
                         <span>Joined</span>
@@ -52,7 +51,6 @@
               </div>
             </div>
           </div>
-
         </div>
 
         <div class="column is-3">
@@ -447,7 +445,6 @@
 
     <div class="columns">
       <div class="column">
-
         <div class="field is-grouped">
           <div class="control">
             <button class="button is-primary" @click="downloadPdf()">
@@ -460,10 +457,8 @@
             <span>(Copy the link to share the robe parameters)</span>
           </div>
         </div>
-
       </div>
     </div>
-
 
     <canvas
       id="robe-pattern-canvas"
@@ -520,7 +515,7 @@ function dataUrlToBuf(dataurl) {
   const bstr = atob(arr[1]);
   let n = bstr.length;
   const u8arr = new Uint8Array(n);
-  while(n--){
+  while (n--) {
     u8arr[n] = bstr.charCodeAt(n);
   }
   // return new Blob([u8arr], {type:mime});
@@ -536,22 +531,16 @@ export default {
       let a;
       try {
         a = JSON.parse(robeData);
-      } catch(e) {
-        console.log('Parse error: Robe data is not well-formatted JSON string.');
+      } catch (e) {
+        console.log(
+          'Parse error: Robe data is not well-formatted JSON string.'
+        );
       }
       if (typeof a !== 'undefined' && Object.keys(a).includes('title')) {
         d.robe = a;
       }
-    };
+    }
     return d;
-  },
-
-  mounted() {
-    this.updateCanvas();
-  },
-
-  updated() {
-    this.updateCanvas();
   },
 
   computed: {
@@ -573,6 +562,14 @@ export default {
 
       return url;
     }
+  },
+
+  mounted() {
+    this.updateCanvas();
+  },
+
+  updated() {
+    this.updateCanvas();
   },
 
   methods: {
@@ -616,21 +613,22 @@ export default {
       const imgCell = doc.cell('', { padding: 0, y: 600 });
       imgCell.image(img, {
         width: 830,
-        align: 'center',
+        align: 'center'
       });
 
       const textCell = doc.cell('', { paddingLeft: 10 * pdf.mm });
-      textCell.text()
-              .add('Ticivara Robe Sewing ', {
-                fontSize: 9
-              })
-              .add('https://ticivara.github.io', {
-                fontSize: 9,
-                link: 'https://ticivara.github.io',
-                color: '0x569cd6'
-              });
+      textCell
+        .text()
+        .add('Ticivara Robe Sewing ', {
+          fontSize: 9
+        })
+        .add('https://ticivara.github.io', {
+          fontSize: 9,
+          link: 'https://ticivara.github.io',
+          color: '0x569cd6'
+        });
 
-      doc.asBuffer().then(buf => {
+      doc.asBuffer().then((buf) => {
         const pdf_blob = new Blob([buf], { type: 'application/pdf' });
         const url = URL.createObjectURL(pdf_blob);
 

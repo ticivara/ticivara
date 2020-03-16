@@ -9,13 +9,7 @@ const KB = ['k1_a', 'k1_b', 'k2_a', 'k2_b', 'k3_a', 'k3_b', 'k4_a', 'k4_b'];
 // kusi cut index to key
 const KC = ['k1_a', 'k2_a', 'k3_a', 'k4_a'];
 
-function DrawSabongPattern(
-  ctx,
-  canvasWidth,
-  canvasHeight,
-  img,
-  robe
-) {
+function DrawSabongPattern(ctx, canvasWidth, canvasHeight, img, robe) {
   // shrinking lengths
   const a = calcSabongShrinkingLengths(robe);
   const sl = {
@@ -24,7 +18,7 @@ function DrawSabongPattern(
     val_mandala_width: a.mandala_width,
     val_mandala_height: a.mandala_height,
     val_border_width: a.border_width,
-    val_border_height: a.border_height,
+    val_border_height: a.border_height
   };
 
   const D = {
@@ -55,7 +49,7 @@ function DrawSabongPattern(
     val_mandala_width: sl.val_mandala_width,
     val_mandala_height: sl.val_mandala_height,
     val_border_width: sl.val_border_width,
-    val_border_height: sl.val_border_height,
+    val_border_height: sl.val_border_height
   };
 
   // clear screen
@@ -72,76 +66,64 @@ function DrawSabongPattern(
     D.pos_pattern_height * sc
   );
 
-  textTitle(ctx, D,
-            D.title, "60px",
-            0, -8.0);
+  textTitle(ctx, D, D.title, '60px', 0, -8.0);
 
-  text(ctx, D,
-       "Final Width: " + numPad(D.val_inner_width) +
-       ", Final Height: " + numPad(D.val_inner_height),
-       0, -15.0);
+  text(
+    ctx,
+    D,
+    'Final Width: ' +
+      numPad(D.val_inner_width) +
+      ', Final Height: ' +
+      numPad(D.val_inner_height),
+    0,
+    -15.0
+  );
 
-  text(ctx, D,
-       "Cut Width: " + numPad(D.val_cut_width) +
-       ", Cut Height: " + numPad(D.val_cut_height),
-       0, -18.0);
+  text(
+    ctx,
+    D,
+    'Cut Width: ' +
+      numPad(D.val_cut_width) +
+      ', Cut Height: ' +
+      numPad(D.val_cut_height),
+    0,
+    -18.0
+  );
 
-  text(ctx, D,
-       "a, border width: " + numPad(D.val_border_width),
-       40.0, -15.0);
+  text(ctx, D, 'a, border width: ' + numPad(D.val_border_width), 40.0, -15.0);
 
-  text(ctx, D,
-       "b, border height: " + numPad(D.val_border_height),
-       40.0, -18.0);
+  text(ctx, D, 'b, border height: ' + numPad(D.val_border_height), 40.0, -18.0);
 
-  text(ctx, D,
-       "c, cutting buffer: " + numPad(D.val_buffer_width),
-       40.0, -21.0);
+  text(ctx, D, 'c, cutting buffer: ' + numPad(D.val_buffer_width), 40.0, -21.0);
 
-  text(ctx, D,
-       "k, kusi width: " + numPad(D.val_kusi_width),
-       40.0, -24.0);
+  text(ctx, D, 'k, kusi width: ' + numPad(D.val_kusi_width), 40.0, -24.0);
 
-  text(ctx, D,
-       "m, mandala width: " + numPad(D.val_mandala_width),
-       40.0, -27.0);
+  text(ctx, D, 'm, mandala width: ' + numPad(D.val_mandala_width), 40.0, -27.0);
 
-  text(ctx, D,
-       "d, mandala height: " + numPad(D.val_mandala_height),
-       40.0, -30.0);
+  text(
+    ctx,
+    D,
+    'd, mandala height: ' + numPad(D.val_mandala_height),
+    40.0,
+    -30.0
+  );
 
   // buffer at the edges
   if (D.robe.border_type === 0) {
-    textNum(ctx, D,
-            D.val_buffer_width,
-            2.0, 5.0);
-    textNum(ctx, D,
-            D.val_buffer_width,
-            D.pos_pattern_width - 6.0, 5.0);
+    textNum(ctx, D, D.val_buffer_width, 2.0, 5.0);
+    textNum(ctx, D, D.val_buffer_width, D.pos_pattern_width - 6.0, 5.0);
   } else {
-    textNum(ctx, D,
-            D.val_buffer_width,
-            7.0, 16.0);
-    textNum(ctx, D,
-            D.val_buffer_width,
-            D.pos_pattern_width - 11.0, 16.0);
+    textNum(ctx, D, D.val_buffer_width, 7.0, 16.0);
+    textNum(ctx, D, D.val_buffer_width, D.pos_pattern_width - 11.0, 16.0);
   }
 
   // border width
-  textNum(ctx, D,
-          D.val_border_width,
-          5.0, 8.0);
-  textNum(ctx, D,
-          D.val_border_width,
-          D.pos_pattern_width - 9.0, 8.0);
+  textNum(ctx, D, D.val_border_width, 5.0, 8.0);
+  textNum(ctx, D, D.val_border_width, D.pos_pattern_width - 9.0, 8.0);
 
   // border height
-  textNum(ctx, D,
-          D.val_border_height,
-          9.0, 3.0);
-  textNum(ctx, D,
-          D.val_border_height,
-          D.pos_pattern_width - 13.0, 3.0);
+  textNum(ctx, D, D.val_border_height, 9.0, 3.0);
+  textNum(ctx, D, D.val_border_height, D.pos_pattern_width - 13.0, 3.0);
 
   // cutting lines
   cutKusi(ctx, D, 0);
@@ -183,7 +165,6 @@ function DrawSabongPattern(
 
   // horizontal accumulative length
   if (D.robe.border_type === 0) {
-
     textAccumulateHoriz(ctx, D, 0, -1, 0, 1, 1);
     textAccumulateHoriz(ctx, D, 0, -1, 1, 1, 0);
     textAccumulateHoriz(ctx, D, 1, 0, 1, 1, -6);
@@ -197,9 +178,7 @@ function DrawSabongPattern(
     textAccumulateHoriz(ctx, D, 5, 7, 1, 1, -7);
     textAccumulateHoriz(ctx, D, 5, 7, 2, 1, -8);
     textAccumulateHoriz(ctx, D, 5, 7, 2, 2, 0);
-
   } else {
-
     textAccumulateHoriz(ctx, D, 0, -1, 0, 0, -6);
     textAccumulateHoriz(ctx, D, 0, -1, 0, 1, 0);
     textAccumulateHoriz(ctx, D, 1, 0, 0, 1, -6);
@@ -212,12 +191,10 @@ function DrawSabongPattern(
     textAccumulateHoriz(ctx, D, 4, 7, 0, 1, -6.2);
     textAccumulateHoriz(ctx, D, 5, 7, 0, 1, -7);
     textAccumulateHoriz(ctx, D, 5, 7, 0, 2, 1);
-
   }
 
   // vertical accumulative length
   if (D.robe.border_type === 0) {
-
     textAccumulateVert(ctx, D, 0, 0, 0, 1, 1);
     textAccumulateVert(ctx, D, 0, 0, 1, 1, 0);
     textAccumulateVert(ctx, D, 1, 0, 1, 1, 0);
@@ -227,9 +204,7 @@ function DrawSabongPattern(
     textAccumulateVert(ctx, D, 3, 2, 1, 1, 0);
     textAccumulateVert(ctx, D, 3, 2, 2, 1, -6.5);
     textAccumulateVert(ctx, D, 3, 2, 2, 2, 0);
-
   } else {
-
     textAccumulateVert(ctx, D, 0, 0, 0, 0, -4);
     textAccumulateVert(ctx, D, 0, 0, 0, 1, 1);
     textAccumulateVert(ctx, D, 1, 0, 0, 1, 0);
@@ -238,7 +213,6 @@ function DrawSabongPattern(
     textAccumulateVert(ctx, D, 2, 2, 0, 1, 0);
     textAccumulateVert(ctx, D, 3, 2, 0, 1, -6.5);
     textAccumulateVert(ctx, D, 3, 2, 0, 2, 1);
-
   }
 }
 
@@ -248,40 +222,66 @@ function numPad(s) {
 
 // Draws text with x y from the bottom left corner of the pattern image.
 // Bottom-left corner is 0,0 in Inkscape as well.
-function drawText(ctx, s, xO, yO,
-                  pattern_scale,
-                  pos_text_offset_x,
-                  pos_text_offset_y,
-                  pos_pattern_height) {
+function drawText(
+  ctx,
+  s,
+  xO,
+  yO,
+  pattern_scale,
+  pos_text_offset_x,
+  pos_text_offset_y,
+  pos_pattern_height
+) {
   const sc = pattern_scale;
   const x = (pos_text_offset_x + xO) * sc;
-  const y = ((pos_pattern_height - yO) + pos_text_offset_y) * sc;
+  const y = (pos_pattern_height - yO + pos_text_offset_y) * sc;
   ctx.font = '28px "Fira Sans"';
   ctx.fillStyle = '#000000';
   ctx.fillText(s, x, y);
 }
 
-function drawTextTitle(ctx, s, size, xO, yO,
-                       pattern_scale,
-                       pos_text_offset_x,
-                       pos_text_offset_y,
-                       pos_pattern_height) {
+function drawTextTitle(
+  ctx,
+  s,
+  size,
+  xO,
+  yO,
+  pattern_scale,
+  pos_text_offset_x,
+  pos_text_offset_y,
+  pos_pattern_height
+) {
   const sc = pattern_scale;
   const x = (pos_text_offset_x + xO) * sc;
-  const y = ((pos_pattern_height - yO) + pos_text_offset_y) * sc;
+  const y = (pos_pattern_height - yO + pos_text_offset_y) * sc;
   ctx.font = String(size) + ' "Butler"';
   ctx.fillStyle = '#000000';
   ctx.fillText(s, x, y);
 }
 
 function text(ctx, D, s, x, y) {
-  drawText(ctx, s, x, y,
-           D.pattern_scale, D.pos_text_offset_x, D.pos_text_offset_y, D.pos_pattern_height);
+  drawText(
+    ctx,
+    s,
+    D.pattern_scale,
+    D.pos_text_offset_x,
+    D.pos_text_offset_y,
+    D.pos_pattern_height
+  );
 }
 
 function textTitle(ctx, D, s, size, x, y) {
-  drawTextTitle(ctx, s, size, x, y,
-                D.pattern_scale, D.pos_text_offset_x, D.pos_text_offset_y, D.pos_pattern_height);
+  drawTextTitle(
+    ctx,
+    s,
+    size,
+    x,
+    y,
+    D.pattern_scale,
+    D.pos_text_offset_x,
+    D.pos_text_offset_y,
+    D.pos_pattern_height
+  );
 }
 
 function textNum(ctx, D, s, x, y) {
@@ -305,13 +305,17 @@ function textMandalaWidth(ctx, D, n) {
     x = 2.0;
     y = 16.0;
   }
-  textNum(ctx, D,
-          D.val_mandala_width,
-          ((D.pos_buffer_width +
-            D.pos_border_width +
-            (n * (D.pos_mandala_width + D.pos_kusi_width)) +
-            (D.pos_mandala_width / 2)) - x),
-          y);
+  textNum(
+    ctx,
+    D,
+    D.val_mandala_width,
+    D.pos_buffer_width +
+      D.pos_border_width +
+      n * (D.pos_mandala_width + D.pos_kusi_width) +
+      D.pos_mandala_width / 2 -
+      x,
+    y
+  );
 }
 
 function textKusiWidth(ctx, D, n) {
@@ -323,15 +327,19 @@ function textKusiWidth(ctx, D, n) {
     x = 2.0;
     y = 16.0;
   }
-  const nI = n*2+1;
-  textNum(ctx, D,
-          (D.val_kusi_width + D.robe.kusi_buffers[KB[nI]]),
-          ((D.pos_buffer_width +
-            D.pos_border_width +
-            D.pos_mandala_width +
-            (n * (D.pos_mandala_width + D.pos_kusi_width)) +
-            (D.pos_kusi_width / 2)) - x),
-          y);
+  const nI = n * 2 + 1;
+  textNum(
+    ctx,
+    D,
+    D.val_kusi_width + D.robe.kusi_buffers[KB[nI]],
+    D.pos_buffer_width +
+      D.pos_border_width +
+      D.pos_mandala_width +
+      n * (D.pos_mandala_width + D.pos_kusi_width) +
+      D.pos_kusi_width / 2 -
+      x,
+    y
+  );
 }
 
 function textKusiHeight(ctx, D, n) {
@@ -343,14 +351,18 @@ function textKusiHeight(ctx, D, n) {
     x = 14.0;
     y = 3.5;
   }
-  textNum(ctx, D,
-          D.val_kusi_width,
-          x,
-          ((D.pos_buffer_width +
-            D.pos_border_width +
-            D.pos_mandala_height +
-            (n * (D.pos_mandala_height + D.pos_kusi_width)) +
-            (D.pos_kusi_width / 2)) - y));
+  textNum(
+    ctx,
+    D,
+    D.val_kusi_width,
+    x,
+    D.pos_buffer_width +
+      D.pos_border_width +
+      D.pos_mandala_height +
+      n * (D.pos_mandala_height + D.pos_kusi_width) +
+      D.pos_kusi_width / 2 -
+      y
+  );
 }
 
 function hasCutBuffer(robe, i) {
@@ -359,23 +371,31 @@ function hasCutBuffer(robe, i) {
   // determine lookup index based on kusi line index
   switch (i) {
     // left side of middle khandha:
-  case 0:
-    cut_idx = -1; break;
-  case 1:
-    cut_idx = 0; break;
-  case 2:
-    cut_idx = -1; break;
-  case 3:
-    cut_idx = 1; break;
+    case 0:
+      cut_idx = -1;
+      break;
+    case 1:
+      cut_idx = 0;
+      break;
+    case 2:
+      cut_idx = -1;
+      break;
+    case 3:
+      cut_idx = 1;
+      break;
     // right side of middle khandha:
-  case 4:
-    cut_idx = -1; break;
-  case 5:
-    cut_idx = 2; break;
-  case 6:
-    cut_idx = -1; break;
-  case 7:
-    cut_idx = 3; break;
+    case 4:
+      cut_idx = -1;
+      break;
+    case 5:
+      cut_idx = 2;
+      break;
+    case 6:
+      cut_idx = -1;
+      break;
+    case 7:
+      cut_idx = 3;
+      break;
   }
 
   if (cut_idx >= 0) {
@@ -387,25 +407,33 @@ function hasCutBuffer(robe, i) {
 
 function textKusiBuffer(ctx, D, nI, m, k, b, c, x_offset) {
   // additional buffer
-  textNumSigned(ctx, D,
-                D.robe.kusi_buffers[KB[nI]],
-                (-5.5 + x_offset +
-                 (m * D.pos_mandala_width) +
-                 (k * D.pos_kusi_width) +
-                 (b * D.pos_border_width) +
-                 (c * D.pos_buffer_width)),
-                100.2);
+  textNumSigned(
+    ctx,
+    D,
+    D.robe.kusi_buffers[KB[nI]],
+    -5.5 +
+      x_offset +
+      m * D.pos_mandala_width +
+      k * D.pos_kusi_width +
+      b * D.pos_border_width +
+      c * D.pos_buffer_width,
+    100.2
+  );
 
   // cutting buffer
   if (hasCutBuffer(D.robe, nI)) {
-    textNumSigned(ctx, D,
-                  D.robe.kusi_cutting_buffer,
-                  (-5.5 + x_offset +
-                   (m * D.pos_mandala_width) +
-                   (k * D.pos_kusi_width) +
-                   (b * D.pos_border_width) +
-                   (c * D.pos_buffer_width)),
-                  90);
+    textNumSigned(
+      ctx,
+      D,
+      D.robe.kusi_cutting_buffer,
+      -5.5 +
+        x_offset +
+        m * D.pos_mandala_width +
+        k * D.pos_kusi_width +
+        b * D.pos_border_width +
+        c * D.pos_buffer_width,
+      90
+    );
   }
 }
 
@@ -418,13 +446,17 @@ function textMandalaHeight(ctx, D, n) {
     x = 14.0;
     y = 3.5;
   }
-  textNum(ctx, D,
-          D.val_mandala_height,
-          x,
-          ((D.pos_buffer_width +
-            D.pos_border_width +
-            (n * (D.pos_mandala_height + D.pos_kusi_width)) +
-            (D.pos_mandala_height / 2)) - y));
+  textNum(
+    ctx,
+    D,
+    D.val_mandala_height,
+    x,
+    D.pos_buffer_width +
+      D.pos_border_width +
+      n * (D.pos_mandala_height + D.pos_kusi_width) +
+      D.pos_mandala_height / 2 -
+      y
+  );
 }
 
 function kusiBuffersUntil(robe, n) {
@@ -446,7 +478,7 @@ function kusiBuffersUntil(robe, n) {
     i++;
   }
   return a;
-};
+}
 
 // mandala, kusi, border, cut buffer
 function textAccumulateHoriz(ctx, D, m, k, b, c, x_offset) {
@@ -458,18 +490,22 @@ function textAccumulateHoriz(ctx, D, m, k, b, c, x_offset) {
     x = 12.5;
     y = 83.0;
   }
-  textNum(ctx, D,
-          ((m * D.val_mandala_width) +
-           (Math.floor((k+1)/2) * D.val_kusi_width) +
-           kusiBuffersUntil(D.robe, k) +
-           (b * D.val_border_width) +
-           (c * D.val_buffer_width)),
-          (x + x_offset +
-           (m * D.pos_mandala_width) +
-           (Math.floor((k+1)/2) * D.pos_kusi_width) +
-           (b * D.pos_border_width) +
-           (c * D.pos_buffer_width)),
-          y);
+  textNum(
+    ctx,
+    D,
+    m * D.val_mandala_width +
+      Math.floor((k + 1) / 2) * D.val_kusi_width +
+      kusiBuffersUntil(D.robe, k) +
+      b * D.val_border_width +
+      c * D.val_buffer_width,
+    x +
+      x_offset +
+      m * D.pos_mandala_width +
+      Math.floor((k + 1) / 2) * D.pos_kusi_width +
+      b * D.pos_border_width +
+      c * D.pos_buffer_width,
+    y
+  );
 }
 
 // mandala, kusi, border, cut buffer
@@ -482,24 +518,29 @@ function textAccumulateVert(ctx, D, m, k, b, c, y_offset) {
     x = 212.5;
     y = 10.5;
   }
-  textNum(ctx, D,
-          ((m * D.val_mandala_height) +
-           (k * D.val_kusi_width) +
-           (b * D.val_border_height) +
-           (c * D.val_buffer_width)),
-          x,
-          (y + y_offset +
-           (m * D.pos_mandala_height) +
-           (k * D.pos_kusi_width) +
-           (b * D.pos_border_width) +
-           (c * D.pos_buffer_width)));
+  textNum(
+    ctx,
+    D,
+    m * D.val_mandala_height +
+      k * D.val_kusi_width +
+      b * D.val_border_height +
+      c * D.val_buffer_width,
+    x,
+    y +
+      y_offset +
+      m * D.pos_mandala_height +
+      k * D.pos_kusi_width +
+      b * D.pos_border_width +
+      c * D.pos_buffer_width
+  );
 }
 
 function cutKusi(ctx, D, n) {
-  let xO = (((n + 1) * D.pos_mandala_width) +
-            (n * D.pos_kusi_width) +
-            D.pos_border_width +
-            D.pos_buffer_width);
+  let xO =
+    (n + 1) * D.pos_mandala_width +
+    n * D.pos_kusi_width +
+    D.pos_border_width +
+    D.pos_buffer_width;
 
   // kusi 3
   if (n >= 2) {
@@ -529,17 +570,21 @@ function cutKusi(ctx, D, n) {
     ctx.lineWidth = 1;
 
     if (D.robe.border_type === 0) {
-      ctx.drawImage(ScissorsImg,
-                    x - 3*sc,
-                    (D.pos_img_offset_y + 21.5) * sc,
-                    6 * sc,
-                    6 * sc);
+      ctx.drawImage(
+        ScissorsImg,
+        x - 3 * sc,
+        (D.pos_img_offset_y + 21.5) * sc,
+        6 * sc,
+        6 * sc
+      );
     } else {
-      ctx.drawImage(ScissorsImg,
-                    x - 3*sc,
-                    (D.pos_img_offset_y + 23.0) * sc,
-                    6 * sc,
-                    6 * sc);
+      ctx.drawImage(
+        ScissorsImg,
+        x - 3 * sc,
+        (D.pos_img_offset_y + 23.0) * sc,
+        6 * sc,
+        6 * sc
+      );
     }
   }
 }
@@ -555,30 +600,23 @@ function calcShrinkingLengths(robe, khandhas) {
 
   // inner width: scaled final width, not including the edge buffers
   // iw = fw * (1 + sc / 100)
-  const inner_width = final_width * (1 + (robe.shrink_percent_width / 100));
-  const inner_height = final_height * (1 + (robe.shrink_percent_height / 100));
+  const inner_width = final_width * (1 + robe.shrink_percent_width / 100);
+  const inner_height = final_height * (1 + robe.shrink_percent_height / 100);
 
   // cut width includes the edge buffers and kusi buffers
   const cut_width =
-        inner_width
-        + (2 * buffer_width)
-        + kusiBuffersUntil(robe, khandhas - 1);
+    inner_width + 2 * buffer_width + kusiBuffersUntil(robe, khandhas - 1);
 
-  const cut_height =
-        inner_height
-        + (2 * vertical_buffer_width);
+  const cut_height = inner_height + 2 * vertical_buffer_width;
 
   // mandala width without scaling
   // m = (fw - 2b - (khandhas - 1)k) / khandhas
   const orig_mandala_width =
-        (final_width
-        - (2 * orig_border_width)
-        - ((khandhas - 1) * kusi_width)) / khandhas;
+    (final_width - 2 * orig_border_width - (khandhas - 1) * kusi_width) /
+    khandhas;
 
   const orig_mandala_height =
-        (final_height
-         - (2 * orig_border_width)
-         - (2 * kusi_width)) / 3;
+    (final_height - 2 * orig_border_width - 2 * kusi_width) / 3;
 
   // orig border to mandala ratio, width and height
   // i.e. one border equals this much of a mandala
@@ -588,16 +626,16 @@ function calcShrinkingLengths(robe, khandhas) {
 
   // remainder cut width, taking the kusi off the cut size
   // rw = iw - (khandhas - 1)k
-  const rem_w = inner_width - ((khandhas - 1) * kusi_width);
-  const rem_h = inner_height - (2 * kusi_width);
+  const rem_w = inner_width - (khandhas - 1) * kusi_width;
+  const rem_h = inner_height - 2 * kusi_width;
 
   // five mandalas in the remainder width, plus two borders expressed as mandalas
   // for five khandhas:
   // w = 5m + 2b = 5m + 2rm
   // w = (5+2r)m
   // w / (5+2r) = m
-  const mandala_width = rem_w / (khandhas + (2 * b2m_w));
-  const mandala_height = rem_h / (3 + (2 * b2m_h));
+  const mandala_width = rem_w / (khandhas + 2 * b2m_w);
+  const mandala_height = rem_h / (3 + 2 * b2m_h);
   const border_width = mandala_width * b2m_w;
   const border_height = mandala_height * b2m_h;
 

@@ -18,7 +18,7 @@ export default {
   asyncData(context) {
     return {
       pageText
-    }
+    };
   }
 };
 </script>
