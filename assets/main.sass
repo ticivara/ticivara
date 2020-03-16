@@ -46,9 +46,25 @@ body
   border-radius: 20px
   background-color: rgba(255, 255, 255, 0.8)
 
-#content-wrap .narrow-container
+#content-wrap .container
   +from($desktop)
     max-width: 900px
+  +from($widescreen)
+    max-width: 1344px
+
+#content-wrap .pattern-container
+  +from($desktop)
+    max-width: 1344px
+
+#content-wrap .pattern-container .content
+  +until($widescreen)
+    padding-left: 1rem
+    padding-right: 1rem
+    font-size: 0.85rem
+
+#content-wrap .pattern-container .content .field input[type="number"]
+  +until($widescreen)
+    width: 90px
 
 #page-wrap.thai
   font-family: "Garuda", "Helvetica Neue", sans-serif

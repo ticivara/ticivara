@@ -1,11 +1,9 @@
 <template>
   <div class="container">
-    <div class="narrow-container container">
-      <div class="content">
-        <h1 class="page-title">{{ title }}</h1>
-        <Toc :items="toc" />
-        <div class="page-content" v-html="htmlContent" />
-      </div>
+    <div class="content">
+      <h1 class="page-title">{{ title }}</h1>
+      <Toc :items="toc" />
+      <div class="page-content" v-html="htmlContent" />
     </div>
   </div>
 </template>

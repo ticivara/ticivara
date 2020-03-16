@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="pattern-container container">
     <div>
       <div class="content">
         <h1 class="page-title">{{ title }}</h1>
