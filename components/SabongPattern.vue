@@ -2,13 +2,6 @@
   <div>
     <div id="simple_controls">
       <div class="columns">
-        <div class="column">
-
-
-        </div>
-      </div>
-
-      <div class="columns">
         <div class="column is-6">
 
           <div class="field is-horizontal">
@@ -452,6 +445,21 @@
       </div>
     </div>
 
+    <div class="columns">
+      <div class="column">
+
+        <div class="field is-pulled-right">
+          <div class="control">
+            <button class="button is-primary" @click="downloadPdf()">
+              <span>Download PDF</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
     <canvas
       id="sabong-pattern-canvas"
       class="pattern"
@@ -463,6 +471,8 @@
 </template>
 
 <script>
+import pdf from 'pdfjs';
+import Helvetica from 'pdfjs/font/Helvetica';
 import DrawSabongPattern from '@/assets/js/DrawSabongPattern.js';
 
 const D = {
@@ -499,6 +509,19 @@ const D = {
   show_more_controls: false
 };
 
+function dataUrlToBuf(dataurl) {
+  const arr = dataurl.split(',');
+  // const mime = arr[0].match(/:(.*?);/)[1];
+  const bstr = atob(arr[1]);
+  let n = bstr.length;
+  const u8arr = new Uint8Array(n);
+  while(n--){
+    u8arr[n] = bstr.charCodeAt(n);
+  }
+  // return new Blob([u8arr], {type:mime});
+  return u8arr;
+}
+
 export default {
   data() {
     return D;
@@ -530,6 +553,57 @@ export default {
 
     setBorderType(type_id) {
       this.border_type = type_id;
+    },
+
+    downloadPdf() {
+      const canvas = document.getElementById('sabong-pattern-canvas');
+      const buffer = dataUrlToBuf(canvas.toDataURL('image/jpeg', 0.95));
+
+      const doc = new pdf.Document({
+        // A4 landscape
+        width: 841.896,
+        height: 595.296,
+        padding: 0,
+        font: Helvetica,
+        properties: {
+          title: 'Sabong',
+          creator: 'Ticivara Robe Sewing'
+        }
+      });
+
+      const img = new pdf.Image(buffer);
+
+      const imgCell = doc.cell('', { padding: 0, y: 600 });
+      imgCell.image(img, {
+        width: 830,
+        align: 'center',
+      });
+
+      const textCell = doc.cell('', { paddingLeft: 10 * pdf.mm });
+      textCell.text()
+         .add('Ticivara Robe Sewing ', {
+           fontSize: 9
+         })
+         .add('https://ticivara.github.io', {
+           fontSize: 9,
+           link: 'https://ticivara.github.io',
+           color: '0x569cd6'
+         });
+
+      doc.asBuffer().then(buf => {
+        const pdf_blob = new Blob([buf], { type: 'application/pdf' });
+        const url = URL.createObjectURL(pdf_blob);
+
+        const link = document.createElement('a');
+        link.style.display = 'none';
+        link.download = 'sabong.pdf';
+        link.href = url;
+
+        document.body.appendChild(link);
+        link.click();
+        URL.revokeObjectURL(link.href);
+        document.body.removeChild(link);
+      });
     }
   }
 };
