@@ -1,13 +1,19 @@
 import ScissorsBlackDown from '@/assets/js/ScissorsBlackDown.js';
+import {
+  numPad,
+  text,
+  textTitle,
+  textNum,
+  textNumSigned,
+  KB,
+  KC,
+  hasCutBuffer,
+  kusiBuffersUntil,
+  calcShrinkingLengths
+} from '@/assets/js/helpers.js';
 
 const ScissorsImg = new Image();
 ScissorsImg.src = ScissorsBlackDown;
-
-// kusi buffer index to key
-const KB = ['k1_a', 'k1_b', 'k2_a', 'k2_b', 'k3_a', 'k3_b', 'k4_a', 'k4_b'];
-
-// kusi cut index to key
-const KC = ['k1_a', 'k2_a', 'k3_a', 'k4_a'];
 
 function DrawSabongPattern(ctx, canvasWidth, canvasHeight, img, robe) {
   // shrinking lengths
@@ -215,88 +221,6 @@ function DrawSabongPattern(ctx, canvasWidth, canvasHeight, img, robe) {
   }
 }
 
-function numPad(s) {
-  return Number.parseFloat(s).toFixed(1);
-}
-
-// Draws text with x y from the bottom left corner of the pattern image.
-// Bottom-left corner is 0,0 in Inkscape as well.
-function drawText(
-  ctx,
-  s,
-  xO,
-  yO,
-  pattern_scale,
-  pos_text_offset_x,
-  pos_text_offset_y,
-  pos_pattern_height
-) {
-  const sc = pattern_scale;
-  const x = (pos_text_offset_x + xO) * sc;
-  const y = (pos_pattern_height - yO + pos_text_offset_y) * sc;
-  ctx.font = '28px "Fira Sans"';
-  ctx.fillStyle = '#000000';
-  ctx.fillText(s, x, y);
-}
-
-function drawTextTitle(
-  ctx,
-  s,
-  size,
-  xO,
-  yO,
-  pattern_scale,
-  pos_text_offset_x,
-  pos_text_offset_y,
-  pos_pattern_height
-) {
-  const sc = pattern_scale;
-  const x = (pos_text_offset_x + xO) * sc;
-  const y = (pos_pattern_height - yO + pos_text_offset_y) * sc;
-  ctx.font = String(size) + ' "Butler"';
-  ctx.fillStyle = '#000000';
-  ctx.fillText(s, x, y);
-}
-
-function text(ctx, D, s, x, y) {
-  drawText(
-    ctx,
-    s,
-    x,
-    y,
-    D.pattern_scale,
-    D.pos_text_offset_x,
-    D.pos_text_offset_y,
-    D.pos_pattern_height
-  );
-}
-
-function textTitle(ctx, D, s, size, x, y) {
-  drawTextTitle(
-    ctx,
-    s,
-    size,
-    x,
-    y,
-    D.pattern_scale,
-    D.pos_text_offset_x,
-    D.pos_text_offset_y,
-    D.pos_pattern_height
-  );
-}
-
-function textNum(ctx, D, s, x, y) {
-  text(ctx, D, numPad(s), x, y);
-}
-
-function textNumSigned(ctx, D, s, x, y) {
-  let sign = '';
-  if (Number.parseFloat(s) >= 0.0) {
-    sign = '+';
-  }
-  text(ctx, D, sign + numPad(s), x, y);
-}
-
 function textMandalaWidth(ctx, D, n) {
   let x, y;
   if (D.robe.border_type === 0) {
@@ -366,46 +290,6 @@ function textKusiHeight(ctx, D, n) {
   );
 }
 
-function hasCutBuffer(robe, i) {
-  let cut_idx = -1;
-
-  // determine lookup index based on kusi line index
-  switch (i) {
-    // left side of middle khandha:
-    case 0:
-      cut_idx = -1;
-      break;
-    case 1:
-      cut_idx = 0;
-      break;
-    case 2:
-      cut_idx = -1;
-      break;
-    case 3:
-      cut_idx = 1;
-      break;
-    // right side of middle khandha:
-    case 4:
-      cut_idx = -1;
-      break;
-    case 5:
-      cut_idx = 2;
-      break;
-    case 6:
-      cut_idx = -1;
-      break;
-    case 7:
-      cut_idx = 3;
-      break;
-  }
-
-  if (cut_idx >= 0) {
-    return robe.kusi_cuts[KC[cut_idx]];
-  } else {
-    return false;
-  }
-}
-
 function textKusiBuffer(ctx, D, nI, m, k, b, c, x_offset) {
   // additional buffer
   textNumSigned(
@@ -458,27 +342,6 @@ function textMandalaHeight(ctx, D, n) {
       D.pos_mandala_height / 2 -
       y
   );
-}
-
-function kusiBuffersUntil(robe, n) {
-  if (n < 0) {
-    return 0;
-  }
-  let a = 0;
-  let i = 0;
-
-  const robe_cb = Number(robe.kusi_cutting_buffer);
-
-  while (i <= n && i < KB.length) {
-    a += Number(robe.kusi_buffers[KB[i]]);
-
-    if (hasCutBuffer(robe, i)) {
-      a += robe_cb;
-    }
-
-    i++;
-  }
-  return a;
 }
 
 // mandala, kusi, border, cut buffer
@@ -588,66 +451,6 @@ function cutKusi(ctx, D, n) {
       );
     }
   }
-}
-
-function calcShrinkingLengths(robe, khandhas) {
-  const final_width = Number(robe.width);
-  const final_height = Number(robe.height);
-  const buffer_width = Number(robe.buffer_width);
-  const kusi_width = Number(robe.kusi_width);
-  const orig_border_width = Number(robe.border_width);
-  // same as the horizontal
-  const vertical_buffer_width = Number(robe.buffer_width);
-
-  // inner width: scaled final width, not including the edge buffers
-  // iw = fw * (1 + sc / 100)
-  const inner_width = final_width * (1 + robe.shrink_percent_width / 100);
-  const inner_height = final_height * (1 + robe.shrink_percent_height / 100);
-
-  // cut width includes the edge buffers and kusi buffers
-  const cut_width =
-    inner_width + 2 * buffer_width + kusiBuffersUntil(robe, khandhas - 1);
-
-  const cut_height = inner_height + 2 * vertical_buffer_width;
-
-  // mandala width without scaling
-  // m = (fw - 2b - (khandhas - 1)k) / khandhas
-  const orig_mandala_width =
-    (final_width - 2 * orig_border_width - (khandhas - 1) * kusi_width) /
-    khandhas;
-
-  const orig_mandala_height =
-    (final_height - 2 * orig_border_width - 2 * kusi_width) / 3;
-
-  // orig border to mandala ratio, width and height
-  // i.e. one border equals this much of a mandala
-  // r = b / m
-  const b2m_w = orig_border_width / orig_mandala_width;
-  const b2m_h = orig_border_width / orig_mandala_height;
-
-  // remainder cut width, taking the kusi off the cut size
-  // rw = iw - (khandhas - 1)k
-  const rem_w = inner_width - (khandhas - 1) * kusi_width;
-  const rem_h = inner_height - 2 * kusi_width;
-
-  // five mandalas in the remainder width, plus two borders expressed as mandalas
-  // for five khandhas:
-  // w = 5m + 2b = 5m + 2rm
-  // w = (5+2r)m
-  // w / (5+2r) = m
-  const mandala_width = rem_w / (khandhas + 2 * b2m_w);
-  const mandala_height = rem_h / (3 + 2 * b2m_h);
-  const border_width = mandala_width * b2m_w;
-  const border_height = mandala_height * b2m_h;
-
-  return {
-    cut_width,
-    cut_height,
-    mandala_width,
-    mandala_height,
-    border_width,
-    border_height
-  };
 }
 
 function calcSabongShrinkingLengths(robe) {
