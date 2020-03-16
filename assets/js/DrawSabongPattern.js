@@ -14,10 +14,10 @@ function DrawSabongPattern(
   canvasWidth,
   canvasHeight,
   img,
-  sabong
+  robe
 ) {
   // shrinking lengths
-  const a = calcSabongShrinkingLengths(sabong);
+  const a = calcSabongShrinkingLengths(robe);
   const sl = {
     val_cut_width: a.cut_width,
     val_cut_height: a.cut_height,
@@ -28,8 +28,8 @@ function DrawSabongPattern(
   };
 
   const D = {
-    sabong,
-    title: sabong.title,
+    robe,
+    title: robe.title,
     // values from the SVG for positioning
     pos_pattern_width: 232,
     pos_pattern_height: 145,
@@ -45,10 +45,10 @@ function DrawSabongPattern(
     // scale
     pattern_scale: 14.0,
     // calcualted size values to display, these could be user inputs
-    val_buffer_width: Number(sabong.buffer_width),
-    val_inner_width: Number(sabong.width),
-    val_inner_height: Number(sabong.height),
-    val_kusi_width: Number(sabong.kusi_width),
+    val_buffer_width: Number(robe.buffer_width),
+    val_inner_width: Number(robe.width),
+    val_inner_height: Number(robe.height),
+    val_kusi_width: Number(robe.kusi_width),
     // shrinking lengths
     val_cut_width: sl.val_cut_width,
     val_cut_height: sl.val_cut_height,
@@ -111,7 +111,7 @@ function DrawSabongPattern(
        40.0, -30.0);
 
   // buffer at the edges
-  if (D.sabong.border_type === 0) {
+  if (D.robe.border_type === 0) {
     textNum(ctx, D,
             D.val_buffer_width,
             2.0, 5.0);
@@ -182,7 +182,7 @@ function DrawSabongPattern(
   textMandalaHeight(ctx, D, 2);
 
   // horizontal accumulative length
-  if (D.sabong.border_type === 0) {
+  if (D.robe.border_type === 0) {
 
     textAccumulateHoriz(ctx, D, 0, -1, 0, 1, 1);
     textAccumulateHoriz(ctx, D, 0, -1, 1, 1, 0);
@@ -216,7 +216,7 @@ function DrawSabongPattern(
   }
 
   // vertical accumulative length
-  if (D.sabong.border_type === 0) {
+  if (D.robe.border_type === 0) {
 
     textAccumulateVert(ctx, D, 0, 0, 0, 1, 1);
     textAccumulateVert(ctx, D, 0, 0, 1, 1, 0);
@@ -298,7 +298,7 @@ function textNumSigned(ctx, D, s, x, y) {
 
 function textMandalaWidth(ctx, D, n) {
   let x, y;
-  if (D.sabong.border_type === 0) {
+  if (D.robe.border_type === 0) {
     x = 2.0;
     y = 8.0;
   } else {
@@ -316,7 +316,7 @@ function textMandalaWidth(ctx, D, n) {
 
 function textKusiWidth(ctx, D, n) {
   let x, y;
-  if (D.sabong.border_type === 0) {
+  if (D.robe.border_type === 0) {
     x = 2.0;
     y = 8.0;
   } else {
@@ -325,7 +325,7 @@ function textKusiWidth(ctx, D, n) {
   }
   const nI = n*2+1;
   textNum(ctx, D,
-          (D.val_kusi_width + D.sabong.kusi_buffers[KB[nI]]),
+          (D.val_kusi_width + D.robe.kusi_buffers[KB[nI]]),
           ((D.pos_buffer_width +
             D.pos_border_width +
             D.pos_mandala_width +
@@ -336,7 +336,7 @@ function textKusiWidth(ctx, D, n) {
 
 function textKusiHeight(ctx, D, n) {
   let x, y;
-  if (D.sabong.border_type === 0) {
+  if (D.robe.border_type === 0) {
     x = 8.8;
     y = 3.5;
   } else {
@@ -388,7 +388,7 @@ function hasCutBuffer(robe, i) {
 function textKusiBuffer(ctx, D, nI, m, k, b, c, x_offset) {
   // additional buffer
   textNumSigned(ctx, D,
-                D.sabong.kusi_buffers[KB[nI]],
+                D.robe.kusi_buffers[KB[nI]],
                 (-5.5 + x_offset +
                  (m * D.pos_mandala_width) +
                  (k * D.pos_kusi_width) +
@@ -397,9 +397,9 @@ function textKusiBuffer(ctx, D, nI, m, k, b, c, x_offset) {
                 100.2);
 
   // cutting buffer
-  if (hasCutBuffer(D.sabong, nI)) {
+  if (hasCutBuffer(D.robe, nI)) {
     textNumSigned(ctx, D,
-                  D.sabong.kusi_cutting_buffer,
+                  D.robe.kusi_cutting_buffer,
                   (-5.5 + x_offset +
                    (m * D.pos_mandala_width) +
                    (k * D.pos_kusi_width) +
@@ -411,7 +411,7 @@ function textKusiBuffer(ctx, D, nI, m, k, b, c, x_offset) {
 
 function textMandalaHeight(ctx, D, n) {
   let x, y;
-  if (D.sabong.border_type === 0) {
+  if (D.robe.border_type === 0) {
     x = 8.0;
     y = 3.5;
   } else {
@@ -451,7 +451,7 @@ function kusiBuffersUntil(robe, n) {
 // mandala, kusi, border, cut buffer
 function textAccumulateHoriz(ctx, D, m, k, b, c, x_offset) {
   let x, y;
-  if (D.sabong.border_type === 0) {
+  if (D.robe.border_type === 0) {
     x = 0.0;
     y = 95.0;
   } else {
@@ -461,7 +461,7 @@ function textAccumulateHoriz(ctx, D, m, k, b, c, x_offset) {
   textNum(ctx, D,
           ((m * D.val_mandala_width) +
            (Math.floor((k+1)/2) * D.val_kusi_width) +
-           kusiBuffersUntil(D.sabong, k) +
+           kusiBuffersUntil(D.robe, k) +
            (b * D.val_border_width) +
            (c * D.val_buffer_width)),
           (x + x_offset +
@@ -475,7 +475,7 @@ function textAccumulateHoriz(ctx, D, m, k, b, c, x_offset) {
 // mandala, kusi, border, cut buffer
 function textAccumulateVert(ctx, D, m, k, b, c, y_offset) {
   let x, y;
-  if (D.sabong.border_type === 0) {
+  if (D.robe.border_type === 0) {
     x = 223;
     y = -2.0;
   } else {
@@ -516,7 +516,7 @@ function cutKusi(ctx, D, n) {
   const x = (D.pos_img_offset_x + xO) * sc;
   const y = (D.pos_img_offset_y + yO) * sc;
 
-  if (D.sabong.kusi_cuts[KC[n]]) {
+  if (D.robe.kusi_cuts[KC[n]]) {
     ctx.strokeStyle = '#0000FF';
     ctx.lineWidth = 5;
 
@@ -528,7 +528,7 @@ function cutKusi(ctx, D, n) {
     // restore default width
     ctx.lineWidth = 1;
 
-    if (D.sabong.border_type === 0) {
+    if (D.robe.border_type === 0) {
       ctx.drawImage(ScissorsImg,
                     x - 3*sc,
                     (D.pos_img_offset_y + 21.5) * sc,

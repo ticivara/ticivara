@@ -11,7 +11,7 @@
             <div class="field-body">
               <div class="field">
                 <div class="control">
-                  <input v-model="sabong.title" class="input" type="text" />
+                  <input v-model="robe.title" class="input" type="text" />
                 </div>
               </div>
             </div>
@@ -28,7 +28,7 @@
                     <p class="control">
                       <button
                         :class="[
-                          sabong.border_type === 0 ? 'is-info is-selected' : '',
+                          robe.border_type === 0 ? 'is-info is-selected' : '',
                           'button'
                           ]"
                         @click="setBorderType(0)"
@@ -39,7 +39,7 @@
                     <p class="control">
                       <button
                         :class="[
-                          sabong.border_type === 1 ? 'is-info is-selected' : '',
+                          robe.border_type === 1 ? 'is-info is-selected' : '',
                           'button'
                           ]"
                         @click="setBorderType(1)"
@@ -64,7 +64,7 @@
               <div class="field">
                 <div class="control">
                   <input
-                    v-model="sabong.width"
+                    v-model="robe.width"
                     class="input"
                     type="number"
                     step="1"
@@ -83,7 +83,7 @@
               <div class="field">
                 <div class="control">
                   <input
-                    v-model="sabong.height"
+                    v-model="robe.height"
                     class="input"
                     type="number"
                     step="1"
@@ -104,7 +104,7 @@
               <div class="field">
                 <div class="control">
                   <input
-                    v-model="sabong.shrink_percent_width"
+                    v-model="robe.shrink_percent_width"
                     class="input"
                     type="number"
                     step="1"
@@ -123,7 +123,7 @@
               <div class="field">
                 <div class="control">
                   <input
-                    v-model="sabong.shrink_percent_height"
+                    v-model="robe.shrink_percent_height"
                     class="input"
                     type="number"
                     step="1"
@@ -147,7 +147,7 @@
             <div class="field">
               <div class="control">
                 <input
-                  v-model="sabong.kusi_width"
+                  v-model="robe.kusi_width"
                   class="input"
                   type="number"
                   step="1"
@@ -168,7 +168,7 @@
             <div class="field">
               <div class="control">
                 <input
-                  v-model="sabong.border_width"
+                  v-model="robe.border_width"
                   class="input"
                   type="number"
                   step="1"
@@ -189,7 +189,7 @@
             <div class="field">
               <div class="control">
                 <input
-                  v-model="sabong.buffer_width"
+                  v-model="robe.buffer_width"
                   class="input"
                   type="number"
                   step="1"
@@ -226,7 +226,7 @@
             <label class="label">k1-a:</label>
             <div class="control">
               <input
-                v-model="sabong.kusi_buffers.k1_a"
+                v-model="robe.kusi_buffers.k1_a"
                 class="input"
                 type="number"
                 step="0.1"
@@ -241,7 +241,7 @@
             <label class="label">k1-b:</label>
             <div class="control">
               <input
-                v-model="sabong.kusi_buffers.k1_b"
+                v-model="robe.kusi_buffers.k1_b"
                 class="input"
                 type="number"
                 step="0.1"
@@ -256,7 +256,7 @@
             <label class="label">k2-a:</label>
             <div class="control">
               <input
-                v-model="sabong.kusi_buffers.k2_a"
+                v-model="robe.kusi_buffers.k2_a"
                 class="input"
                 type="number"
                 step="0.1"
@@ -271,7 +271,7 @@
             <label class="label">k2-b:</label>
             <div class="control">
               <input
-                v-model="sabong.kusi_buffers.k2_b"
+                v-model="robe.kusi_buffers.k2_b"
                 class="input"
                 type="number"
                 step="0.1"
@@ -286,7 +286,7 @@
             <label class="label">k3-a:</label>
             <div class="control">
               <input
-                v-model="sabong.kusi_buffers.k3_a"
+                v-model="robe.kusi_buffers.k3_a"
                 class="input"
                 type="number"
                 step="0.1"
@@ -301,7 +301,7 @@
             <label class="label">k3-b:</label>
             <div class="control">
               <input
-                v-model="sabong.kusi_buffers.k3_b"
+                v-model="robe.kusi_buffers.k3_b"
                 class="input"
                 type="number"
                 step="0.1"
@@ -316,7 +316,7 @@
             <label class="label">k4-a:</label>
             <div class="control">
               <input
-                v-model="sabong.kusi_buffers.k4_a"
+                v-model="robe.kusi_buffers.k4_a"
                 class="input"
                 type="number"
                 step="0.1"
@@ -331,7 +331,7 @@
             <label class="label">k4-b:</label>
             <div class="control">
               <input
-                v-model="sabong.kusi_buffers.k4_b"
+                v-model="robe.kusi_buffers.k4_b"
                 class="input"
                 type="number"
                 step="0.1"
@@ -354,7 +354,7 @@
         <div class="field">
           <div class="control">
             <input
-              v-model="sabong.kusi_cutting_buffer"
+              v-model="robe.kusi_cutting_buffer"
               class="input"
               type="number"
               step="0.1"
@@ -368,12 +368,12 @@
         <div class="field">
           <div class="control">
             <button
-              :class="[sabong.kusi_cuts.k1_a ? 'is-info' : '', 'button']"
-              @click="sabong.kusi_cuts.k1_a = !sabong.kusi_cuts.k1_a"
+              :class="[robe.kusi_cuts.k1_a ? 'is-info' : '', 'button']"
+              @click="robe.kusi_cuts.k1_a = !robe.kusi_cuts.k1_a"
             >
               <span class="icon is-small">
                 <img
-                  v-if="sabong.kusi_cuts.k1_a"
+                  v-if="robe.kusi_cuts.k1_a"
                   src="@/assets/img/scissors-white.svg"
                 />
                 <img v-else src="@/assets/img/scissors-black.svg" />
@@ -388,12 +388,12 @@
         <div class="field">
           <div class="control">
             <button
-              :class="[sabong.kusi_cuts.k2_a ? 'is-info' : '', 'button']"
-              @click="sabong.kusi_cuts.k2_a = !sabong.kusi_cuts.k2_a"
+              :class="[robe.kusi_cuts.k2_a ? 'is-info' : '', 'button']"
+              @click="robe.kusi_cuts.k2_a = !robe.kusi_cuts.k2_a"
             >
               <span class="icon is-small">
                 <img
-                  v-if="sabong.kusi_cuts.k2_a"
+                  v-if="robe.kusi_cuts.k2_a"
                   src="@/assets/img/scissors-white.svg"
                 />
                 <img v-else src="@/assets/img/scissors-black.svg" />
@@ -408,12 +408,12 @@
         <div class="field">
           <div class="control">
             <button
-              :class="[sabong.kusi_cuts.k3_a ? 'is-info' : '', 'button']"
-              @click="sabong.kusi_cuts.k3_a = !sabong.kusi_cuts.k3_a"
+              :class="[robe.kusi_cuts.k3_a ? 'is-info' : '', 'button']"
+              @click="robe.kusi_cuts.k3_a = !robe.kusi_cuts.k3_a"
             >
               <span class="icon is-small">
                 <img
-                  v-if="sabong.kusi_cuts.k3_a"
+                  v-if="robe.kusi_cuts.k3_a"
                   src="@/assets/img/scissors-white.svg"
                 />
                 <img v-else src="@/assets/img/scissors-black.svg" />
@@ -428,12 +428,12 @@
         <div class="field">
           <div class="control">
             <button
-              :class="[sabong.kusi_cuts.k4_a ? 'is-info' : '', 'button']"
-              @click="sabong.kusi_cuts.k4_a = !sabong.kusi_cuts.k4_a"
+              :class="[robe.kusi_cuts.k4_a ? 'is-info' : '', 'button']"
+              @click="robe.kusi_cuts.k4_a = !robe.kusi_cuts.k4_a"
             >
               <span class="icon is-small">
                 <img
-                  v-if="sabong.kusi_cuts.k4_a"
+                  v-if="robe.kusi_cuts.k4_a"
                   src="@/assets/img/scissors-white.svg"
                 />
                 <img v-else src="@/assets/img/scissors-black.svg" />
@@ -466,7 +466,7 @@
 
 
     <canvas
-      id="sabong-pattern-canvas"
+      id="robe-pattern-canvas"
       class="pattern"
       :width="width"
       :height="height"
@@ -484,7 +484,7 @@ const D = {
   width: 3500,
   height: 2400,
   show_more_controls: false,
-  sabong: {
+  robe: {
     title: 'Sabong ' + new Date().getFullYear(),
     border_type: 0, // 0 = overlapping, 1 = joined
     width: 228,
@@ -540,7 +540,7 @@ export default {
         console.log('Parse error: Robe data is not well-formatted JSON string.');
       }
       if (typeof a !== 'undefined' && Object.keys(a).includes('title')) {
-        d.sabong = a;
+        d.robe = a;
       }
     };
     return d;
@@ -556,7 +556,7 @@ export default {
 
   computed: {
     robeDataUrl() {
-      const robeData = encodeURIComponent(JSON.stringify(this.sabong));
+      const robeData = encodeURIComponent(JSON.stringify(this.robe));
       const p = window.location.port;
       let port = '';
       if (p !== 80 || p !== 443) {
@@ -577,14 +577,14 @@ export default {
 
   methods: {
     updateCanvas() {
-      const canvas = document.getElementById('sabong-pattern-canvas');
+      const canvas = document.getElementById('robe-pattern-canvas');
       const ctx = canvas.getContext('2d');
       const img = new Image();
       const a = this;
       img.onload = function() {
-        DrawSabongPattern(ctx, a.width, a.height, img, a.sabong);
+        DrawSabongPattern(ctx, a.width, a.height, img, a.robe);
       };
-      if (this.sabong.border_type === 0) {
+      if (this.robe.border_type === 0) {
         img.src = '/img/sabong-pattern-overlapping-border.svg';
       } else {
         img.src = '/img/sabong-pattern-joined-border.svg';
@@ -592,11 +592,11 @@ export default {
     },
 
     setBorderType(type_id) {
-      this.sabong.border_type = type_id;
+      this.robe.border_type = type_id;
     },
 
     downloadPdf() {
-      const canvas = document.getElementById('sabong-pattern-canvas');
+      const canvas = document.getElementById('robe-pattern-canvas');
       const buffer = dataUrlToBuf(canvas.toDataURL('image/jpeg', 0.95));
 
       const doc = new pdf.Document({
