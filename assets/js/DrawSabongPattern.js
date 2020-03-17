@@ -9,15 +9,16 @@ import {
   KC,
   hasCutBuffer,
   kusiBuffersUntil,
-  calcShrinkingLengths
+  calcShrinkingLengths,
+  initAndDraw
 } from '@/assets/js/helpers.js';
 
 const ScissorsImg = new Image();
 ScissorsImg.src = ScissorsBlackDown;
 
-function DrawSabongPattern(ctx, canvasWidth, canvasHeight, img, robe) {
+function drawPanels(ctx, canvasWidth, canvasHeight, img, robe) {
   // shrinking lengths
-  const a = calcSabongShrinkingLengths(robe);
+  const a = calcShrinkingLengths(robe, 5);
   const sl = {
     val_cut_width: a.cut_width,
     val_cut_height: a.cut_height,
@@ -453,8 +454,8 @@ function cutKusi(ctx, D, n) {
   }
 }
 
-function calcSabongShrinkingLengths(robe) {
-  return calcShrinkingLengths(robe, 5);
+export function DrawSabongPattern(patterns, canvasWidth, canvasHeight, robe) {
+  initAndDraw(patterns[0], robe, (ctx, img) => {
+    drawPanels(ctx, canvasWidth, canvasHeight, img, robe);
+  });
 }
-
-export default DrawSabongPattern;

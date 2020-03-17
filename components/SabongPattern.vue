@@ -206,7 +206,7 @@
               :class="[show_more_controls ? 'is-info' : '', 'button']"
               @click="show_more_controls = !show_more_controls"
             >
-              <span>Show more parameters</span>
+              <span>More parameters</span>
             </button>
           </div>
         </div>
@@ -453,14 +453,14 @@
           </div>
 
           <div class="control">
-            <a class="button is-text" :href="robeDataUrl">Parameters Link</a>
+            <a class="button is-text" :href="robeParamsUrl">Parameters Link</a>
           </div>
         </div>
       </div>
     </div>
 
     <canvas
-      id="robe-pattern-canvas"
+      id="sabong-pattern-canvas"
       class="pattern"
       :width="width"
       :height="height"
@@ -470,9 +470,8 @@
 </template>
 
 <script>
-import pdf from 'pdfjs';
-import Helvetica from 'pdfjs/font/Helvetica';
-import DrawSabongPattern from '@/assets/js/DrawSabongPattern.js';
+import { DrawSabongPattern } from '@/assets/js/DrawSabongPattern.js';
+import { getQueryParsedData, getRobeParamsUrl, renderAndDownloadPdf } from '@/assets/js/helpers.js';
 
 const D = {
   width: 3500,
@@ -508,58 +507,22 @@ const D = {
   }
 };
 
-function dataUrlToBuf(dataurl) {
-  const arr = dataurl.split(',');
-  // const mime = arr[0].match(/:(.*?);/)[1];
-  const bstr = atob(arr[1]);
-  let n = bstr.length;
-  const u8arr = new Uint8Array(n);
-  while (n--) {
-    u8arr[n] = bstr.charCodeAt(n);
-  }
-  // return new Blob([u8arr], {type:mime});
-  return u8arr;
-}
+const Patterns = [
+  {
+    canvas_id: 'sabong-pattern-canvas',
+    overlapping_img_src: '/img/sabong-pattern-overlapping-border.svg',
+    joined_img_src: '/img/sabong-pattern-joined-border.svg'
+  },
+];
 
 export default {
   data() {
-    const d = D;
-    const keys = Object.keys(this.$route.query);
-    if (keys.length > 0 && keys.includes('robe')) {
-      const robeData = decodeURIComponent(this.$route.query.robe);
-      let a;
-      try {
-        a = JSON.parse(robeData);
-      } catch (e) {
-        console.log(
-          'Parse error: Robe data is not well-formatted JSON string.'
-        );
-      }
-      if (typeof a !== 'undefined' && Object.keys(a).includes('title')) {
-        d.robe = a;
-      }
-    }
-    return d;
+    return getQueryParsedData(D, this.$route.query);
   },
 
   computed: {
-    robeDataUrl() {
-      const robeData = encodeURIComponent(JSON.stringify(this.robe));
-      const p = window.location.port;
-      let port = '';
-      if (p !== 80 || p !== 443) {
-        port = ':' + p;
-      }
-      const url =
-        window.location.protocol +
-        '//' +
-        window.location.hostname +
-        port +
-        this.$route.path +
-        '?robe=' +
-        robeData;
-
-      return url;
+    robeParamsUrl() {
+      return getRobeParamsUrl(this.robe);
     }
   },
 
@@ -573,18 +536,7 @@ export default {
 
   methods: {
     updateCanvas() {
-      const canvas = document.getElementById('robe-pattern-canvas');
-      const ctx = canvas.getContext('2d');
-      const img = new Image();
-      const a = this;
-      img.onload = function() {
-        DrawSabongPattern(ctx, a.width, a.height, img, a.robe);
-      };
-      if (this.robe.border_type === 0) {
-        img.src = '/img/sabong-pattern-overlapping-border.svg';
-      } else {
-        img.src = '/img/sabong-pattern-joined-border.svg';
-      }
+      DrawSabongPattern(Patterns, this.width, this.height, this.robe);
     },
 
     setBorderType(type_id) {
@@ -592,57 +544,7 @@ export default {
     },
 
     downloadPdf() {
-      const canvas = document.getElementById('robe-pattern-canvas');
-      const buffer = dataUrlToBuf(canvas.toDataURL('image/jpeg', 0.95));
-
-      const doc = new pdf.Document({
-        // A4 landscape
-        width: 841.896,
-        height: 595.296,
-        padding: 0,
-        font: Helvetica,
-        properties: {
-          title: 'Sabong',
-          creator: 'Ticivara Robe Sewing'
-        }
-      });
-
-      const img = new pdf.Image(buffer);
-
-      const imgCell = doc.cell('', { padding: 0, y: 600 });
-      imgCell.image(img, {
-        width: 830,
-        align: 'center'
-      });
-
-      const textCell = doc.cell('', { paddingLeft: 10 * pdf.mm });
-      textCell
-        .text()
-        .add('Ticivara Robe Sewing ', {
-          fontSize: 9
-        })
-        .add('[parameters link]', {
-          fontSize: 9,
-          link: this.robeDataUrl,
-          color: '0x569cd6'
-        });
-
-      doc.asBuffer().then((buf) => {
-        const pdf_blob = new Blob([buf], { type: 'application/pdf' });
-        const url = URL.createObjectURL(pdf_blob);
-
-        const link = document.createElement('a');
-        link.style.display = 'none';
-        link.download = 'sabong.pdf';
-        link.href = url;
-
-        document.body.appendChild(link);
-        link.click();
-        setTimeout(function() {
-          document.body.removeChild(link);
-          URL.revokeObjectURL(link.href);
-        }, 100);
-      });
+      renderAndDownloadPdf(Patterns, this.robe, this.robeParamsUrl);
     }
   }
 };

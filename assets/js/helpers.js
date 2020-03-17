@@ -1,3 +1,6 @@
+import pdf from 'pdfjs';
+import Helvetica from 'pdfjs/font/Helvetica';
+
 export function numPad(s) {
   return Number.parseFloat(s).toFixed(1);
 }
@@ -214,4 +217,137 @@ export function calcShrinkingLengths(robe, khandhas) {
     border_width,
     border_height
   };
+}
+
+function dataUrlToBuf(dataurl) {
+  const arr = dataurl.split(',');
+  // const mime = arr[0].match(/:(.*?);/)[1];
+  const bstr = atob(arr[1]);
+  let n = bstr.length;
+  const u8arr = new Uint8Array(n);
+  while (n--) {
+    u8arr[n] = bstr.charCodeAt(n);
+  }
+  // return new Blob([u8arr], {type:mime});
+  return u8arr;
+}
+
+export function initAndDraw(pattern, robe, draw_callback) {
+  const canvas = document.getElementById(pattern.canvas_id);
+  if (canvas === null) {
+    console.log("Error: Can't find canvas: " + pattern.canvas_id);
+    return;
+  }
+  const ctx = canvas.getContext('2d');
+  const img = new Image();
+  img.onload = function() {
+    draw_callback(ctx, img);
+  };
+  if (robe.border_type === 0) {
+    img.src = pattern.overlapping_img_src;
+  } else {
+    img.src = pattern.joined_img_src;
+  }
+}
+
+function addPdfPage(doc, canvas_id, robeParamsUrl) {
+  const canvas = document.getElementById(canvas_id);
+  const buffer = dataUrlToBuf(canvas.toDataURL('image/jpeg', 0.95));
+
+  const img = new pdf.Image(buffer);
+
+  const imgCell = doc.cell('', { padding: 0, y: 600 });
+  imgCell.image(img, {
+    width: 830,
+    align: 'center'
+  });
+
+  const textCell = doc.cell('', { paddingLeft: 10 * pdf.mm });
+  textCell
+    .text()
+    .add('Ticivara Robe Sewing ', {
+      fontSize: 9
+    })
+    .add('[parameters link]', {
+      fontSize: 9,
+      link: robeParamsUrl,
+      color: '0x569cd6'
+    });
+}
+
+export function renderAndDownloadPdf(patterns, robe, robeParamsUrl) {
+  const doc = new pdf.Document({
+    // A4 landscape
+    width: 841.896,
+    height: 595.296,
+    padding: 0,
+    font: Helvetica,
+    properties: {
+      title: robe.title,
+      creator: 'Ticivara Robe Sewing'
+    }
+  });
+
+  patterns.forEach((i, idx) => {
+    addPdfPage(doc, i.canvas_id, robeParamsUrl);
+    if (idx < patterns.length - 1) {
+      doc.pageBreak();
+    }
+  });
+
+  doc.asBuffer().then((buf) => {
+    const pdf_blob = new Blob([buf], { type: 'application/pdf' });
+    const url = URL.createObjectURL(pdf_blob);
+
+    const link = document.createElement('a');
+    link.style.display = 'none';
+    link.download = 'robe.pdf';
+    link.href = url;
+
+    document.body.appendChild(link);
+    link.click();
+    setTimeout(function() {
+      document.body.removeChild(link);
+      URL.revokeObjectURL(link.href);
+    }, 100);
+  });
+}
+
+export function getRobeParamsUrl(robe) {
+  const robeParams = encodeURIComponent(JSON.stringify(robe));
+  const p = window.location.port;
+  let port = '';
+  if (p !== 80 || p !== 443) {
+    port = ':' + p;
+  }
+  const url =
+        window.location.protocol +
+        '//' +
+        window.location.hostname +
+        port +
+        window.location.pathname +
+        '?robe=' +
+        robeParams;
+
+  return url;
+}
+
+export function getQueryParsedData(D, query) {
+  const d = D;
+  const keys = Object.keys(query);
+  if (keys.length > 0 && keys.includes('robe')) {
+    const robeParams = decodeURIComponent(query.robe);
+    let a;
+    try {
+      a = JSON.parse(robeParams);
+    } catch (e) {
+      console.log(
+        'Parse error: Robe data is not well-formatted JSON string.'
+      );
+    }
+    if (typeof a !== 'undefined' && Object.keys(a).includes('title')) {
+      d.robe = a;
+    }
+  }
+  return d;
 }
