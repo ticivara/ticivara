@@ -12,7 +12,6 @@ import {
   initAndDraw
 } from '@/assets/js/helpers.js';
 
-
 function drawGuide(ctx, canvasWidth, canvasHeight, img, robe) {
   // shrinking lengths
   const a = calcShrinkingLengths(robe, 9);
@@ -71,37 +70,13 @@ function drawGuide(ctx, canvasWidth, canvasHeight, img, robe) {
 
   textTitle(ctx, D, D.robe.title, '120px', -0.5, 168);
 
-  text(
-    ctx,
-    D,
-    'Final Width: ' + numPad(D.val_inner_width),
-    5,
-    140
-  );
+  text(ctx, D, 'Final Width: ' + numPad(D.val_inner_width), 5, 140);
 
-  text(
-    ctx,
-    D,
-    'Final Height: ' + numPad(D.val_inner_height),
-    5,
-    136
-  );
+  text(ctx, D, 'Final Height: ' + numPad(D.val_inner_height), 5, 136);
 
-  text(
-    ctx,
-    D,
-    'Cut Width: ' + numPad(D.val_cut_width),
-    5,
-    132
-  );
+  text(ctx, D, 'Cut Width: ' + numPad(D.val_cut_width), 5, 132);
 
-  text(
-    ctx,
-    D,
-    'Cut Height: ' + numPad(D.val_cut_height),
-    5,
-    128
-  );
+  text(ctx, D, 'Cut Height: ' + numPad(D.val_cut_height), 5, 128);
 }
 
 function drawPanels_1(ctx, canvasWidth, canvasHeight, img, robe) {
@@ -162,37 +137,13 @@ function drawPanels_1(ctx, canvasWidth, canvasHeight, img, robe) {
 
   textTitle(ctx, D, D.robe.title, '120px', -0.5, 168);
 
-  text(
-    ctx,
-    D,
-    'Final Width: ' + numPad(D.val_inner_width),
-    5,
-    140
-  );
+  text(ctx, D, 'Final Width: ' + numPad(D.val_inner_width), 5, 140);
 
-  text(
-    ctx,
-    D,
-    'Final Height: ' + numPad(D.val_inner_height),
-    5,
-    136
-  );
+  text(ctx, D, 'Final Height: ' + numPad(D.val_inner_height), 5, 136);
 
-  text(
-    ctx,
-    D,
-    'Cut Width: ' + numPad(D.val_cut_width),
-    5,
-    132
-  );
+  text(ctx, D, 'Cut Width: ' + numPad(D.val_cut_width), 5, 132);
 
-  text(
-    ctx,
-    D,
-    'Cut Height: ' + numPad(D.val_cut_height),
-    5,
-    128
-  );
+  text(ctx, D, 'Cut Height: ' + numPad(D.val_cut_height), 5, 128);
 }
 
 function drawPanels_4(ctx, canvasWidth, canvasHeight, img, robe) {
@@ -253,37 +204,13 @@ function drawPanels_4(ctx, canvasWidth, canvasHeight, img, robe) {
 
   textTitle(ctx, D, D.robe.title, '120px', -0.5, 168);
 
-  text(
-    ctx,
-    D,
-    'Final Width: ' + numPad(D.val_inner_width),
-    5,
-    140
-  );
+  text(ctx, D, 'Final Width: ' + numPad(D.val_inner_width), 5, 140);
 
-  text(
-    ctx,
-    D,
-    'Final Height: ' + numPad(D.val_inner_height),
-    5,
-    136
-  );
+  text(ctx, D, 'Final Height: ' + numPad(D.val_inner_height), 5, 136);
 
-  text(
-    ctx,
-    D,
-    'Cut Width: ' + numPad(D.val_cut_width),
-    5,
-    132
-  );
+  text(ctx, D, 'Cut Width: ' + numPad(D.val_cut_width), 5, 132);
 
-  text(
-    ctx,
-    D,
-    'Cut Height: ' + numPad(D.val_cut_height),
-    5,
-    128
-  );
+  text(ctx, D, 'Cut Height: ' + numPad(D.val_cut_height), 5, 128);
 }
 
 function drawPanels_7(ctx, canvasWidth, canvasHeight, img, robe) {
@@ -344,37 +271,13 @@ function drawPanels_7(ctx, canvasWidth, canvasHeight, img, robe) {
 
   textTitle(ctx, D, D.robe.title, '120px', -0.5, 168);
 
-  text(
-    ctx,
-    D,
-    'Final Width: ' + numPad(D.val_inner_width),
-    5,
-    140
-  );
+  text(ctx, D, 'Final Width: ' + numPad(D.val_inner_width), 5, 140);
 
-  text(
-    ctx,
-    D,
-    'Final Height: ' + numPad(D.val_inner_height),
-    5,
-    136
-  );
+  text(ctx, D, 'Final Height: ' + numPad(D.val_inner_height), 5, 136);
 
-  text(
-    ctx,
-    D,
-    'Cut Width: ' + numPad(D.val_cut_width),
-    5,
-    132
-  );
+  text(ctx, D, 'Cut Width: ' + numPad(D.val_cut_width), 5, 132);
 
-  text(
-    ctx,
-    D,
-    'Cut Height: ' + numPad(D.val_cut_height),
-    5,
-    128
-  );
+  text(ctx, D, 'Cut Height: ' + numPad(D.val_cut_height), 5, 128);
 }
 
 export function DrawSanghatiPattern(patterns, canvasWidth, canvasHeight, robe) {

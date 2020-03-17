@@ -321,13 +321,13 @@ export function getRobeParamsUrl(robe) {
     port = ':' + p;
   }
   const url =
-        window.location.protocol +
-        '//' +
-        window.location.hostname +
-        port +
-        window.location.pathname +
-        '?robe=' +
-        robeParams;
+    window.location.protocol +
+    '//' +
+    window.location.hostname +
+    port +
+    window.location.pathname +
+    '?robe=' +
+    robeParams;
 
   return url;
 }
@@ -341,9 +341,7 @@ export function getQueryParsedData(D, query) {
     try {
       a = JSON.parse(robeParams);
     } catch (e) {
-      console.log(
-        'Parse error: Robe data is not well-formatted JSON string.'
-      );
+      console.log('Parse error: Robe data is not well-formatted JSON string.');
     }
     if (typeof a !== 'undefined' && Object.keys(a).includes('title')) {
       d.robe = a;

@@ -471,7 +471,11 @@
 
 <script>
 import { DrawSabongPattern } from '@/assets/js/DrawSabongPattern.js';
-import { getQueryParsedData, getRobeParamsUrl, renderAndDownloadPdf } from '@/assets/js/helpers.js';
+import {
+  getQueryParsedData,
+  getRobeParamsUrl,
+  renderAndDownloadPdf
+} from '@/assets/js/helpers.js';
 
 const D = {
   width: 3500,
@@ -512,7 +516,7 @@ const Patterns = [
     canvas_id: 'sabong-pattern-canvas',
     overlapping_img_src: '/img/sabong-pattern-overlapping-border.svg',
     joined_img_src: '/img/sabong-pattern-joined-border.svg'
-  },
+  }
 ];
 
 export default {

@@ -151,7 +151,11 @@
 
 <script>
 import { DrawCivaraPattern } from '@/assets/js/DrawCivaraPattern.js';
-import { getQueryParsedData, getRobeParamsUrl, renderAndDownloadPdf } from '@/assets/js/helpers.js';
+import {
+  getQueryParsedData,
+  getRobeParamsUrl,
+  renderAndDownloadPdf
+} from '@/assets/js/helpers.js';
 
 const D = {
   width: 3500,
@@ -238,6 +242,5 @@ export default {
       renderAndDownloadPdf(Patterns, this.robe, this.robeParamsUrl);
     }
   }
-}
-
+};
 </script>
