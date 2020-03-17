@@ -168,29 +168,56 @@ export function calcShrinkingLengths(robe, khandhas) {
 
   // inner width: scaled final width, not including the edge buffers
   // iw = fw * (1 + sc / 100)
-  const inner_width = final_width * (1 + robe.shrink_percent_width / 100);
-  const inner_height = final_height * (1 + robe.shrink_percent_height / 100);
+  let inner_width, inner_height;
+  if (robe.border_type === 0) {
+    inner_width = final_width * (1 + robe.shrink_percent_width / 100);
+    inner_height = final_height * (1 + robe.shrink_percent_height / 100);
+  } else {
+    // joined border are not included in the scaled inner size
+    inner_width = (final_width - 2 * orig_border_width)
+      * (1 + robe.shrink_percent_width / 100);
+    inner_height = (final_height - 2 * orig_border_width)
+      * (1 + robe.shrink_percent_height / 100);
+  }
 
   // cut width includes the edge buffers and kusi buffers
   const cut_width =
-    inner_width + 2 * buffer_width + kusiBuffersUntil(robe, khandhas - 1);
+        inner_width + 2 * buffer_width + kusiBuffersUntil(robe, (khandhas - 1)*2 - 1);
 
   const cut_height = inner_height + 2 * buffer_width;
 
   // mandala width without scaling
   // m = (fw - 2b - (khandhas - 1)k) / khandhas
-  const orig_mandala_width =
-    (final_width - 2 * orig_border_width - (khandhas - 1) * kusi_width) /
-    khandhas;
+  let orig_mandala_width, orig_mandala_height;
+  if (robe.border_type === 0) {
 
-  const orig_mandala_height =
-    (final_height - 2 * orig_border_width - 2 * kusi_width) / 3;
+    orig_mandala_width =
+      (final_width - 2 * orig_border_width - (khandhas - 1) * kusi_width) / khandhas;
+
+    orig_mandala_height =
+      (final_height - 2 * orig_border_width - 2 * kusi_width) / 3;
+
+  } else {
+    // joined border is not included in khandas length (inner width)
+
+    orig_mandala_width =
+      (final_width - (khandhas - 1) * kusi_width) / khandhas;
+
+    orig_mandala_height =
+      (final_height - 2 * kusi_width) / 3;
+  }
 
   // orig border to mandala ratio, width and height
   // i.e. one border equals this much of a mandala
   // r = b / m
-  const b2m_w = orig_border_width / orig_mandala_width;
-  const b2m_h = orig_border_width / orig_mandala_height;
+  let b2m_w, b2m_h;
+  if (robe.border_type === 0) {
+    b2m_w = orig_border_width / orig_mandala_width;
+    b2m_h = orig_border_width / orig_mandala_height;
+  } else {
+    b2m_w = 0.0;
+    b2m_h = 0.0;
+  }
 
   // remainder cut width, taking the kusi off the cut size
   // rw = iw - (khandhas - 1)k
@@ -202,10 +229,22 @@ export function calcShrinkingLengths(robe, khandhas) {
   // w = 5m + 2b = 5m + 2rm
   // w = (5+2r)m
   // w / (5+2r) = m
-  const mandala_width = rem_w / (khandhas + 2 * b2m_w);
-  const mandala_height = rem_h / (3 + 2 * b2m_h);
-  const border_width = mandala_width * b2m_w;
-  const border_height = mandala_height * b2m_h;
+  let mandala_width, mandala_height, border_width, border_height;
+  if (robe.border_type === 0) {
+
+    mandala_width = rem_w / (khandhas + 2 * b2m_w);
+    mandala_height = rem_h / (3 + 2 * b2m_h);
+    border_width = mandala_width * b2m_w;
+    border_height = mandala_height * b2m_h;
+
+  } else {
+
+    mandala_width = rem_w / khandhas;
+    mandala_height = rem_h / 3;
+    border_width = orig_border_width;
+    border_height = orig_border_width;
+
+  }
 
   return {
     cut_width,
