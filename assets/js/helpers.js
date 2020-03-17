@@ -165,8 +165,6 @@ export function calcShrinkingLengths(robe, khandhas) {
   const buffer_width = Number(robe.buffer_width);
   const kusi_width = Number(robe.kusi_width);
   const orig_border_width = Number(robe.border_width);
-  // same as the horizontal
-  const vertical_buffer_width = Number(robe.buffer_width);
 
   // inner width: scaled final width, not including the edge buffers
   // iw = fw * (1 + sc / 100)
@@ -177,7 +175,7 @@ export function calcShrinkingLengths(robe, khandhas) {
   const cut_width =
     inner_width + 2 * buffer_width + kusiBuffersUntil(robe, khandhas - 1);
 
-  const cut_height = inner_height + 2 * vertical_buffer_width;
+  const cut_height = inner_height + 2 * buffer_width;
 
   // mandala width without scaling
   // m = (fw - 2b - (khandhas - 1)k) / khandhas

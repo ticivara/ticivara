@@ -138,17 +138,17 @@ function drawPanels(ctx, canvasWidth, canvasHeight, img, robe) {
   cutKusi(ctx, D, 3);
 
   // mandala width
-  textMandalaWidth(ctx, D, 0);
-  textMandalaWidth(ctx, D, 1);
-  textMandalaWidth(ctx, D, 2);
-  textMandalaWidth(ctx, D, 3);
-  textMandalaWidth(ctx, D, 4);
+  textMandalaWidth(ctx, D, 0, 0);
+  textMandalaWidth(ctx, D, 2, 1);
+  textMandalaWidth(ctx, D, 4, 2);
+  textMandalaWidth(ctx, D, 6, 3);
+  textMandalaWidth(ctx, D, -1, 4);
 
   // kusi width
-  textKusiWidth(ctx, D, 0);
-  textKusiWidth(ctx, D, 1);
-  textKusiWidth(ctx, D, 2);
-  textKusiWidth(ctx, D, 3);
+  textKusiWidth(ctx, D, 1, 1);
+  textKusiWidth(ctx, D, 3, 2);
+  textKusiWidth(ctx, D, 5, 3);
+  textKusiWidth(ctx, D, 7, 4);
 
   // kusi height
   textKusiHeight(ctx, D, 0);
@@ -222,7 +222,7 @@ function drawPanels(ctx, canvasWidth, canvasHeight, img, robe) {
   }
 }
 
-function textMandalaWidth(ctx, D, n) {
+function textMandalaWidth(ctx, D, nI, m) {
   let x, y;
   if (D.robe.border_type === 0) {
     x = 2.0;
@@ -231,20 +231,26 @@ function textMandalaWidth(ctx, D, n) {
     x = 2.0;
     y = 16.0;
   }
+  let kusi_buffer;
+  if (nI < 0) {
+    kusi_buffer = 0;
+  } else {
+    kusi_buffer = Number(D.robe.kusi_buffers[KB[nI]]);
+  }
   textNum(
     ctx,
     D,
-    D.val_mandala_width,
+    D.val_mandala_width + kusi_buffer,
     D.pos_buffer_width +
       D.pos_border_width +
-      n * (D.pos_mandala_width + D.pos_kusi_width) +
+      m * (D.pos_mandala_width + D.pos_kusi_width) +
       D.pos_mandala_width / 2 -
       x,
     y
   );
 }
 
-function textKusiWidth(ctx, D, n) {
+function textKusiWidth(ctx, D, nI, m) {
   let x, y;
   if (D.robe.border_type === 0) {
     x = 2.0;
@@ -253,15 +259,21 @@ function textKusiWidth(ctx, D, n) {
     x = 2.0;
     y = 16.0;
   }
-  const nI = n * 2 + 1;
+
+  let a = D.val_kusi_width + Number(D.robe.kusi_buffers[KB[nI]]);
+
+  if (hasCutBuffer(D.robe, nI)) {
+    a += Number(D.robe.kusi_cutting_buffer);
+  }
+
   textNum(
     ctx,
     D,
-    D.val_kusi_width + D.robe.kusi_buffers[KB[nI]],
+    a,
     D.pos_buffer_width +
       D.pos_border_width +
-      D.pos_mandala_width +
-      n * (D.pos_mandala_width + D.pos_kusi_width) +
+      (m - 1) * D.pos_kusi_width +
+      m * D.pos_mandala_width +
       D.pos_kusi_width / 2 -
       x,
     y
