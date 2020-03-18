@@ -25,8 +25,11 @@ const menu = [
   },
   {
     path: '',
-    label: 'Borders',
-    sub: [{ path: '/<lang>/borders', label: 'Guide', sub: [] }]
+    label: 'Misc',
+    sub: [
+      { path: '/<lang>/borders', label: 'Borders', sub: [] },
+      { path: '/<lang>/tags', label: 'Tag Knots', sub: [] }
+    ]
   },
   {
     path: '',
