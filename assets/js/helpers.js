@@ -319,6 +319,11 @@ function addPdfPage(doc, canvas_id, robeParamsUrl) {
     });
 }
 
+function downloadName(title) {
+  const a = title.replace(/[^a-zA-Z0-9-_ ]/g, '').trim();
+  return a + '.pdf';
+}
+
 export function renderAndDownloadPdf(patterns, robe, robeParamsUrl) {
   const doc = new pdf.Document({
     // A4 landscape
@@ -345,7 +350,7 @@ export function renderAndDownloadPdf(patterns, robe, robeParamsUrl) {
 
     const link = document.createElement('a');
     link.style.display = 'none';
-    link.download = 'robe.pdf';
+    link.download = downloadName(robe.title);
     link.href = url;
 
     document.body.appendChild(link);
