@@ -71,12 +71,12 @@ function drawGuide(ctx, canvasWidth, canvasHeight, img, robe) {
   text(ctx, D, 'Cut Width: ' + numPad(D.val_cut_width), 5, 132);
   text(ctx, D, 'Cut Height: ' + numPad(D.val_cut_height), 5, 128);
 
-  text(ctx, D, "cutting buffer: " + numPad(D.val_buffer_width), 5, 122);
-  text(ctx, D, "a, border width: " + numPad(D.val_border_width), 5, 118);
-  text(ctx, D, "b, border height: " + numPad(D.val_border_height), 5, 114);
-  text(ctx, D, "k, kusi width: " + numPad(D.val_kusi_width), 5, 110);
-  text(ctx, D, "m, mandala width: " + numPad(D.val_mandala_width), 5, 106);
-  text(ctx, D, "d, mandala height: " + numPad(D.val_mandala_height), 5, 102);
+  text(ctx, D, 'cutting buffer: ' + numPad(D.val_buffer_width), 5, 122);
+  text(ctx, D, 'a, border width: ' + numPad(D.val_border_width), 5, 118);
+  text(ctx, D, 'b, border height: ' + numPad(D.val_border_height), 5, 114);
+  text(ctx, D, 'k, kusi width: ' + numPad(D.val_kusi_width), 5, 110);
+  text(ctx, D, 'm, mandala width: ' + numPad(D.val_mandala_width), 5, 106);
+  text(ctx, D, 'd, mandala height: ' + numPad(D.val_mandala_height), 5, 102);
 
   textNum(ctx, D, D.val_cut_width, 245, 164);
   textNum(ctx, D, D.val_cut_height, 255, 155);
@@ -321,7 +321,6 @@ function drawPanels_7(ctx, canvasWidth, canvasHeight, img, robe) {
   textAccumulateVert(ctx, D, 2, 2, 1, 1, 1.0, 1.0);
   textAccumulateVert(ctx, D, 3, 2, 1, 1, 1.0, 1.0);
   textAccumulateVert(ctx, D, 3, 2, 1, 2, 1.0, 3.0);
-;
 }
 
 // mandala, kusi, border, cut buffer
