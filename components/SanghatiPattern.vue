@@ -164,23 +164,25 @@ const D = {
   robe: {
     title: 'Sanghati ' + new Date().getFullYear(),
     border_type: 0, // 0 = overlapping, 1 = joined
-    width: 228,
-    height: 99,
+    width: 355,
+    height: 214,
     buffer_width: 1,
-    border_width: 12,
+    // vertical_buffer_width used only in civara and sanghati
+    vertical_buffer_width: 10,
+    border_width: 14,
     kusi_width: 6,
     kusi_cutting_buffer: 0.5,
     shrink_percent_width: 0,
     shrink_percent_height: 0,
     kusi_buffers: {
       k1_a: 0.0,
-      k1_b: 0.5,
+      k1_b: 0.0,
       k2_a: 0.0,
-      k2_b: 0.5,
+      k2_b: 0.0,
       k3_a: 0.0,
-      k3_b: 0.5,
+      k3_b: 0.0,
       k4_a: 0.0,
-      k4_b: 0.5
+      k4_b: 0.0
     },
     kusi_cuts: {
       k1_a: false,
