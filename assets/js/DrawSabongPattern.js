@@ -72,7 +72,7 @@ function drawPanels(ctx, canvasWidth, canvasHeight, img, robe) {
     D.pos_pattern_height * sc
   );
 
-  textTitle(ctx, D, D.robe.title, '60px', 0, -8.0);
+  textTitle(ctx, D, D.robe.title, '60px', 0, -12.0);
 
   text(
     ctx,
@@ -82,7 +82,7 @@ function drawPanels(ctx, canvasWidth, canvasHeight, img, robe) {
       ', Final Height: ' +
       numPad(D.val_inner_height),
     0,
-    -15.0
+    -19.0
   );
 
   text(
@@ -93,25 +93,25 @@ function drawPanels(ctx, canvasWidth, canvasHeight, img, robe) {
       ', Cut Height: ' +
       numPad(D.val_cut_height),
     0,
-    -18.0
+    -22.0
   );
 
-  text(ctx, D, 'a, border width: ' + numPad(D.val_border_width), 40.0, -15.0);
+  text(ctx, D, 'a, border width: ' + numPad(D.val_border_width), 40.0, -19.0);
 
-  text(ctx, D, 'b, border height: ' + numPad(D.val_border_height), 40.0, -18.0);
+  text(ctx, D, 'b, border height: ' + numPad(D.val_border_height), 40.0, -22.0);
 
-  text(ctx, D, 'c, cutting buffer: ' + numPad(D.val_buffer_width), 40.0, -21.0);
+  text(ctx, D, 'c, cutting buffer: ' + numPad(D.val_buffer_width), 40.0, -25.0);
 
-  text(ctx, D, 'k, kusi width: ' + numPad(D.val_kusi_width), 40.0, -24.0);
+  text(ctx, D, 'k, kusi width: ' + numPad(D.val_kusi_width), 40.0, -28.0);
 
-  text(ctx, D, 'm, mandala width: ' + numPad(D.val_mandala_width), 40.0, -27.0);
+  text(ctx, D, 'm, mandala width: ' + numPad(D.val_mandala_width), 40.0, -31.0);
 
   text(
     ctx,
     D,
     'd, mandala height: ' + numPad(D.val_mandala_height),
     40.0,
-    -30.0
+    -34.0
   );
 
   // buffer at the edges

@@ -296,16 +296,26 @@ function addPdfPage(doc, canvas_id, robeParamsUrl) {
     align: 'center'
   });
 
+  const blue = '0x2D79B9';
+
   const textCell = doc.cell('', { paddingLeft: 10 * pdf.mm });
   textCell
     .text()
-    .add('Ticivara Robe Sewing ', {
+    .add('Ticivara Robe Sewing - ', {
+      fontSize: 9
+    })
+    .add('ticivara.github.io', {
+      fontSize: 9,
+      link: 'https://ticivara.github.io',
+      color: blue
+    })
+    .add(' - ', {
       fontSize: 9
     })
     .add('[parameters link]', {
       fontSize: 9,
       link: robeParamsUrl,
-      color: '0x569cd6'
+      color: blue
     });
 }
 
