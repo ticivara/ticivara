@@ -101,6 +101,107 @@
 
     <div class="columns">
       <div class="column">
+        <div v-show="show_more_controls" class="field is-horizontal">
+          <div class="field-label">
+            <label class="label">Kusi width:</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <input
+                  v-model="robe.kusi_width"
+                  class="input"
+                  type="number"
+                  step="1"
+                  min="0"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div v-show="show_more_controls" class="field is-horizontal">
+          <div class="field-label">
+            <label class="label">Border width:</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <input
+                  v-model="robe.border_width"
+                  class="input"
+                  type="number"
+                  step="1"
+                  min="0"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div v-show="show_more_controls" class="field is-horizontal">
+          <div class="field-label">
+            <label class="label">Buffer width:</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <input
+                  v-model="robe.buffer_width"
+                  class="input"
+                  type="number"
+                  step="1"
+                  min="0"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div v-show="show_more_controls" class="field is-horizontal">
+          <div class="field-label">
+            <label class="label">Vertical buffer width:</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <input
+                  v-model="robe.vertical_buffer_width"
+                  class="input"
+                  type="number"
+                  step="1"
+                  min="0"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns">
+      <div class="column">
+        <div class="field is-pulled-right">
+          <div class="control">
+            <button
+              :class="[show_more_controls ? 'is-info' : '', 'button']"
+              @click="show_more_controls = !show_more_controls"
+            >
+              <span>More parameters</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns">
+      <div class="column">
         <div class="field is-grouped">
           <div class="control">
             <button class="button is-primary" @click="downloadPdf()">
