@@ -46,6 +46,7 @@ function drawPanels(ctx, canvasWidth, canvasHeight, img, robe) {
     pattern_scale: 14.0,
     // calcualted size values to display, these could be user inputs
     val_buffer_width: Number(robe.buffer_width),
+    val_vertical_buffer_width: Number(robe.vertical_buffer_width),
     val_inner_width: Number(robe.width),
     val_inner_height: Number(robe.height),
     val_kusi_width: Number(robe.kusi_width),

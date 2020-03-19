@@ -187,7 +187,8 @@
             <div class="field">
               <div class="control">
                 <input
-                  v-model="robe.buffer_width"
+                  :value="robe.buffer_width"
+                  @change="setBufferWidth($event)"
                   class="input"
                   type="number"
                   step="1"
@@ -487,6 +488,8 @@ const D = {
     width: 228,
     height: 99,
     buffer_width: 1,
+    // in the sabong, vertical_buffer_width is the same as buffer_width
+    vertical_buffer_width: 1,
     border_width: 12,
     kusi_width: 6,
     kusi_cutting_buffer: 0.5,
@@ -541,6 +544,13 @@ export default {
   methods: {
     updateCanvas() {
       DrawSabongPattern(Patterns, this.width, this.height, this.robe);
+    },
+
+    // have to use a method to update both attribs
+    setBufferWidth(event) {
+      const x = event.target.value;
+      this.robe.buffer_width = Number(x);
+      this.robe.vertical_buffer_width = Number(x);
     },
 
     setBorderType(type_id) {
