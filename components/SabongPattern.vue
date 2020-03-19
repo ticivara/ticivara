@@ -188,11 +188,11 @@
               <div class="control">
                 <input
                   :value="robe.buffer_width"
-                  @change="setBufferWidth($event)"
                   class="input"
                   type="number"
                   step="1"
                   min="0"
+                  @change="setBufferWidth($event)"
                 />
               </div>
             </div>
