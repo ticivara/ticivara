@@ -1,204 +1,208 @@
 <template>
   <div>
-    <div id="simple_controls">
+    <div class="parameters">
+      <div id="simple_controls">
+        <div class="columns">
+          <div class="column is-6">
+            <div class="field is-horizontal">
+              <div class="field-label">
+                <label class="label">Title:</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <input v-model="robe.title" class="input" type="text" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-3">
+            <div class="field is-horizontal">
+              <div class="field-label">
+                <label class="label">Final width:</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <input
+                      v-model="robe.width"
+                      class="input"
+                      type="number"
+                      step="1"
+                      min="0"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal">
+              <div class="field-label">
+                <label class="label">Final height:</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <input
+                      v-model="robe.height"
+                      class="input"
+                      type="number"
+                      step="1"
+                      min="0"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-3">
+            <div class="field is-horizontal">
+              <div class="field-label">
+                <label class="label">Shrinking width %:</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <input
+                      v-model="robe.shrink_percent_width"
+                      class="input"
+                      type="number"
+                      step="1"
+                      min="0"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field is-horizontal">
+              <div class="field-label">
+                <label class="label">Shrinking height %:</label>
+              </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+                    <input
+                      v-model="robe.shrink_percent_height"
+                      class="input"
+                      type="number"
+                      step="1"
+                      min="0"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="columns">
-        <div class="column is-6">
-          <div class="field is-horizontal">
-            <div class="field-label">
-              <label class="label">Title:</label>
-            </div>
-            <div class="field-body">
-              <div class="field">
-                <div class="control">
-                  <input v-model="robe.title" class="input" type="text" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="column is-3">
-          <div class="field is-horizontal">
-            <div class="field-label">
-              <label class="label">Final width:</label>
-            </div>
-            <div class="field-body">
-              <div class="field">
-                <div class="control">
-                  <input
-                    v-model="robe.width"
-                    class="input"
-                    type="number"
-                    step="1"
-                    min="0"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="field is-horizontal">
-            <div class="field-label">
-              <label class="label">Final height:</label>
-            </div>
-            <div class="field-body">
-              <div class="field">
-                <div class="control">
-                  <input
-                    v-model="robe.height"
-                    class="input"
-                    type="number"
-                    step="1"
-                    min="0"
-                  />
-                </div>
-              </div>
+        <div class="column">
+          <div v-show="show_more_controls" class="field">
+            <label class="label">Border width:</label>
+            <div class="control">
+              <input
+                v-model="robe.border_width"
+                class="input"
+                type="number"
+                step="1"
+                min="0"
+              />
             </div>
           </div>
         </div>
 
-        <div class="column is-3">
-          <div class="field is-horizontal">
-            <div class="field-label">
-              <label class="label">Shrinking width %:</label>
-            </div>
-            <div class="field-body">
-              <div class="field">
-                <div class="control">
-                  <input
-                    v-model="robe.shrink_percent_width"
-                    class="input"
-                    type="number"
-                    step="1"
-                    min="0"
-                  />
-                </div>
-              </div>
+        <div class="column">
+          <div v-show="show_more_controls" class="field">
+            <label class="label">Kusi width:</label>
+            <div class="control">
+              <input
+                v-model="robe.kusi_width"
+                class="input"
+                type="number"
+                step="1"
+                min="0"
+              />
             </div>
           </div>
 
-          <div class="field is-horizontal">
-            <div class="field-label">
-              <label class="label">Shrinking height %:</label>
+          <div v-show="show_more_controls" class="field">
+            <label class="label">Vertical kusi buffer:</label>
+            <div class="control">
+              <input
+                v-model="robe.vertical_kusi_buffer"
+                class="input"
+                type="number"
+                step="0.1"
+                min="0"
+              />
             </div>
-            <div class="field-body">
-              <div class="field">
-                <div class="control">
-                  <input
-                    v-model="robe.shrink_percent_height"
-                    class="input"
-                    type="number"
-                    step="1"
-                    min="0"
-                  />
-                </div>
-              </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div v-show="show_more_controls" class="field">
+            <label class="label">Buffer width:</label>
+            <div class="control">
+              <input
+                v-model="robe.buffer_width"
+                class="input"
+                type="number"
+                step="1"
+                min="0"
+              />
+            </div>
+          </div>
+
+          <div v-show="show_more_controls" class="field">
+            <label class="label">Vertical buffer width:</label>
+            <div class="control">
+              <input
+                v-model="robe.vertical_buffer_width"
+                class="input"
+                type="number"
+                step="1"
+                min="0"
+              />
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="columns">
-      <div class="column">
-        <div v-show="show_more_controls" class="field">
-          <label class="label">Border width:</label>
-          <div class="control">
-            <input
-              v-model="robe.border_width"
-              class="input"
-              type="number"
-              step="1"
-              min="0"
-            />
+      <div class="columns">
+        <div class="column">
+          <div class="field is-pulled-right">
+            <div class="control">
+              <button
+                :class="[show_more_controls ? 'is-info' : '', 'button']"
+                @click="show_more_controls = !show_more_controls"
+              >
+                <span v-show="show_more_controls">Less parameters</span>
+                <span v-show="!show_more_controls">More parameters</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="column">
-        <div v-show="show_more_controls" class="field">
-          <label class="label">Kusi width:</label>
-          <div class="control">
-            <input
-              v-model="robe.kusi_width"
-              class="input"
-              type="number"
-              step="1"
-              min="0"
-            />
-          </div>
-        </div>
+      <div class="columns">
+        <div class="column">
+          <div class="field is-grouped">
+            <div class="control">
+              <button class="button is-primary" @click="downloadPdf()">
+                <span>Download PDF</span>
+              </button>
+            </div>
 
-        <div v-show="show_more_controls" class="field">
-          <label class="label">Vertical kusi buffer:</label>
-          <div class="control">
-            <input
-              v-model="robe.vertical_kusi_buffer"
-              class="input"
-              type="number"
-              step="0.1"
-              min="0"
-            />
-          </div>
-        </div>
-      </div>
-
-      <div class="column">
-        <div v-show="show_more_controls" class="field">
-          <label class="label">Buffer width:</label>
-          <div class="control">
-            <input
-              v-model="robe.buffer_width"
-              class="input"
-              type="number"
-              step="1"
-              min="0"
-            />
-          </div>
-        </div>
-
-        <div v-show="show_more_controls" class="field">
-          <label class="label">Vertical buffer width:</label>
-          <div class="control">
-            <input
-              v-model="robe.vertical_buffer_width"
-              class="input"
-              type="number"
-              step="1"
-              min="0"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="columns">
-      <div class="column">
-        <div class="field is-pulled-right">
-          <div class="control">
-            <button
-              :class="[show_more_controls ? 'is-info' : '', 'button']"
-              @click="show_more_controls = !show_more_controls"
-            >
-              <span v-show="show_more_controls">Less parameters</span>
-              <span v-show="!show_more_controls">More parameters</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="columns">
-      <div class="column">
-        <div class="field is-grouped">
-          <div class="control">
-            <button class="button is-primary" @click="downloadPdf()">
-              <span>Download PDF</span>
-            </button>
-          </div>
-
-          <div class="control">
-            <a class="button is-text" :href="robeParamsUrl">Parameters Link</a>
+            <div class="control">
+              <a class="button is-text" :href="robeParamsUrl"
+                >Parameters Link</a
+              >
+            </div>
           </div>
         </div>
       </div>
