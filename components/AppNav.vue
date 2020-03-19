@@ -10,7 +10,7 @@
 
     <div id="app-nav" class="navbar-menu">
       <TabletMenu :lang="lang" />
-      <WidescreenMenu :lang="lang" />
+      <!-- <WidescreenMenu :lang="lang" /> -->
 
       <div class="navbar-end">
         <div class="flag-links is-pulled-right navbar-item">
@@ -49,12 +49,12 @@
 
 <script>
 import TabletMenu from '@/components/TabletMenu.vue';
-import WidescreenMenu from '@/components/WidescreenMenu.vue';
+// import WidescreenMenu from '@/components/WidescreenMenu.vue';
 
 export default {
   components: {
-    TabletMenu,
-    WidescreenMenu
+    TabletMenu
+    // WidescreenMenu
   },
   computed: {
     lang() {

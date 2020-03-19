@@ -1,11 +1,14 @@
+// NOTE: Not using a separate widescreen menu now.
+
 #app-nav-wrap .links-tablet-desktop
-  +from($widescreen)
-    display: none
+  // +from($widescreen)
+  //   display: none
 
   &.navbar-start
     justify-content: center
     margin: 0 auto
-    padding: 0
+    padding: 0 0 1em 0
+
 
   div.navbar-item
     align-items: start
@@ -59,13 +62,15 @@
         padding-right: 0.5em
 
 div.navbar-brand
-  +desktop-only
+  // +desktop-only
+  +desktop
     width: 7rem
     margin: 0
     padding: 0
 
 div.navbar-end
-  +desktop-only
+  // +desktop-only
+  +desktop
     width: 7rem
     margin: 0
     padding: 0
@@ -75,6 +80,8 @@ div.navbar-end
     height: 42px
 
 #app-nav div.navbar-item.flag-links .flag-wrap
-  +until($widescreen)
-    &.is-active
-      background-color: darken($navbar-dark, 10)
+  // +until($widescreen)
+  //   &.is-active
+  //     background-color: darken($navbar-dark, 10)
+  &.is-active
+    background-color: darken($navbar-dark, 10)
