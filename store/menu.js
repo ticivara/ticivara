@@ -35,6 +35,7 @@ const menu = [
     path: '',
     label: 'Notes',
     sub: [
+      { path: '/<lang>/templates', label: 'Templates', sub: [] },
       { path: '/<lang>/dyeing', label: 'Dyeing Manual', sub: [] },
       { path: '/<lang>/tools', label: 'Tools Checklist', sub: [] }
     ]

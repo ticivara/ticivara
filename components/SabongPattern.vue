@@ -207,7 +207,8 @@
               :class="[show_more_controls ? 'is-info' : '', 'button']"
               @click="show_more_controls = !show_more_controls"
             >
-              <span>More parameters</span>
+              <span v-show="show_more_controls">Less parameters</span>
+              <span v-show="!show_more_controls">More parameters</span>
             </button>
           </div>
         </div>
