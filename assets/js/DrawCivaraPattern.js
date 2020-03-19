@@ -38,6 +38,7 @@ function drawGuide(ctx, canvasWidth, canvasHeight, img, robe) {
     // calcualted size values to display, these could be user inputs
     val_buffer_width: Number(robe.buffer_width),
     val_vertical_buffer_width: Number(robe.vertical_buffer_width),
+    val_vertical_kusi_buffer: Number(robe.vertical_kusi_buffer),
     val_inner_width: Number(robe.width),
     val_inner_height: Number(robe.height),
     val_kusi_width: Number(robe.kusi_width),
@@ -73,11 +74,12 @@ function drawGuide(ctx, canvasWidth, canvasHeight, img, robe) {
 
   text(ctx, D, 'cutting buffer: ' + numPad(D.val_buffer_width), 5, 122);
   text(ctx, D, 'vertical cutting buffer: ' + numPad(D.val_vertical_buffer_width), 5, 118);
-  text(ctx, D, 'a, border width: ' + numPad(D.val_border_width), 5, 114);
-  text(ctx, D, 'b, border height: ' + numPad(D.val_border_height), 5, 110);
-  text(ctx, D, 'k, kusi width: ' + numPad(D.val_kusi_width), 5, 106);
-  text(ctx, D, 'm, mandala width: ' + numPad(D.val_mandala_width), 5, 102);
-  text(ctx, D, 'd, mandala height: ' + numPad(D.val_mandala_height), 5, 98);
+  text(ctx, D, 'vertical kusi buffer: ' + numPad(D.val_vertical_kusi_buffer), 5, 114);
+  text(ctx, D, 'a, border width: ' + numPad(D.val_border_width), 5, 110);
+  text(ctx, D, 'b, border height: ' + numPad(D.val_border_height), 5, 106);
+  text(ctx, D, 'k, kusi width: ' + numPad(D.val_kusi_width), 5, 102);
+  text(ctx, D, 'm, mandala width: ' + numPad(D.val_mandala_width), 5, 98);
+  text(ctx, D, 'd, mandala height: ' + numPad(D.val_mandala_height), 5, 94);
 
   textNum(ctx, D, D.val_cut_width, 245, 164);
   textNum(ctx, D, D.val_cut_height, 255, 155);
@@ -121,6 +123,7 @@ function drawPanels_1(ctx, canvasWidth, canvasHeight, img, robe) {
     // calcualted size values to display, these could be user inputs
     val_buffer_width: Number(robe.buffer_width),
     val_vertical_buffer_width: Number(robe.vertical_buffer_width),
+    val_vertical_kusi_buffer: Number(robe.vertical_kusi_buffer),
     val_inner_width: Number(robe.width),
     val_inner_height: Number(robe.height),
     val_kusi_width: Number(robe.kusi_width),
@@ -199,6 +202,7 @@ function drawPanels_4(ctx, canvasWidth, canvasHeight, img, robe) {
     // calcualted size values to display, these could be user inputs
     val_buffer_width: Number(robe.buffer_width),
     val_vertical_buffer_width: Number(robe.vertical_buffer_width),
+    val_vertical_kusi_buffer: Number(robe.vertical_kusi_buffer),
     val_inner_width: Number(robe.width),
     val_inner_height: Number(robe.height),
     val_kusi_width: Number(robe.kusi_width),
@@ -278,6 +282,7 @@ function drawPanels_7(ctx, canvasWidth, canvasHeight, img, robe) {
     // calcualted size values to display, these could be user inputs
     val_buffer_width: Number(robe.buffer_width),
     val_vertical_buffer_width: Number(robe.vertical_buffer_width),
+    val_vertical_kusi_buffer: Number(robe.vertical_kusi_buffer),
     val_inner_width: Number(robe.width),
     val_inner_height: Number(robe.height),
     val_kusi_width: Number(robe.kusi_width),
@@ -348,7 +353,7 @@ function textAccumulateVert(ctx, D, m, k, b, c, x_offset, y_offset) {
     ctx,
     D,
     m * D.val_mandala_width +
-      k * D.val_kusi_width +
+      k * (D.val_kusi_width + D.val_vertical_kusi_buffer) +
       b * D.val_border_width +
       c * D.val_buffer_width,
     x_offset + D.pos_pattern_width,

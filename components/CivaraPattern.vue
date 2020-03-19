@@ -101,85 +101,72 @@
 
     <div class="columns">
       <div class="column">
-        <div v-show="show_more_controls" class="field is-horizontal">
-          <div class="field-label">
-            <label class="label">Kusi width:</label>
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <div class="control">
-                <input
-                  v-model="robe.kusi_width"
-                  class="input"
-                  type="number"
-                  step="1"
-                  min="0"
-                />
-              </div>
-            </div>
+        <div v-show="show_more_controls" class="field">
+          <label class="label">Border width:</label>
+          <div class="control">
+            <input
+              v-model="robe.border_width"
+              class="input"
+              type="number"
+              step="1"
+              min="0"
+            />
           </div>
         </div>
       </div>
 
       <div class="column">
-        <div v-show="show_more_controls" class="field is-horizontal">
-          <div class="field-label">
-            <label class="label">Border width:</label>
+        <div v-show="show_more_controls" class="field">
+          <label class="label">Kusi width:</label>
+          <div class="control">
+            <input
+              v-model="robe.kusi_width"
+              class="input"
+              type="number"
+              step="1"
+              min="0"
+            />
           </div>
-          <div class="field-body">
-            <div class="field">
-              <div class="control">
-                <input
-                  v-model="robe.border_width"
-                  class="input"
-                  type="number"
-                  step="1"
-                  min="0"
-                />
-              </div>
-            </div>
+        </div>
+
+        <div v-show="show_more_controls" class="field">
+          <label class="label">Vertical kusi buffer:</label>
+          <div class="control">
+            <input
+              v-model="robe.vertical_kusi_buffer"
+              class="input"
+              type="number"
+              step="0.1"
+              min="0"
+            />
           </div>
         </div>
       </div>
 
       <div class="column">
-        <div v-show="show_more_controls" class="field is-horizontal">
-          <div class="field-label">
-            <label class="label">Buffer width:</label>
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <div class="control">
-                <input
-                  v-model="robe.buffer_width"
-                  class="input"
-                  type="number"
-                  step="1"
-                  min="0"
-                />
-              </div>
-            </div>
+        <div v-show="show_more_controls" class="field">
+          <label class="label">Buffer width:</label>
+          <div class="control">
+            <input
+              v-model="robe.buffer_width"
+              class="input"
+              type="number"
+              step="1"
+              min="0"
+            />
           </div>
         </div>
-      </div>
 
-      <div class="column">
-        <div v-show="show_more_controls" class="field is-horizontal">
-          <div class="field-label">
-            <label class="label">Vertical buffer width:</label>
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <div class="control">
-                <input
-                  v-model="robe.vertical_buffer_width"
-                  class="input"
-                  type="number"
-                  step="1"
-                  min="0"
-                />
-              </div>
-            </div>
+        <div v-show="show_more_controls" class="field">
+          <label class="label">Vertical buffer width:</label>
+          <div class="control">
+            <input
+              v-model="robe.vertical_buffer_width"
+              class="input"
+              type="number"
+              step="1"
+              min="0"
+            />
           </div>
         </div>
       </div>
@@ -272,9 +259,11 @@ const D = {
     vertical_buffer_width: 10,
     border_width: 14,
     kusi_width: 6,
+    vertical_kusi_buffer: 0.5,
     kusi_cutting_buffer: 0.5,
     shrink_percent_width: 0,
     shrink_percent_height: 0,
+    // using the vertical_kusi_buffer in civara and sanghati
     kusi_buffers: {
       k1_a: 0.0,
       k1_b: 0.0,
