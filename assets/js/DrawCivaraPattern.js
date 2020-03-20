@@ -81,9 +81,8 @@ function drawGuide(ctx, canvasWidth, canvasHeight, img, robe) {
   text(ctx, D, 'a, border width: ' + numPad(D.val_border_width), 5, 102);
   text(ctx, D, 'b, border height: ' + numPad(D.val_border_height), 5, 98);
   text(ctx, D, 'k, kusi width: ' + numPad(D.val_kusi_width), 5, 94);
-  text(ctx, D, 'k, kusi width: ' + numPad(D.val_kusi_width), 5, 90);
-  text(ctx, D, 'm, mandala width: ' + numPad(D.val_mandala_width), 5, 86);
-  text(ctx, D, 'd, mandala height: ' + numPad(D.val_mandala_height), 5, 82);
+  text(ctx, D, 'm, mandala width: ' + numPad(D.val_mandala_width), 5, 90);
+  text(ctx, D, 'd, mandala height: ' + numPad(D.val_mandala_height), 5, 86);
 
   textNum(ctx, D, D.val_cut_width, 245, 164);
   textNum(ctx, D, D.val_cut_height, 255, 155);
