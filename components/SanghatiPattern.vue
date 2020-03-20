@@ -131,6 +131,19 @@
           </div>
 
           <div v-show="show_more_controls" class="field">
+            <label class="label">Kusi cutting buffer:</label>
+            <div class="control">
+              <input
+                v-model="robe.kusi_cutting_buffer"
+                class="input"
+                type="number"
+                step="0.1"
+                min="0"
+              />
+            </div>
+          </div>
+
+          <div v-show="show_more_controls" class="field">
             <label class="label">Vertical kusi buffer:</label>
             <div class="control">
               <input
@@ -264,8 +277,8 @@ const D = {
     vertical_buffer_width: 15,
     border_width: 16,
     kusi_width: 6.5,
+    kusi_cutting_buffer: 1.0,
     vertical_kusi_buffer: 0.0,
-    kusi_cutting_buffer: 0.5,
     shrink_percent_width: 0,
     shrink_percent_height: 0,
     // using the vertical_kusi_buffer in civara and sanghati
