@@ -3,6 +3,7 @@ import {
   text,
   textTitle,
   textNum,
+  textNumSigned,
   calcShrinkingLengths,
   initAndDraw
 } from '@/assets/js/helpers.js';
@@ -89,9 +90,16 @@ function drawGuide(ctx, canvasWidth, canvasHeight, img, robe) {
 
   textNum(ctx, D, D.val_border_width, 104.5, 82);
   textNum(ctx, D, D.val_border_height, 112, 74.2);
-  textNum(ctx, D, D.val_kusi_width, 122, 74.2);
+  textNum(ctx, D, D.val_kusi_width, 112, 130);
+  textNum(ctx, D, D.val_kusi_width + D.val_vertical_kusi_buffer, 123.5, 74.2);
   textNum(ctx, D, D.val_mandala_width, 130, 82);
   textNum(ctx, D, D.val_mandala_height, 130, 89);
+
+  textNumSigned(ctx, D, D.val_vertical_kusi_buffer, 123, 137);
+  textNumSigned(ctx, D, D.val_kusi_cutting_buffer, 154.2, 86);
+  textNum(ctx, D, D.val_vertical_buffer_width, 209, 73);
+  textNum(ctx, D, D.val_vertical_buffer_width, 209, 160);
+  textNum(ctx, D, D.val_edge_buffer, 249, 133);
 }
 
 function drawPanels_1(ctx, canvasWidth, canvasHeight, img, robe) {
