@@ -349,7 +349,7 @@ export function getRobeParamsUrl(robe) {
   const robeParams = encodeURIComponent(JSON.stringify(robe));
   const p = window.location.port;
   let port = '';
-  if (p !== 80 || p !== 443) {
+  if (p === 3000 || p === 9000) {
     port = ':' + p;
   }
   const url =
