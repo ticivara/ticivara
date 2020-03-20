@@ -14,13 +14,7 @@
 
       <div class="navbar-end">
         <div class="flag-links is-pulled-right navbar-item">
-          <div
-            :class="[
-              lang === 'english' ? 'is-active' : '',
-              'flag-wrap',
-              'is-pulled-left'
-            ]"
-          >
+          <div :class="[lang === 'english' ? 'is-active' : '', 'flag-wrap', 'is-pulled-left']">
             <figure class="image is-24x24">
               <nuxt-link :to="englishUrl">
                 <img src="/img/flag-united-kingdom.png" />
@@ -28,13 +22,7 @@
             </figure>
           </div>
 
-          <div
-            :class="[
-              lang === 'thai' ? 'is-active' : '',
-              'flag-wrap',
-              'is-pulled-left'
-            ]"
-          >
+          <div :class="[lang === 'thai' ? 'is-active' : '', 'flag-wrap', 'is-pulled-left']">
             <figure class="image is-24x24">
               <nuxt-link :to="thaiUrl">
                 <img src="/img/flag-thailand.png" />

@@ -26,13 +26,7 @@
               <div class="field-body">
                 <div class="field">
                   <div class="control">
-                    <input
-                      v-model="robe.width"
-                      class="input"
-                      type="number"
-                      step="1"
-                      min="0"
-                    />
+                    <input v-model="robe.width" class="input" type="number" step="1" min="0" />
                   </div>
                 </div>
               </div>
@@ -45,13 +39,7 @@
               <div class="field-body">
                 <div class="field">
                   <div class="control">
-                    <input
-                      v-model="robe.height"
-                      class="input"
-                      type="number"
-                      step="1"
-                      min="0"
-                    />
+                    <input v-model="robe.height" class="input" type="number" step="1" min="0" />
                   </div>
                 </div>
               </div>
@@ -105,13 +93,7 @@
           <div v-show="show_more_controls" class="field">
             <label class="label">Border width:</label>
             <div class="control">
-              <input
-                v-model="robe.border_width"
-                class="input"
-                type="number"
-                step="1"
-                min="0"
-              />
+              <input v-model="robe.border_width" class="input" type="number" step="1" min="0" />
             </div>
           </div>
         </div>
@@ -120,13 +102,7 @@
           <div v-show="show_more_controls" class="field">
             <label class="label">Kusi width:</label>
             <div class="control">
-              <input
-                v-model="robe.kusi_width"
-                class="input"
-                type="number"
-                step="1"
-                min="0"
-              />
+              <input v-model="robe.kusi_width" class="input" type="number" step="1" min="0" />
             </div>
           </div>
 
@@ -161,13 +137,7 @@
           <div v-show="show_more_controls" class="field">
             <label class="label">Buffer width:</label>
             <div class="control">
-              <input
-                v-model="robe.buffer_width"
-                class="input"
-                type="number"
-                step="1"
-                min="0"
-              />
+              <input v-model="robe.buffer_width" class="input" type="number" step="1" min="0" />
             </div>
           </div>
 
@@ -212,56 +182,29 @@
             </div>
 
             <div class="control">
-              <a class="button is-text" :href="robeParamsUrl"
-                >Parameters Link</a
-              >
+              <a class="button is-text" :href="robeParamsUrl">Parameters Link</a>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <canvas
-      id="sanghati-guide-canvas"
-      class="pattern"
-      :width="width"
-      :height="height"
-    >
+    <canvas id="sanghati-guide-canvas" class="pattern" :width="width" :height="height"> </canvas>
+
+    <canvas id="sanghati-panels-1-2-3-canvas" class="pattern" :width="width" :height="height">
     </canvas>
 
-    <canvas
-      id="sanghati-panels-1-2-3-canvas"
-      class="pattern"
-      :width="width"
-      :height="height"
-    >
+    <canvas id="sanghati-panels-4-5-6-canvas" class="pattern" :width="width" :height="height">
     </canvas>
 
-    <canvas
-      id="sanghati-panels-4-5-6-canvas"
-      class="pattern"
-      :width="width"
-      :height="height"
-    >
-    </canvas>
-
-    <canvas
-      id="sanghati-panels-7-8-9-canvas"
-      class="pattern"
-      :width="width"
-      :height="height"
-    >
+    <canvas id="sanghati-panels-7-8-9-canvas" class="pattern" :width="width" :height="height">
     </canvas>
   </div>
 </template>
 
 <script>
 import { DrawSanghatiPattern } from '@/assets/js/DrawSanghatiPattern.js';
-import {
-  getQueryParsedData,
-  getRobeParamsUrl,
-  renderAndDownloadPdf
-} from '@/assets/js/helpers.js';
+import { getQueryParsedData, getRobeParamsUrl, renderAndDownloadPdf } from '@/assets/js/helpers.js';
 
 const D = {
   width: 3500,

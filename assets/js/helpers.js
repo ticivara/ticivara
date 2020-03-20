@@ -84,16 +84,7 @@ export function textNumSigned(ctx, D, s, x, y) {
 }
 
 // kusi buffer index to key
-export const KB = [
-  'k1_a',
-  'k1_b',
-  'k2_a',
-  'k2_b',
-  'k3_a',
-  'k3_b',
-  'k4_a',
-  'k4_b'
-];
+export const KB = ['k1_a', 'k1_b', 'k2_a', 'k2_b', 'k3_a', 'k3_b', 'k4_a', 'k4_b'];
 
 // kusi cut index to key
 export const KC = ['k1_a', 'k2_a', 'k3_a', 'k4_a'];
@@ -175,19 +166,12 @@ export function calcShrinkingLengths(robe, khandhas) {
     inner_height = final_height * (1 + robe.shrink_percent_height / 100);
   } else {
     // joined border are not included in the scaled inner size
-    inner_width =
-      (final_width - 2 * orig_border_width) *
-      (1 + robe.shrink_percent_width / 100);
-    inner_height =
-      (final_height - 2 * orig_border_width) *
-      (1 + robe.shrink_percent_height / 100);
+    inner_width = (final_width - 2 * orig_border_width) * (1 + robe.shrink_percent_width / 100);
+    inner_height = (final_height - 2 * orig_border_width) * (1 + robe.shrink_percent_height / 100);
   }
 
   // cut width includes the edge buffers and kusi buffers
-  const cut_width =
-    inner_width +
-    2 * buffer_width +
-    kusiBuffersUntil(robe, (khandhas - 1) * 2 - 1);
+  const cut_width = inner_width + 2 * buffer_width + kusiBuffersUntil(robe, (khandhas - 1) * 2 - 1);
 
   const cut_height = inner_height + 2 * vertical_buffer_width;
 
@@ -196,11 +180,9 @@ export function calcShrinkingLengths(robe, khandhas) {
   let orig_mandala_width, orig_mandala_height;
   if (robe.border_type === 0) {
     orig_mandala_width =
-      (final_width - 2 * orig_border_width - (khandhas - 1) * kusi_width) /
-      khandhas;
+      (final_width - 2 * orig_border_width - (khandhas - 1) * kusi_width) / khandhas;
 
-    orig_mandala_height =
-      (final_height - 2 * orig_border_width - 2 * kusi_width) / 3;
+    orig_mandala_height = (final_height - 2 * orig_border_width - 2 * kusi_width) / 3;
   } else {
     // joined border is not included in khandas length (inner width)
 

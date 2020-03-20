@@ -27,10 +27,7 @@
                     <div class="field has-addons">
                       <p class="control">
                         <button
-                          :class="[
-                            robe.border_type === 0 ? 'is-info is-selected' : '',
-                            'button'
-                          ]"
+                          :class="[robe.border_type === 0 ? 'is-info is-selected' : '', 'button']"
                           @click="setBorderType(0)"
                         >
                           <span>Overlapping</span>
@@ -38,10 +35,7 @@
                       </p>
                       <p class="control">
                         <button
-                          :class="[
-                            robe.border_type === 1 ? 'is-info is-selected' : '',
-                            'button'
-                          ]"
+                          :class="[robe.border_type === 1 ? 'is-info is-selected' : '', 'button']"
                           @click="setBorderType(1)"
                         >
                           <span>Joined</span>
@@ -62,13 +56,7 @@
               <div class="field-body">
                 <div class="field">
                   <div class="control">
-                    <input
-                      v-model="robe.width"
-                      class="input"
-                      type="number"
-                      step="1"
-                      min="0"
-                    />
+                    <input v-model="robe.width" class="input" type="number" step="1" min="0" />
                   </div>
                 </div>
               </div>
@@ -81,13 +69,7 @@
               <div class="field-body">
                 <div class="field">
                   <div class="control">
-                    <input
-                      v-model="robe.height"
-                      class="input"
-                      type="number"
-                      step="1"
-                      min="0"
-                    />
+                    <input v-model="robe.height" class="input" type="number" step="1" min="0" />
                   </div>
                 </div>
               </div>
@@ -145,13 +127,7 @@
             <div class="field-body">
               <div class="field">
                 <div class="control">
-                  <input
-                    v-model="robe.kusi_width"
-                    class="input"
-                    type="number"
-                    step="1"
-                    min="0"
-                  />
+                  <input v-model="robe.kusi_width" class="input" type="number" step="1" min="0" />
                 </div>
               </div>
             </div>
@@ -166,13 +142,7 @@
             <div class="field-body">
               <div class="field">
                 <div class="control">
-                  <input
-                    v-model="robe.border_width"
-                    class="input"
-                    type="number"
-                    step="1"
-                    min="0"
-                  />
+                  <input v-model="robe.border_width" class="input" type="number" step="1" min="0" />
                 </div>
               </div>
             </div>
@@ -375,10 +345,7 @@
                 @click="robe.kusi_cuts.k1_a = !robe.kusi_cuts.k1_a"
               >
                 <span class="icon is-small">
-                  <img
-                    v-if="robe.kusi_cuts.k1_a"
-                    src="@/assets/img/scissors-white.svg"
-                  />
+                  <img v-if="robe.kusi_cuts.k1_a" src="@/assets/img/scissors-white.svg" />
                   <img v-else src="@/assets/img/scissors-black.svg" />
                 </span>
                 <span>k1-a</span>
@@ -395,10 +362,7 @@
                 @click="robe.kusi_cuts.k2_a = !robe.kusi_cuts.k2_a"
               >
                 <span class="icon is-small">
-                  <img
-                    v-if="robe.kusi_cuts.k2_a"
-                    src="@/assets/img/scissors-white.svg"
-                  />
+                  <img v-if="robe.kusi_cuts.k2_a" src="@/assets/img/scissors-white.svg" />
                   <img v-else src="@/assets/img/scissors-black.svg" />
                 </span>
                 <span>k2-a</span>
@@ -415,10 +379,7 @@
                 @click="robe.kusi_cuts.k3_a = !robe.kusi_cuts.k3_a"
               >
                 <span class="icon is-small">
-                  <img
-                    v-if="robe.kusi_cuts.k3_a"
-                    src="@/assets/img/scissors-white.svg"
-                  />
+                  <img v-if="robe.kusi_cuts.k3_a" src="@/assets/img/scissors-white.svg" />
                   <img v-else src="@/assets/img/scissors-black.svg" />
                 </span>
                 <span>k3-a</span>
@@ -435,10 +396,7 @@
                 @click="robe.kusi_cuts.k4_a = !robe.kusi_cuts.k4_a"
               >
                 <span class="icon is-small">
-                  <img
-                    v-if="robe.kusi_cuts.k4_a"
-                    src="@/assets/img/scissors-white.svg"
-                  />
+                  <img v-if="robe.kusi_cuts.k4_a" src="@/assets/img/scissors-white.svg" />
                   <img v-else src="@/assets/img/scissors-black.svg" />
                 </span>
                 <span>k4-a</span>
@@ -458,32 +416,20 @@
             </div>
 
             <div class="control">
-              <a class="button is-text" :href="robeParamsUrl"
-                >Parameters Link</a
-              >
+              <a class="button is-text" :href="robeParamsUrl">Parameters Link</a>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <canvas
-      id="sabong-pattern-canvas"
-      class="pattern"
-      :width="width"
-      :height="height"
-    >
-    </canvas>
+    <canvas id="sabong-pattern-canvas" class="pattern" :width="width" :height="height"> </canvas>
   </div>
 </template>
 
 <script>
 import { DrawSabongPattern } from '@/assets/js/DrawSabongPattern.js';
-import {
-  getQueryParsedData,
-  getRobeParamsUrl,
-  renderAndDownloadPdf
-} from '@/assets/js/helpers.js';
+import { getQueryParsedData, getRobeParamsUrl, renderAndDownloadPdf } from '@/assets/js/helpers.js';
 
 const D = {
   width: 3500,

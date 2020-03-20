@@ -6,8 +6,8 @@
           <strong><em>ti-civara:</em> three robes</strong>
         </p>
         <p>
-          This is a size calculating tool and instruction guide for sewing the
-          robes of a buddhist monk.
+          This is a size calculating tool and instruction guide for sewing the robes of a buddhist
+          monk.
         </p>
         <p>Enjoy your work!</p>
       </div>

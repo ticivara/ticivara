@@ -78,10 +78,7 @@ function drawPanels(ctx, canvasWidth, canvasHeight, img, robe) {
   text(
     ctx,
     D,
-    'Final Width: ' +
-      numPad(D.val_inner_width) +
-      ', Final Height: ' +
-      numPad(D.val_inner_height),
+    'Final Width: ' + numPad(D.val_inner_width) + ', Final Height: ' + numPad(D.val_inner_height),
     0,
     -19.0
   );
@@ -89,10 +86,7 @@ function drawPanels(ctx, canvasWidth, canvasHeight, img, robe) {
   text(
     ctx,
     D,
-    'Cut Width: ' +
-      numPad(D.val_cut_width) +
-      ', Cut Height: ' +
-      numPad(D.val_cut_height),
+    'Cut Width: ' + numPad(D.val_cut_width) + ', Cut Height: ' + numPad(D.val_cut_height),
     0,
     -22.0
   );
@@ -107,13 +101,7 @@ function drawPanels(ctx, canvasWidth, canvasHeight, img, robe) {
 
   text(ctx, D, 'm, mandala width: ' + numPad(D.val_mandala_width), 40.0, -31.0);
 
-  text(
-    ctx,
-    D,
-    'd, mandala height: ' + numPad(D.val_mandala_height),
-    40.0,
-    -34.0
-  );
+  text(ctx, D, 'd, mandala height: ' + numPad(D.val_mandala_height), 40.0, -34.0);
 
   // buffer at the edges
   if (D.robe.border_type === 0) {
@@ -415,10 +403,7 @@ function textAccumulateVert(ctx, D, m, k, b, c, y_offset) {
 
 function cutKusi(ctx, D, n) {
   let xO =
-    (n + 1) * D.pos_mandala_width +
-    n * D.pos_kusi_width +
-    D.pos_border_width +
-    D.pos_buffer_width;
+    (n + 1) * D.pos_mandala_width + n * D.pos_kusi_width + D.pos_border_width + D.pos_buffer_width;
 
   // kusi 3
   if (n >= 2) {
@@ -448,21 +433,9 @@ function cutKusi(ctx, D, n) {
     ctx.lineWidth = 1;
 
     if (D.robe.border_type === 0) {
-      ctx.drawImage(
-        ScissorsImg,
-        x - 3 * sc,
-        (D.pos_img_offset_y + 21.5) * sc,
-        6 * sc,
-        6 * sc
-      );
+      ctx.drawImage(ScissorsImg, x - 3 * sc, (D.pos_img_offset_y + 21.5) * sc, 6 * sc, 6 * sc);
     } else {
-      ctx.drawImage(
-        ScissorsImg,
-        x - 3 * sc,
-        (D.pos_img_offset_y + 23.0) * sc,
-        6 * sc,
-        6 * sc
-      );
+      ctx.drawImage(ScissorsImg, x - 3 * sc, (D.pos_img_offset_y + 23.0) * sc, 6 * sc, 6 * sc);
     }
   }
 }
