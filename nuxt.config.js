@@ -39,7 +39,10 @@ export default {
       NOTE: StyleLint autofixing conflicts with eslint and they keep changing the
       same file. For example fighting over the last newline in a <style lang="sass"> block.
     */
-    '@nuxtjs/stylelint-module'
+    '@nuxtjs/stylelint-module',
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-3557338-12'
+    }]
   ],
   /*
    ** Nuxt.js modules
