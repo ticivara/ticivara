@@ -1,6 +1,10 @@
-# ticivara
+# Ticivara Robe Sewing
+
+<https://ticivara.github.io/>
 
 > Sewing guide for making the robes of a buddhist monk
+
+Source Repository
 
 ## Build Setup
 
