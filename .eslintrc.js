@@ -21,7 +21,7 @@ module.exports = {
   rules: {
     'prettier/prettier': 'warn', //  0 = off, 1 = warn, 2 = error
     'camelcase': 'off',
-    'no-unused-vars': ['warn', {}],
+    // 'no-unused-vars': ['warn', {}],
     'max-len': ['error', {'code': 100, 'ignoreUrls': true}],
     'no-console': 'off',
     'space-before-function-paren': 'off',
