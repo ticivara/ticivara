@@ -152,13 +152,13 @@
         <div class="column">
           <div v-show="show_more_controls" class="field is-horizontal">
             <div class="field-label">
-              <label class="label">Buffer width:</label>
+              <label class="label">Edge buffer:</label>
             </div>
             <div class="field-body">
               <div class="field">
                 <div class="control">
                   <input
-                    :value="robe.buffer_width"
+                    :value="robe.edge_buffer"
                     class="input"
                     type="number"
                     step="1"
@@ -440,8 +440,8 @@ const D = {
     border_type: 0, // 0 = overlapping, 1 = joined
     width: 228,
     height: 99,
-    buffer_width: 1,
-    // in the sabong, vertical_buffer_width is the same as buffer_width
+    edge_buffer: 1,
+    // in the sabong, vertical_buffer_width is the same as edge_buffer
     vertical_buffer_width: 1,
     border_width: 12,
     kusi_width: 6,
@@ -502,7 +502,7 @@ export default {
     // have to use a method to update both attribs
     setBufferWidth(event) {
       const x = event.target.value;
-      this.robe.buffer_width = Number(x);
+      this.robe.edge_buffer = Number(x);
       this.robe.vertical_buffer_width = Number(x);
     },
 

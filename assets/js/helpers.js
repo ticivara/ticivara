@@ -153,7 +153,7 @@ export function kusiBuffersUntil(robe, n) {
 export function calcShrinkingLengths(robe, khandhas) {
   const final_width = Number(robe.width);
   const final_height = Number(robe.height);
-  const buffer_width = Number(robe.buffer_width);
+  const edge_buffer = Number(robe.edge_buffer);
   const vertical_buffer_width = Number(robe.vertical_buffer_width);
   const kusi_width = Number(robe.kusi_width);
   const orig_border_width = Number(robe.border_width);
@@ -171,7 +171,7 @@ export function calcShrinkingLengths(robe, khandhas) {
   }
 
   // cut width includes the edge buffers and kusi buffers
-  const cut_width = inner_width + 2 * buffer_width + kusiBuffersUntil(robe, (khandhas - 1) * 2 - 1);
+  const cut_width = inner_width + 2 * edge_buffer + kusiBuffersUntil(robe, (khandhas - 1) * 2 - 1);
 
   const cut_height = inner_height + 2 * vertical_buffer_width;
 

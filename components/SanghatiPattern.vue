@@ -135,9 +135,9 @@
 
         <div class="column">
           <div v-show="show_more_controls" class="field">
-            <label class="label">Buffer width:</label>
+            <label class="label">Edge buffer:</label>
             <div class="control">
-              <input v-model="robe.buffer_width" class="input" type="number" step="1" min="0" />
+              <input v-model="robe.edge_buffer" class="input" type="number" step="1" min="0" />
             </div>
           </div>
 
@@ -215,7 +215,7 @@ const D = {
     border_type: 0, // 0 = overlapping, 1 = joined
     width: 355,
     height: 214,
-    buffer_width: 1,
+    edge_buffer: 1,
     // vertical_buffer_width used only in civara and sanghati
     vertical_buffer_width: 15,
     border_width: 16,

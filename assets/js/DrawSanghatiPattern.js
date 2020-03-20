@@ -28,7 +28,7 @@ function drawGuide(ctx, canvasWidth, canvasHeight, img, robe) {
     pos_img_offset_y: 10,
     pos_text_offset_x: 10,
     pos_text_offset_y: 10,
-    pos_buffer_width: 1.0,
+    pos_edge_buffer: 1.0,
     pos_border_width: 5.91,
     pos_kusi_width: 2.53,
     pos_mandala_width: 13.09,
@@ -36,7 +36,7 @@ function drawGuide(ctx, canvasWidth, canvasHeight, img, robe) {
     // scale
     pattern_scale: 12.0,
     // calcualted size values to display, these could be user inputs
-    val_buffer_width: Number(robe.buffer_width),
+    val_edge_buffer: Number(robe.edge_buffer),
     val_vertical_buffer_width: Number(robe.vertical_buffer_width),
     val_kusi_cutting_buffer: Number(robe.kusi_cutting_buffer),
     val_vertical_kusi_buffer: Number(robe.vertical_kusi_buffer),
@@ -73,7 +73,7 @@ function drawGuide(ctx, canvasWidth, canvasHeight, img, robe) {
   text(ctx, D, 'Cut Width: ' + numPad(D.val_cut_width), 5, 132);
   text(ctx, D, 'Cut Height: ' + numPad(D.val_cut_height), 5, 128);
 
-  text(ctx, D, 'cutting buffer: ' + numPad(D.val_buffer_width), 5, 122);
+  text(ctx, D, 'edge buffer: ' + numPad(D.val_edge_buffer), 5, 122);
   text(ctx, D, 'vertical cutting buffer: ' + numPad(D.val_vertical_buffer_width), 5, 118);
   text(ctx, D, 'kusi cutting buffer: ' + numPad(D.val_kusi_cutting_buffer), 5, 114);
   text(ctx, D, 'vertical kusi buffer: ' + numPad(D.val_vertical_kusi_buffer), 5, 110);
@@ -116,7 +116,7 @@ function drawPanels_1(ctx, canvasWidth, canvasHeight, img, robe) {
     pos_img_offset_y: 20,
     pos_text_offset_x: 10,
     pos_text_offset_y: 20,
-    pos_buffer_width: 1.11,
+    pos_edge_buffer: 1.11,
     pos_vertical_buffer_width: 11.1,
     pos_border_width: 15.54,
     pos_kusi_width: 6.66,
@@ -125,7 +125,7 @@ function drawPanels_1(ctx, canvasWidth, canvasHeight, img, robe) {
     // scale
     pattern_scale: 12.0,
     // calcualted size values to display, these could be user inputs
-    val_buffer_width: Number(robe.buffer_width),
+    val_edge_buffer: Number(robe.edge_buffer),
     val_vertical_buffer_width: Number(robe.vertical_buffer_width),
     val_kusi_cutting_buffer: Number(robe.kusi_cutting_buffer),
     val_vertical_kusi_buffer: Number(robe.vertical_kusi_buffer),
@@ -198,7 +198,7 @@ function drawPanels_4(ctx, canvasWidth, canvasHeight, img, robe) {
     pos_img_offset_y: 20,
     pos_text_offset_x: 10,
     pos_text_offset_y: 20,
-    pos_buffer_width: 1.11,
+    pos_edge_buffer: 1.11,
     pos_vertical_buffer_width: 11.1,
     pos_border_width: 15.54,
     pos_kusi_width: 6.66,
@@ -207,7 +207,7 @@ function drawPanels_4(ctx, canvasWidth, canvasHeight, img, robe) {
     // scale
     pattern_scale: 12.0,
     // calcualted size values to display, these could be user inputs
-    val_buffer_width: Number(robe.buffer_width),
+    val_edge_buffer: Number(robe.edge_buffer),
     val_vertical_buffer_width: Number(robe.vertical_buffer_width),
     val_kusi_cutting_buffer: Number(robe.kusi_cutting_buffer),
     val_vertical_kusi_buffer: Number(robe.vertical_kusi_buffer),
@@ -281,7 +281,7 @@ function drawPanels_7(ctx, canvasWidth, canvasHeight, img, robe) {
     pos_img_offset_y: 20,
     pos_text_offset_x: 10,
     pos_text_offset_y: 20,
-    pos_buffer_width: 1.11,
+    pos_edge_buffer: 1.11,
     pos_vertical_buffer_width: 11.1,
     pos_border_width: 15.54,
     pos_kusi_width: 6.66,
@@ -290,7 +290,7 @@ function drawPanels_7(ctx, canvasWidth, canvasHeight, img, robe) {
     // scale
     pattern_scale: 12.0,
     // calcualted size values to display, these could be user inputs
-    val_buffer_width: Number(robe.buffer_width),
+    val_edge_buffer: Number(robe.edge_buffer),
     val_vertical_buffer_width: Number(robe.vertical_buffer_width),
     val_kusi_cutting_buffer: Number(robe.kusi_cutting_buffer),
     val_vertical_kusi_buffer: Number(robe.vertical_kusi_buffer),
@@ -342,26 +342,26 @@ function drawPanels_7(ctx, canvasWidth, canvasHeight, img, robe) {
   textAccumulateVert(ctx, D, 3, 2, 5, 1, 1, -9.0, 3.0);
 }
 
-// mandala, kusi, border, cut buffer
-function textAccumulateHoriz(ctx, D, m, k, b, c, x_offset, y_offset) {
+// mandala, kusi, border, vertical buffer
+function textAccumulateHoriz(ctx, D, m, k, b, v, x_offset, y_offset) {
   textNum(
     ctx,
     D,
     m * D.val_mandala_height +
       k * D.val_kusi_width +
       b * D.val_border_height +
-      c * D.val_vertical_buffer_width,
+      v * D.val_vertical_buffer_width,
     x_offset +
       m * D.pos_mandala_width +
       k * D.pos_kusi_width +
       b * D.pos_border_width +
-      c * D.pos_vertical_buffer_width,
+      v * D.pos_vertical_buffer_width,
     y_offset
   );
 }
 
-// mandala, kusi, kusi cut buffer, border, cut buffer
-function textAccumulateVert(ctx, D, m, k, kcb, b, c, x_offset, y_offset) {
+// mandala, kusi, kusi cut buffer, border, edge buffer
+function textAccumulateVert(ctx, D, m, k, kcb, b, e, x_offset, y_offset) {
   textNum(
     ctx,
     D,
@@ -369,14 +369,14 @@ function textAccumulateVert(ctx, D, m, k, kcb, b, c, x_offset, y_offset) {
       k * (D.val_kusi_width + D.val_vertical_kusi_buffer) +
       kcb * D.val_kusi_cutting_buffer +
       b * D.val_border_width +
-      c * D.val_buffer_width,
+      e * D.val_edge_buffer,
     x_offset + D.pos_pattern_width,
     y_offset +
       m * D.pos_mandala_height +
       k * D.pos_kusi_width +
-      kcb * D.pos_buffer_width +
+      kcb * D.pos_edge_buffer +
       b * D.pos_border_width +
-      c * D.pos_buffer_width
+      e * D.pos_edge_buffer
   );
 }
 
