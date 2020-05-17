@@ -108,7 +108,7 @@ Take the horizontal kusi line and fold it down on the two sides.
 </figure>
 
 Pin them below the sewn line and fold back to check that the kusi will be on a
-lower level than the mandala.
+lower level than the middle section.
 
 <figure>
 
@@ -159,7 +159,7 @@ When it is folded in the right direction, the flap will be inside.
 </figure>
 
 Pin the layers, and double-check by folding it back out, that the kusi is lower
-than the mandala.
+than the middle section.
 
 Join the horizontal lines this way.
 

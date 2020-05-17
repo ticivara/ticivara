@@ -99,9 +99,9 @@ function drawPanels(ctx, canvasWidth, canvasHeight, img, robe) {
 
   text(ctx, D, 'k, kusi width: ' + numPad(D.val_kusi_width), 40.0, -28.0);
 
-  text(ctx, D, 'm, mandala width: ' + numPad(D.val_mandala_width), 40.0, -31.0);
+  text(ctx, D, 'm, middle section width: ' + numPad(D.val_mandala_width), 40.0, -31.0);
 
-  text(ctx, D, 'd, mandala height: ' + numPad(D.val_mandala_height), 40.0, -34.0);
+  text(ctx, D, 'd, middle section height: ' + numPad(D.val_mandala_height), 40.0, -34.0);
 
   // buffer at the edges
   if (D.robe.border_type === 0) {
