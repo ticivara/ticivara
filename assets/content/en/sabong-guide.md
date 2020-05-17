@@ -1,37 +1,115 @@
 # Sabong Sewing Guide
 
-Determine the final size and mark the cloth.
+## Planning the cutting layout
 
-Keep in mind the top and bottom side of the cloth.
+Measure the cloth and plan how the sabong and the borders are going to fit.
 
-If the cloth is not tall enough to draw the sabong as one piece, divide at the
-khandha lines as necessary and draw the khandhas horizontally on the cloth.
+If the cloth is not wide enough for the sabong to be drawn and cut as one piece, determine which
+khandas will be cut out separately. Draw them horizontally on the cloth, instead of the vertical
+orientation seen on the pattern diagram.
 
-In the case of separate khandas, allow 1cm cutting buffers at the side edges
-where khandhas will be joined, and 5-10cm shifting buffers at the top and bottom
-edge of the khandhas.
+On the drawing, the cutting lines are the long vertical lines.
 
-Fold and make the first sewing. Keep in mind to not sew too narrow, the second
-sewing will be closer to the edge of the cloth.
+In the case of separate khandas, the pattern calculator implies a 1cm cutting buffer at the side
+edges where khandhas will be joined, and 5-10cm shifting buffers at the top and bottom edge of the
+khandhas.
 
-Observe the sequence of the lines: (1) broken, (2) cross, (3) long. The second
-sewing is in the same sequence.
+The separate khandas will be joined along these lines after the first and second sewing is
+completed.
 
-If the cloth was cut as one piece, it is ready for the second sewing.
+The thread orientation of the cloth has to be observed and kept consistent between the separate
+pieces. The cloth streches to a different degree when pulled in the vertical or horizontal
+direction. If this is mixed up, the different orientation will cause the material to wrinkle.
 
-If it was cut from separate pieces, these have to be joined now.
+The borders may fit in one length, but may have to be sewn from joining separate pieces to maintain
+the thread orientation.
 
-The join has to hide both open edges.
+First, determine how much of the total cloth is going to be needed to fit the sabong and the
+borders, and cut off this appriximate size from the main cloth roll.
 
-For the second sewing, fold the cloth outward from the kusis, flatten and sew
-along the edge.
+Wash it at 40 degrees, to make sure the cloth shrinks before drawing the marks.
+
+Dry and iron.
+
+## Marking the cloth
+
+Determine the final size with the pattern calculator and mark the cloth.
+
+Keep in mind the top and bottom side of the cloth. The top side is going to be slightly more
+reflective when looking at it from a low angle.
+
+## First sewing
+
+Start with the broken lines. Pinch the cloth and crease it along the drawn line.
+
+Fold and make the first sewing, at about 5mm from the edge.
+
+Keep in mind to not sew too narrow, the second sewing will be made between this sewn line and the
+edge of the fold.
+
+Observe the sequence of the lines: (1) broken vertical, (2) short horizontal, (3) long vertical.
+
+<figure>
+
+[![First sewing broken lines](/img/sabong/photos/first-sewing-broken-lines-w500.jpg)](/img/sabong/photos/first-sewing-broken-lines-orig.jpg)
+
+</figure>
+
+<figure>
+
+[![First sewing horizontal lines](/img/sabong/photos/first-sewing-horiz-lines-w500.jpg)](/img/sabong/photos/first-sewing-horiz-lines-orig.jpg)
+
+</figure>
+
+The beginning and end of the lines don't need to be locked with reverse sewing. Around the edge of
+the cloth, the hem and the boder will lock the threads. At the kusis where the broken lines end, the
+next line will cross it and lock the thread.
+
+When sewing the broken lines, one may start at one end of the cloth, stop where the line crosses the
+kusi. The needle can be then lifted across the kusi, continuing to sew the broken line on the other
+side of the kusi.
+
+After one group of lines is finished, such as after the broken lines, pinch and crease the cloth
+along one of the lines in the next group. Fold and sew along the edge, closing the T at the place
+where the lines meet.
+
+## Second sewing
+
+The second sewing is in the same sequence as the first.
+
+For the second sewing, fold the cloth outward from the kusis, flatten and sew between the first
+sewing and the edge of the fold.
+
+<figure>
+
+[![Second sewing broken lines 1](/img/sabong/photos/second-sewing-broken-lines-1-w500.jpg)](/img/sabong/photos/second-sewing-broken-lines-1-orig.jpg)
+
+</figure>
+
+<figure>
+
+[![Second sewing broken lines 2](/img/sabong/photos/second-sewing-broken-lines-2-w500.jpg)](/img/sabong/photos/second-sewing-broken-lines-2-orig.jpg)
+
+</figure>
 
 This way on the outside of the cloth there will be one visible sewing line, and
 on the inside there will be two.
 
 In the second sewing, the folding direction has to be observed so that the kusis
-are lower than the mandalas.
+are lower than the middle sections.
 
-Make a hem around the edges at 1cm.
+If it was cut from separate pieces, these have to be joined now. The join has to hide both open
+edges. The joining fold is made by two sewing lines, which are effectively the first and second
+sewing along the long vertical lines.
+
+## Trim and Hem
+
+When sewing from separate pieces, they may need to be trimmed along the edges all around the cloth,
+to create even and straight edges.
+
+Make a hem by folding up 1cm around the edges and sewing them.
+
+## Borders
 
 Add the [borders](/en/borders).
+
