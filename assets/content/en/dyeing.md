@@ -8,7 +8,7 @@ The current version is *v1.4, 3 June 2019*.
 
 Downloads:
 
-- [Dyeing Manual (PDF)](/dyeing-manual/Dyeing-Manual.pdf)
-- [Spreadsheet (MS Excel)](/dyeing-manual/Dyeing-Manual-Excel.xlsx)
-- [Spreadsheet (LibreOffice)](/dyeing-manual/Dyeing-Manual.ods)
+- [Dyeing Manual (PDF)](https://ticivara.github.io/dyeing-manual/Dyeing-Manual.pdf)
+- [Spreadsheet (MS Excel)](https://ticivara.github.io/dyeing-manual/Dyeing-Manual-Excel.xlsx)
+- [Spreadsheet (LibreOffice)](https://ticivara.github.io/dyeing-manual/Dyeing-Manual.ods)
 

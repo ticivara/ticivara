@@ -9,6 +9,10 @@ Cut off 10cm longer on each side to allow for mistakes.
 Fold up a short length, align the edges to be parallel, this will establish a 90
 degree corner. Crease the corners of the fold to create a mark.
 
+<!-- latex
+\setlength{\nextPhotoWidth}{0.5\textwidth}
+-->
+
 <figure>
 
 ![fold up for 90deg](/img/sanghati/figures/fold-up-for-90deg.jpg)
@@ -21,9 +25,11 @@ going to start.
 Mark the bottom edge above the holes of the salvage on the edge. Use this as the
 bottom side of the drawing.
 
-Identify the top and bottom side of the cloth. The top side is slightly more
-reflective, and the bottom is more matt. When a corner is folded over, the
-difference should be possible to tell when looking at the cloth at a low angle.
+<!-- latex
+\setlength{\nextPhotoWidth}{0.4\textwidth}
+
+\begin{wrapfigure}[5]{r}{0.4\textwidth}
+-->
 
 <figure>
 
@@ -31,12 +37,28 @@ difference should be possible to tell when looking at the cloth at a low angle.
 
 </figure>
 
+<!-- latex
+\end{wrapfigure}
+-->
+
+Identify the top and bottom side of the cloth. The top side is slightly more
+reflective, and the bottom is more matt. When a corner is folded over, the
+difference should be possible to tell when looking at the cloth at a low angle.
+
 Draw the marks on the top side.
+
+<!-- latex
+\clearpage
+-->
 
 Mark the lenghts and draw the pattern.
 
 On the *khanda lines* that you are intending to cut, carry the crossing line
 over a few centimeters to keep a mark of the positions after the cut.
+
+<!-- latex
+\setlength{\nextPhotoWidth}{0.5\textwidth}
+-->
 
 <figure>
 
@@ -54,6 +76,10 @@ The top and bottom side of the cloth have to be observed. The marks again have
 to be drawn on the top side of the second layer, but the first layer have to be
 flipped on the vertical axis when marking, to produce a mirror image.
 
+<!-- latex
+\setlength{\nextPhotoWidth}{0.6\textwidth}
+-->
+
 <figure>
 
 ![copy the marks](/img/sanghati/figures/copy-the-marks.jpg)
@@ -68,11 +94,19 @@ See [the Border Sewing Guide](/en/borders)
 
 Start the first sewing from the broken lines (1).
 
+<!-- latex
+\setlength{\nextPhotoWidth}{0.5\textwidth}
+-->
+
 <figure>
 
 ![first sewing sequence](/img/sanghati/figures/first-sewing-sequence.jpg)
 
 </figure>
+
+<!-- latex
+\setlength{\nextPhotoWidth}{0.5\textwidth}
+-->
 
 <figure>
 
@@ -89,6 +123,10 @@ Move to the other side of the kusi, and continue the line. Lock the far edges by
 reverse sewing. The inner edge doesn't have to be locked, the second sewing will
 cross and lock it.
 
+<!-- latex
+\setlength{\nextPhotoWidth}{0.5\textwidth}
+-->
+
 <figure>
 
 [![first sewing](/img/sanghati/photos/first-sewing-w500.jpg)](/img/sanghati/photos/first-sewing-orig.jpg)
@@ -100,6 +138,10 @@ cross and lock it.
 Start with the middle khandha, take both layers and arrange them with the sewing inside.
 
 Take the horizontal kusi line and fold it down on the two sides.
+
+<!-- latex
+\setlength{\nextPhotoWidth}{0.5\textwidth}
+-->
 
 <figure>
 
@@ -116,6 +158,10 @@ lower level than the middle section.
 
 </figure>
 
+<!-- latex
+\setlength{\nextPhotoWidth}{0.5\textwidth}
+-->
+
 <figure>
 
 [![join horizontal fold out](/img/sanghati/photos/join-horizontal-fold-out-w500.jpg)](/img/sanghati/photos/join-horizontal-fold-out-orig.jpg)
@@ -128,11 +174,24 @@ the watering canals between rice paddy fields.
 Sew the layer together below the first sewing, within 1-2 mm. Sew both
 horizontal kusi lines this way.
 
+<!-- latex
+\begin{multicols}{2}
+
+\setlength{\nextPhotoWidth}{0.8\linewidth}
+-->
+
 <figure>
 
 ![sew horizontal](/img/sanghati/figures/sew-horizontal-lines.jpg)
 
 </figure>
+
+<!-- latex
+
+\columnbreak
+
+\setlength{\nextPhotoWidth}{\linewidth}
+-->
 
 <figure>
 
@@ -140,11 +199,21 @@ horizontal kusi lines this way.
 
 </figure>
 
+<!-- latex
+\end{multicols}
+
+\clearpage
+-->
+
 It is possible to fold the first one in the wrong direction, and when you fold
 it back, the kusi ends up higher. When folded in the wrong direction, there will
 be a flap at the corner.
 
 When it is folded in the right direction, the flap will be inside.
+
+<!-- latex
+\setlength{\nextPhotoWidth}{0.5\textwidth}
+-->
 
 <figure>
 
@@ -171,11 +240,24 @@ Join the horizontal lines this way.
 
 Join the vertical lines in the same manner, but stop at 2mm from the horizontal lines.
 
+<!-- latex
+\begin{multicols}{2}
+
+\setlength{\nextPhotoWidth}{0.8\linewidth}
+-->
+
 <figure>
 
 ![sew vertical](/img/sanghati/figures/sew-vertical-lines.jpg)
 
 </figure>
+
+<!-- latex
+
+\columnbreak
+
+\setlength{\nextPhotoWidth}{\linewidth}
+-->
 
 <figure>
 
@@ -183,9 +265,19 @@ Join the vertical lines in the same manner, but stop at 2mm from the horizontal 
 
 </figure>
 
+<!-- latex
+\end{multicols}
+
+\clearpage
+-->
+
 ## Joining the Khandhas
 
 Join one of the side khandhas to the middle khandha.
+
+<!-- latex
+\setlength{\nextPhotoWidth}{0.5\textwidth}
+-->
 
 <figure>
 
@@ -201,11 +293,19 @@ When joining the side khandha, allow 1cm from the edge for sewing.
 
 To get a 5.5cm kusi, mark the cloth at 6.5cm and trim the egde.
 
+<!-- latex
+\setlength{\nextPhotoWidth}{0.4\textwidth}
+-->
+
 <figure>
 
 ![trim the edge](/img/sanghati/figures/trim-the-edge.jpg)
 
 </figure>
+
+<!-- latex
+\clearpage
+-->
 
 Pull the sewing line against the edge of a ruler to straighten the cloth.
 
@@ -222,6 +322,10 @@ Trim.
 [![trim before join](/img/sanghati/photos/khandhas-trim-before-join-w500.jpg)](/img/sanghati/photos/khandhas-trim-before-join-orig.jpg)
 
 </figure>
+
+<!-- latex
+\clearpage
+-->
 
 Place the side layers on top and bottom of the middle layer. Find the pencil
 marks of the kusi lines and align them evenly.

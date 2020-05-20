@@ -9,6 +9,11 @@
           This is a size calculating tool and instruction guide for sewing the robes of a buddhist
           monk.
         </p>
+        <p>
+          Read the guides online or
+          <nuxt-link to="/en/pdf">download the PDF</nuxt-link>
+          for printing.
+        </p>
         <p>Enjoy your work!</p>
       </div>
       <div class="landing-logo">
@@ -40,6 +45,11 @@
         <p>
           การคำนวณที่ใช้ในเว็บนี้เป็นเพียงหนึ่งของวิธีที่หลากหลายในการตัดเย็บ
           หากมีข้อสงสัยสามารถสอบถามได้ที่ ratanawanno@gmail.com
+        </p>
+        <p>
+          Read the guides online or
+          <nuxt-link to="/th/pdf">download the PDF</nuxt-link>
+          for printing.
         </p>
       </div>
       <div class="landing-logo">

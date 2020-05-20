@@ -26,6 +26,10 @@
 
 </figure>
 
+<!-- latex
+\setlength{\nextPhotoWidth}{0.9\textwidth}
+-->
+
 <figure>
 
 ![border cut and join](/img/sanghati/figures/border-cut-and-join.jpg)

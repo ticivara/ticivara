@@ -9,6 +9,7 @@
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{wrapfig}
+\usepackage{multicol}
 
 \usepackage{hyperxmp}
 \usepackage{hyperref}
@@ -154,7 +155,28 @@
   \renewcommand\afterchaptertitle{\par\nobreak\vskip \afterchapskip}%
 }
 
+\makechapterstyle{none}{
+  \chapterstyle{default}
+  \setlength{\beforechapskip}{0pt}
+  \renewcommand\printchaptername{}
+  \renewcommand\chapternamenum{}
+  \renewcommand\chapnumfont{}
+  \renewcommand\printchapternum{}
+  \renewcommand\afterchapternum{}
+  \renewcommand\printchapternonum{}
+  \renewcommand\chaptitlefont{}
+  \renewcommand*\printchaptertitle[1]{}
+  \renewcommand\afterchaptertitle{}
+}
+
 \chapterstyle{lowtitle}
+
+\maxtocdepth{chapter}
+\setsecnumdepth{section}
+
+\setlength{\cftbeforechapterskip}{10pt}
+\renewcommand\cftchapterfont{\firaSansFont\fontsize{11}{20}\selectfont}
+\renewcommand\cftchapterpagefont{\firaSansFont\fontsize{11}{20}\selectfont}
 
 \newlength\defaultPhotoWidth
 \setlength{\defaultPhotoWidth}{0.7\textwidth}
@@ -167,4 +189,8 @@
     \includegraphics[width=\nextPhotoWidth]{#1}%
   \par}%
   \setlength{\nextPhotoWidth}{\defaultPhotoWidth}%
+}
+
+\newcommand{\photoCaption}[1]{%
+  {\centering\emph{#1}\par}%
 }

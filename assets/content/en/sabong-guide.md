@@ -31,6 +31,10 @@ Wash it at 40 degrees, to make sure the cloth shrinks before drawing the marks.
 
 Dry and iron.
 
+<!-- latex
+\clearpage
+-->
+
 ## Marking the cloth
 
 Determine the final size with the pattern calculator and mark the cloth.
@@ -47,8 +51,6 @@ Fold and make the first sewing, at about 5mm from the edge.
 Keep in mind to not sew too narrow, the second sewing will be made between this sewn line and the
 edge of the fold.
 
-Observe the sequence of the lines: (1) broken vertical, (2) short horizontal, (3) long vertical.
-
 <figure>
 
 [![First sewing broken lines](/img/sabong/photos/first-sewing-broken-lines-w500.jpg)](/img/sabong/photos/first-sewing-broken-lines-orig.jpg)
@@ -60,6 +62,8 @@ Observe the sequence of the lines: (1) broken vertical, (2) short horizontal, (3
 [![First sewing horizontal lines](/img/sabong/photos/first-sewing-horiz-lines-w500.jpg)](/img/sabong/photos/first-sewing-horiz-lines-orig.jpg)
 
 </figure>
+
+Observe the sequence of the lines: (1) broken vertical, (2) short horizontal, (3) long vertical.
 
 The beginning and end of the lines don't need to be locked with reverse sewing. Around the edge of
 the cloth, the hem and the boder will lock the threads. At the kusis where the broken lines end, the

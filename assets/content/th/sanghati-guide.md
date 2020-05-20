@@ -24,6 +24,10 @@
 
 (1) เย็บขึ้นกระดูกกุสิ _เส้นขาด_ แต่ละเส้นยาวประมาณ 10 ซม. ที่ไม่ต้องเย็บตลอดแนวเพราะเราจะเย็บเส้นนี้ตอนประกบผ้าสองชิ้นเข้ากัน เส้นอัฑฒกุสิ _เส้นขวาง_ เย็บตลอดแนว เย็บเช่นนี้ทุกๆ ชิ้น เก็บไว้เป็นคู่เพื่อกันลืม
 
+<!-- latex
+\setlength{\nextPhotoWidth}{0.5\textwidth}
+-->
+
 <figure>
 
 ![make the seam](/img/sanghati/photos/th-sanghati-sewing01.jpg "ขึ้นกระดูกผ้าทุกชิ้น")
@@ -39,6 +43,10 @@
 <td> 
 <figure>
 
+<!-- latex
+\setlength{\nextPhotoWidth}{0.45\textwidth}
+-->
+
 ![join midle layer #1](/img/sanghati/photos/th-sanghati-sewing02.jpg "นำผ้าสองด้านมาประกบกระดูกเขาหากัน") 
 <figcaption>นำผ้าสองด้านมาประกบกระดูกเขาหากัน</figcaption>
 
@@ -46,6 +54,10 @@
 </td>
 <td> 
 <figure>
+
+<!-- latex
+\setlength{\nextPhotoWidth}{0.45\textwidth}
+-->
 
 ![Join midle panel #2](/img/sanghati/photos/th-sanghati-sewing03.jpg "พับด้านบนลง ให้แนวเส้นกุสิ และอัฑฒะกุสิเสมอกัน") 
 <figcaption>พับด้านบนลง ให้แนวเส้นกุสิ และอัฑฒะกุสิเสมอกันนำผ้าสองด้านมาประกบกระดูกเขาหากัน</figcaption>
@@ -57,6 +69,10 @@
 <td> 
 <figure>
 
+<!-- latex
+\setlength{\nextPhotoWidth}{0.45\textwidth}
+-->
+
 ![Join midle panel #3](/img/sanghati/photos/th-sanghati-sewing03.jpg "พับผืนล่างลงลักษณะเดียวกัน ได้ตำแหน่งดีแล้วกลัดด้วยเข็มหมุด") 
 <figcaption>พับผืนล่างลงลักษณะเดียวกัน ได้ตำแหน่งดีแล้วกลัดด้วยเข็มหมุด</figcaption>
 
@@ -65,7 +81,11 @@
 <td> 
 <figure>
 
-![Join midle panel #4](/img/sanghati/photos/th-sanghati-sewing04.jpg " เย็บเส้นอัฑฒะกุสิ หลังกระดูก เมื่อสำเร็จคลี่ผ้าออกจะเห็น ช่องอัฑฒะกุสิเป็นคลอง") 
+<!-- latex
+\setlength{\nextPhotoWidth}{0.45\textwidth}
+-->
+
+![Join midle panel #4](/img/sanghati/photos/th-sanghati-sewing04.jpg "เย็บเส้นอัฑฒะกุสิ หลังกระดูก เมื่อสำเร็จคลี่ผ้าออกจะเห็น ช่องอัฑฒะกุสิเป็นคลอง") 
 <figcaption>เย็บเส้นอัฑฒะกุสิ หลังกระดูก เมื่อสำเร็จคลี่ผ้าออกจะเห็น ช่องอัฑฒะกุสิเป็นคลอง</figcaption>
 
 </figure> 
@@ -104,9 +124,17 @@
 
 </figure>
 
+<!-- latex
+\clearpage
+-->
+
 ### ขันธ์ที่ 4 และ 6
 
 (1) พลิกผ้าของขันธ์ที่ 4 ให้คลุมขันธ์ที่ 5 จะเห็นว่าผ้ามี 4 ชั้น
+
+<!-- latex
+\setlength{\nextPhotoWidth}{0.6\textwidth}
+-->
 
 <figure>
 
@@ -117,12 +145,20 @@
 
 (2) เย็บตามแนวเส้นตัด ให้ห่างจากชายผ้าพแประมาณเพื่อไม่ให้พลาดในการเย็บ และเพื่อต่อผ้าทั้งสี่ชั้นเข้าด้วยกัน ตรวจให้แน่ใจว่าผ้าทุกชิ้นเย็บติดกันดี
 
+<!-- latex
+\setlength{\nextPhotoWidth}{0.6\textwidth}
+-->
+
 <figure>
 
 ![Sew 4 layers](/img/sanghati/photos/th-sanghati-sewing08.jpg "เย็บให้ผ้าทั้งสี่ชั้นติดกันให้ดี")
 <figcaption>ซ้อนผ้าขันธ์ที่ 4 ให้คลุมขันธ์ 5</figcaption>
 
 </figure>
+
+<!-- latex
+\clearpage
+-->
 
 (3) ขลิบให้ตะเข็บเล็กที่สุด
 

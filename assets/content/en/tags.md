@@ -22,6 +22,10 @@ Bring the right strand across in an over-hand loop.
 
 </figure>
 
+<!-- latex
+\clearpage
+-->
+
 Take the loop, and give it a half-twist, away from you, turning the lower edge over to the top.
 
 <figure>
@@ -46,7 +50,11 @@ The left strand goes under the right,
 
 </figure>
 
-and through the new loop.
+<!-- latex
+\clearpage
+-->
+
+and through the new loop, as you see below.
 
 <figure>
 
@@ -70,7 +78,11 @@ Pulling further...
 
 </figure>
 
-the knot should have this form.
+<!-- latex
+\clearpage
+-->
+
+The knot should have this form, in a figure-of-eight and a diamond shape in the center.
 
 <figure>
 
@@ -94,7 +106,11 @@ Pull in the slack.
 
 </figure>
 
-Same with left strand, take it under and through the center.
+<!-- latex
+\clearpage
+-->
+
+Same with the left strand, take it under and through the center.
 
 <figure>
 

@@ -1,7 +1,5 @@
 \ProvidesPackage{local-thai}
 
-%\usepackage[british]{babel}
-
 \raggedbottom
 \raggedbottomsection
 \midsloppy
@@ -9,6 +7,7 @@
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{wrapfig}
+\usepackage{multicol}
 
 \usepackage{hyperxmp}
 \usepackage{hyperref}
@@ -41,6 +40,12 @@
   BoldItalicFont = Garuda-BoldOblique.ttf,
 ]{Garuda.ttf}
 
+\newfontfamily\firaSansFont[
+  ItalicFont = FiraSans-Italic.otf,
+  BoldFont = FiraSans-Bold.otf,
+  BoldItalicFont = FiraSans-BoldItalic.otf,
+]{FiraSans-Regular.otf}
+
 \newcommand\chapterTitleFont{}
 \newcommand\sectionFont{}
 \newcommand\headerFont{}
@@ -61,7 +66,6 @@
 \setlength{\parskip}{10pt}
 \setlength{\parindent}{0pt}
 
-%\usepackage[final,babel=true]{microtype}
 \usepackage[final]{microtype}
 
 % \SetTracking[spacing={400,100,}]{encoding=*, family={Crimson-Roman.otf}}{20}
@@ -147,7 +151,28 @@
   \renewcommand\afterchaptertitle{\par\nobreak\vskip \afterchapskip}%
 }
 
+\makechapterstyle{none}{
+  \chapterstyle{default}
+  \setlength{\beforechapskip}{0pt}
+  \renewcommand\printchaptername{}
+  \renewcommand\chapternamenum{}
+  \renewcommand\chapnumfont{}
+  \renewcommand\printchapternum{}
+  \renewcommand\afterchapternum{}
+  \renewcommand\printchapternonum{}
+  \renewcommand\chaptitlefont{}
+  \renewcommand*\printchaptertitle[1]{}
+  \renewcommand\afterchaptertitle{}
+}
+
 \chapterstyle{lowtitle}
+
+\maxtocdepth{chapter}
+\setsecnumdepth{section}
+
+\setlength{\cftbeforechapterskip}{10pt}
+\renewcommand\cftchapterfont{\fontsize{11}{20}\selectfont}
+\renewcommand\cftchapterpagefont{\fontsize{11}{20}\selectfont}
 
 \newlength\defaultPhotoWidth
 \setlength{\defaultPhotoWidth}{0.7\textwidth}
@@ -160,4 +185,8 @@
     \includegraphics[width=\nextPhotoWidth]{#1}%
   \par}%
   \setlength{\nextPhotoWidth}{\defaultPhotoWidth}%
+}
+
+\newcommand{\photoCaption}[1]{%
+  {\centering\emph{#1}\par}%
 }

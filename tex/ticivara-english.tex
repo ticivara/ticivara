@@ -2,15 +2,52 @@
 
 \usepackage{local-english}
 
-\title{Ticivara}
+\title{Ticivara Robe Sewing Guide}
 
 \begin{document}
+
+\frontmatter
+
+\thispagestyle{empty}
+{\centering
+
+  \vspace*{15mm}
+
+  {\chapterTitleFont\fontsize{22}{22}\selectfont\thetitle}
+
+  \vspace*{10mm}
+
+  \includegraphics[width=0.4\textwidth]{./images/logo.jpg}
+
+  \vspace*{10mm}
+
+}
+
+\chapterstyle{none}
+
+{\centering%
+\begin{minipage}{0.7\textwidth}%
+  \tableofcontents*%
+\end{minipage}%
+\par}
+
+\vfill
+
+{%
+  \centering\firaSansFont\small\selectfont
+  \href{https://ticivara.github.io/pdf/ticivara-english.pdf}{https://ticivara.github.io/pdf/ticivara-english.pdf}%
+\par}
+
+\mainmatter
+
+\chapterstyle{lowtitle}
 
 \input{./en/sabong-guide.tex}
 \input{./en/civara-guide.tex}
 \input{./en/sanghati-guide.tex}
 \input{./en/borders.tex}
 \input{./en/tags.tex}
+\input{./en/dyeing.tex}
 \input{./en/tools.tex}
 
 \end{document}

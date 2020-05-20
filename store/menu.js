@@ -28,7 +28,8 @@ const menu = [
     label: 'Misc',
     sub: [
       { path: '/<lang>/borders', label: 'Borders', sub: [] },
-      { path: '/<lang>/tags', label: 'Tag Knots', sub: [] }
+      { path: '/<lang>/tags', label: 'Tag Knots', sub: [] },
+      { path: '/<lang>/pdf', label: 'PDF', sub: [] }
     ]
   },
   {
