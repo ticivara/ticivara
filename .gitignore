@@ -1,4 +1,40 @@
-# Created by .ignore support plugin (hsz.mobi)
+# LaTeX build pdfs
+tex/ticivara-english.pdf
+tex/ticivara-thai.pdf
+
+# Emacs temp files
+auto/
+*~
+\#*\#
+*.elc
+auto-save-list
+tramp
+.\#*
+.projectile
+TAGS
+
+# Vim temp files
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-v][a-z]
+[._]sw[a-p]
+*~
+tags
+
+# LaTeX temp files
+*.aux
+*.log
+*.toc
+*.lof
+*.fls
+*.fdb_latexmk
+*.out
+
+# General macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
 ### Node template
 # Logs
 /logs

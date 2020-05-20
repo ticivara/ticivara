@@ -6,17 +6,27 @@ If there is space for it on the cloth, use the remaining part at the top for the
 long borders, and the side for the short borders. Cutting them this way
 preserves the thread alignment.
 
+<!-- latex
+\setlength{\nextPhotoWidth}{0.5\textwidth}
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+-->
+
 <figure>
 
 ![borders vertical](/img/sanghati/figures/border-orientation-vertical.jpg)
 
 </figure>
 
+<!-- latex
+\end{wrapfigure}
+-->
+
 The thread has to be aligned in the same direction in the borders and the main
 cloth, otherwise during washing the border and main cloth will shrink at a
 different rate and produce wrinkles.
 
-These are ready to iron and used later.
+These are ready to be ironed and used later.
 
 Fold and iron the edges by gently tapping with the iron. A strong force on the
 iron will push the edges out. 0.5 cm is sufficient along the edges.
@@ -24,11 +34,19 @@ iron will push the edges out. 0.5 cm is sufficient along the edges.
 After ironing, roll up the borders to preserve the ironed edges. Tie up the
 rolls with the trim from the edges.
 
+<!-- latex
+\setlength{\nextPhotoWidth}{0.5\textwidth}
+-->
+
 <figure>
 
 [![borders rolled up](/img/sanghati/photos/borders-rolled-up-w500.jpg)](/img/sanghati/photos/borders-rolled-up-orig.jpg)
 
 </figure>
+
+<!-- latex
+\clearpage
+-->
 
 When the borders have to be cut at a different orientation, sections of it
 have to be joined up to preserve the thread alignment.
@@ -43,6 +61,10 @@ other.
 
 </figure>
 
+<!-- latex
+\setlength{\nextPhotoWidth}{0.9\textwidth}
+-->
+
 <figure>
 
 ![border cut and join](/img/sanghati/figures/border-cut-and-join.jpg)
@@ -52,11 +74,19 @@ other.
 This will preserve the thread orientation when the border is be placed on the
 main cloth.
 
+<!-- latex
+\setlength{\nextPhotoWidth}{0.5\textwidth}
+-->
+
 <figure>
 
 ![border orientation](/img/sanghati/figures/border-orientation-on-cloth.jpg)
 
 </figure>
+
+<!-- latex
+\clearpage
+-->
 
 ## Sewing
 
@@ -65,17 +95,29 @@ Find the distance at which the joined khandhas can be cut.
 Take the line of the kusis and measure which edge is the closest. Draw that
 line.
 
+<!-- latex
+\setlength{\nextPhotoWidth}{0.5\textwidth}
+-->
+
 <figure>
 
 ![trim area](/img/borders/figures/trim-area.jpg)
 
 </figure>
 
+<!-- latex
+\setlength{\nextPhotoWidth}{0.5\textwidth}
+-->
+
 <figure>
 
 [![mark trim area long sides](/img/borders/photos/mark-trim-area-w500.jpg)](/img/borders/photos/mark-trim-area-orig.jpg)
 
 </figure>
+
+<!-- latex
+\setlength{\nextPhotoWidth}{0.5\textwidth}
+-->
 
 <figure>
 
@@ -91,11 +133,16 @@ size.
 
 Trim all around.
 
+<!-- NOTE: this is for sanghati -->
+
 Examine both sides of the cloth for any defects and choose which side is better.
 That will be outside, the borders will be placed there.
 
-Place the cloth on the ironing board with the outside up. Fold up 1cm, iron the
-edge by tapping with the iron, and pin it as you go all around the cloth.
+<!-- latex
+\setlength{\nextPhotoWidth}{0.5\textwidth}
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+-->
 
 <figure>
 
@@ -103,9 +150,20 @@ edge by tapping with the iron, and pin it as you go all around the cloth.
 
 </figure>
 
+<!-- latex
+\end{wrapfigure}
+-->
+
+Place the cloth on the ironing board with the outside up. Fold up 1cm, iron the
+edge by tapping with the iron, and pin it as you go all around the cloth.
+
 Spread the cloth on the floor with the outside up and place the borders along
 the edge. Pin it and sew both sides to about 30cm distance from the corners, so
 that the ends at the corners are free to manipulate.
+
+<!-- latex
+\setlength{\nextPhotoWidth}{0.7\textwidth}
+-->
 
 <figure>
 
@@ -113,14 +171,25 @@ that the ends at the corners are free to manipulate.
 
 </figure>
 
+<!-- latex
+\setlength{\nextPhotoWidth}{0.5\textwidth}
+-->
+
 <figure>
 
 ![sew sides](/img/borders/figures/sew-sides.jpg)
 
 </figure>
 
-After sewing, arrange one corner on the ironing board and iron the edges flat.
-Take care that the edges should meet at the exact corner of the main cloth.
+<!-- latex
+\clearpage
+-->
+
+<!-- latex
+\setlength{\nextPhotoWidth}{0.5\textwidth}
+
+\begin{wrapfigure}[5]{r}{0.5\textwidth}
+-->
 
 <figure>
 
@@ -128,7 +197,20 @@ Take care that the edges should meet at the exact corner of the main cloth.
 
 </figure>
 
+<!-- latex
+\end{wrapfigure}
+-->
+
+After sewing, arrange one corner on the ironing board and iron the edges flat.
+Take care that the edges should meet at the exact corner of the main cloth.
+
+
 Draw the diagonal on both border layers.
+
+<!-- latex
+\vspace*{2\baselineskip}
+\setlength{\nextPhotoWidth}{0.7\textwidth}
+-->
 
 <figure>
 
@@ -147,17 +229,29 @@ Fold out the border, measure 1cm from the diagonal on the flap and trim.
 It is difficult to align the flaps using the diagonal mark, since it is covered.
 Use the 1cm distance cut edge to align the flaps and pin them before joining.
 
+<!-- latex
+\setlength{\nextPhotoWidth}{0.5\textwidth}
+-->
+
 <figure>
 
 ![corner 01 cut](/img/borders/figures/corner-01-cut.jpg)
 
 </figure>
 
+<!-- latex
+\setlength{\nextPhotoWidth}{0.5\textwidth}
+-->
+
 <figure>
 
 ![corner 02 cut](/img/borders/figures/corner-02-cut.jpg)
 
 </figure>
+
+<!-- latex
+\setlength{\nextPhotoWidth}{0.5\textwidth}
+-->
 
 <figure>
 
@@ -176,6 +270,10 @@ Use the 1cm distance cut edge to align the flaps and pin them before joining.
 [![trim the flap](/img/borders/photos/corner-06-trim-flap-w500.jpg)](/img/borders/photos/corner-06-trim-flap-orig.jpg)
 
 </figure>
+
+<!-- latex
+\clearpage
+-->
 
 Join the two flaps.
 
@@ -227,5 +325,5 @@ Then sew the outer edge.
 
 </figure>
 
-Repeat with the other corners and the border is finished.
+Repeat with the other corners to finish the border.
 
