@@ -7,6 +7,7 @@
           v-for="sub in top.sub"
           :key="sub.path + sub.label"
           :class="[isActive(sub.path) ? 'is-active' : '', 'link-item']"
+          @click="pageOpen()"
         >
           <nuxt-link :to="menuLangPath(sub.path)">{{ sub.label }}</nuxt-link>
         </li>
@@ -44,6 +45,9 @@ export default {
         lang = 'th';
       }
       return path.replace('<lang>', lang);
+    },
+    pageOpen() {
+      this.$emit('onPageOpen');
     }
   }
 };
