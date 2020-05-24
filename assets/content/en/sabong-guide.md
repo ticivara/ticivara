@@ -96,6 +96,12 @@ sewing and the edge of the fold.
 
 </figure>
 
+<figure>
+
+[![Second sewing lines](/img/sabong/photos/second-sewing-lines-w500.jpg)](/img/sabong/photos/second-sewing-lines-orig.jpg)
+
+</figure>
+
 This way on the outside of the cloth there will be one visible sewing line, and
 on the inside there will be two.
 
@@ -106,12 +112,20 @@ If it was cut from separate pieces, these have to be joined now. The join has to
 edges. The joining fold is made by two sewing lines, which are effectively the first and second
 sewing along the long vertical lines.
 
-## Trim and Hem
+## Trim and Fold a Hem
 
-When sewing from separate pieces, they may need to be trimmed along the edges all around the cloth,
-to create even and straight edges.
+When sewing the pattern on a single piece of main cloth, the sewing lines pull in the fabric and the
+edge of the cloth is no longer going to be a straight line. The variation is usually about 3-5mm.
 
-Make a hem by folding up 1cm around the edges and sewing them.
+Place a ruler along the edges and determine if the edge has to be trimmed to make them straight.
+
+When sewing from separate pieces, the places where panels are joined usually have some variation in
+the alignment as well, and they may need to be trimmed along the edges all around the cloth, to
+create even and straight edges.
+
+After trimming the edges, fold up 1cm on the edge of the cloth to make a hem, but instead of sewing,
+it is sufficient to iron and pin it. When placing the border on top, sewing the border is going to
+fix the hem in place as well.
 
 ## Borders
 
