@@ -41,22 +41,30 @@
 }
 
 @font-face {
-    font-family: 'Garuda';
+    font-family: 'THSarabunNew';
     font-style: normal;
     font-weight: normal;
-    src: local('Garuda'), local('Garuda'), url('/fonts/Garuda.ttf') format('truetype');
+    src: local('THSarabunNew'), url('/fonts/thsarabunnew-webfont.woff') format('woff');
 }
 
 @font-face {
-    font-family: 'Garuda';
-    font-style: normal;
+    font-family: 'THSarabunNew';
+    font-style: italic;
     font-weight: bold;
-    src: local('Garuda Bold'), local('Garuda Bold'), url('/fonts/Garuda-Bold.ttf') format('truetype');
+    src: local('THSarabunNew'), url('/fonts/thsarabunnew_bolditalic-webfont.woff') format('woff');
 }
 
 @font-face {
-    font-family: 'Garuda';
+    font-family: 'THSarabunNew';
     font-style: italic;
     font-weight: normal;
-    src: local('Garuda Oblique'), local('Garuda Oblique'), url('/fonts/Garuda-Oblique.ttf') format('truetype');
+    src: local('THSarabunNew'), url('/fonts/thsarabunnew_italic-webfont.woff') format('woff');
+
+}
+
+@font-face {
+    font-family: 'THSarabunNew';
+    font-style: normal;
+    font-weight: bold;
+    src: local('THSarabunNew'), url('/fonts/thsarabunnew_bold-webfont.woff') format('woff');
 }
