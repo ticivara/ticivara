@@ -138,7 +138,7 @@
 
 <figure>
 
-![Join the 4th and 5th](/img/sanghati/photos/th-sanghati-sewing08.jpg "ซ้อนผ้าขันธ์ที่ 4 ให้คลุมขันธ์ 5")
+![Join the 4th and 5th](/img/sanghati/photos/th-sanghati-sewing09.jpg "ซ้อนผ้าขันธ์ที่ 4 ให้คลุมขันธ์ 5")
 <figcaption>ซ้อนผ้าขันธ์ที่ 4 ให้คลุมขันธ์ 5</figcaption>
 
 </figure>
@@ -151,7 +151,7 @@
 
 <figure>
 
-![Sew 4 layers](/img/sanghati/photos/th-sanghati-sewing08.jpg "เย็บให้ผ้าทั้งสี่ชั้นติดกันให้ดี")
+![Sew 4 layers](/img/sanghati/photos/th-sanghati-sewing10.jpg "เย็บให้ผ้าทั้งสี่ชั้นติดกันให้ดี")
 <figcaption>ซ้อนผ้าขันธ์ที่ 4 ให้คลุมขันธ์ 5</figcaption>
 
 </figure>
@@ -164,7 +164,7 @@
 
 <figure>
 
-![Trim](/img/sanghati/photos/th-sanghati-sewing08.jpg "ขลิบตะเข็บให้เล็กประมาณ 2 มิลลิเมตร")
+![Trim](/img/sanghati/photos/th-sanghati-sewing11.jpg "ขลิบตะเข็บให้เล็กประมาณ 2 มิลลิเมตร")
 <figcaption>ขลิบตะเข็บให้เล็กประมาณ 2 มิลลิเมตร</figcaption>
 
 </figure>
