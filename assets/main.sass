@@ -84,11 +84,11 @@ body
 #page-wrap.thai
   font-family: "THSarabunNew", "Helvetica Neue", sans-serif
   h1
-    font-size: 2.2em
+    font-size: 1.9em
   h2
-    font-size: 1.6em
+    font-size: 1.3em
   h3
-    font-size: 1.4em
+    font-size: 1.1em
   #app-nav .site-brand h2
     font-size: 1.4em
 
@@ -111,6 +111,15 @@ body
 .content .toc
   margin: 2em auto
   max-width: 15rem
+
+
+#page-wrap.thai #content-wrap .container .content
+  +from($desktop)
+    font-size: 26px
+
+#page-wrap.thai .content .toc
+  +from($desktop)
+    max-width: 25rem
 
 $bg-pattern-dark: #F9D092
 $bg-pattern-light: #FFDDBA
