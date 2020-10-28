@@ -46,6 +46,26 @@ body
   border-radius: 20px
   background-color: rgba(255, 255, 255, 0.8)
 
+#content-wrap.section
+  +until($tablet)
+    padding-top: 1rem
+    padding-left: 0
+    padding-right: 0
+
+#content-wrap.section .content
+  +until($tablet)
+    padding-left: 1rem
+    padding-right: 1rem
+
+#content-wrap.section .content figure
+  +until($tablet)
+    margin-left: 1em
+    margin-right: 1em
+
+#content-wrap.section .content figure img
+  +until($tablet)
+    max-width: 100%
+
 #content-wrap .container
   +from($desktop)
     max-width: 900px
@@ -93,10 +113,14 @@ body
     font-size: 1.4em
 
 #page-wrap.english
-  h1
-    font-size: 2.4em
   h1, h2, h3
     font-family: "Butler"
+  +until($tablet)
+    h1
+      font-size: 1.7em
+  +from($tablet)
+    h1
+      font-size: 2.4em
 
 .content figure
   text-align: center
