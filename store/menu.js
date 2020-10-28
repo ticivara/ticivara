@@ -28,6 +28,7 @@ const menu = [
     label: 'Misc',
     sub: [
       { path: '/<lang>/borders', label: 'Borders', sub: [] },
+      { path: '/<lang>/borders-folding', label: 'Borders: Folding', sub: [] },
       { path: '/<lang>/tags', label: 'Tag Knots', sub: [] },
       { path: '/<lang>/pdf', label: 'PDF', sub: [] }
     ]
