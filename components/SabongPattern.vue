@@ -445,7 +445,7 @@ const D = {
     vertical_buffer_width: 1,
     border_width: 12,
     kusi_width: 6,
-    kusi_cutting_buffer: 0.5,
+    kusi_cutting_buffer: 1.5,
     shrink_percent_width: 0,
     shrink_percent_height: 0,
     kusi_buffers: {

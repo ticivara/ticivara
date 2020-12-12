@@ -19,6 +19,7 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
+    'vue/comment-directive': 'off',
     'prettier/prettier': 'warn', //  0 = off, 1 = warn, 2 = error
     'camelcase': 'off',
     // 'no-unused-vars': ['warn', {}],
