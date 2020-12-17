@@ -11,17 +11,32 @@ produced the cloth.
 
 The needle marks should be seen with the conical depression mark narrowing toward the floor.
 
+<!-- latex
+\begin{multicols}{2}
+\setlength{\nextPhotoWidth}{\linewidth}
+-->
+
 <figure>
 
 ![lay out the cloth](/img/civara/en/lay-out-the-cloth-w500.jpg)
 
 </figure>
 
+<!-- latex
+\columnbreak
+-->
+
 Mark the diagram lines on the cloth with a pencil. Note that the vertical buffer length for the
 squaring stage is already included at the ends of the panels. This will allow 10cm vertical
 manoeuvring when joined the cloth has to be trimmed.
 
 You can mark the panels joined end-to-end, and the vertical buffer will be left in between.
+
+<!-- latex
+\end{multicols}
+
+\clearpage
+-->
 
 <figure>
 
@@ -52,11 +67,19 @@ not cut straight or the thread is allowed to fray, it will make joining the edge
 
 </figure>
 
+<!-- latex
+\setlength{\nextPhotoWidth}{0.6\textwidth}
+-->
+
 <figure>
 
 ![cloth-already-cut](/img/civara/en/cloth-already-cut-w500.jpg)
 
 </figure>
+
+<!-- latex
+\clearpage
+-->
 
 ## First and second sewing
 
@@ -72,7 +95,7 @@ The finished sewing will show one thread on the outside, and two threads on the 
 
 </figure>
 
-If you iron the folds before sewing it, the crease will hold better and the cloth need less
+If you iron the folds before sewing it, the crease will hold better and the cloth needs less
 arranging while on the sewing machine.
 
 <figure>
@@ -89,7 +112,7 @@ Start sewing the broken lines from the outside of the cloth toward the kusi.
 
 </figure>
 
-When you reach the kusi, you can lift the needle, pull a bit of thread out, pull the cloth the skip
+When you reach the kusi, you can lift the needle, pull out a bit of thread, pull the cloth to skip
 over the kusi, and continue sewing on the other side.
 
 <figure>
@@ -106,6 +129,10 @@ The thread has to be secured one way or another, because if left loose, it can u
 
 The outer edges of the thread (at the end of the cloth) don't have to be tied, because it will be
 closed when adding the border.
+
+<!-- latex
+\clearpage
+-->
 
 ## Joining: method overview
 
@@ -149,6 +176,10 @@ Sew the two layers.
 
 </figure>
 
+<!-- latex
+\clearpage
+-->
+
 Open up the two layers, and iron them toward the long overlap. The short overlap lies on top of the long.
 
 <figure>
@@ -181,7 +212,16 @@ the cloth over the edge, not folding the edge along the sewing line.
 
 </figure>
 
+<!-- latex
+\clearpage
+-->
+
 Trim off the excess cloth.
+
+<!-- latex
+\begin{multicols}{2}
+\setlength{\nextPhotoWidth}{\linewidth}
+-->
 
 <figure>
 
@@ -189,11 +229,23 @@ Trim off the excess cloth.
 
 </figure>
 
+<!-- latex
+\columnbreak
+\setlength{\nextPhotoWidth}{\linewidth}
+-->
+
 <figure>
 
 [![join-trim-excess-2](/img/civara/en/join-trim-excess-2-w500.jpg)](/img/civara/en/join-trim-excess-2-orig.jpg)
 
 </figure>
+
+<!-- latex
+\end{multicols}
+
+\vspace*{-\baselineskip}
+\enlargethispage*{\baselineskip}
+-->
 
 Fold both overlaps underneath, turn the long overlap over short one along the edge, and crease it
 with the iron.
@@ -238,19 +290,33 @@ has grown and is ready to be harvested, the field is higher than the path.
 When the first and second sewing is completed on the three pieces, lay them out in the way they will
 be sewn together, to mark the cloth for joining.
 
+Use a long ruler to align the horizontal kusis across the three pieces.
+
+<!-- latex
+\begin{multicols}{2}
+\setlength{\nextPhotoWidth}{\linewidth}
+-->
+
 <figure>
 
 [![lay-out-pieces](/img/civara/en/lay-out-pieces-w500.jpg)](/img/civara/en/lay-out-pieces-orig.jpg)
 
 </figure>
 
-Use a long ruler to align the horizontal kusis across the three pieces.
+<!-- latex
+\columnbreak
+\setlength{\nextPhotoWidth}{\linewidth}
+-->
 
 <figure>
 
 [![mark-joining-points](/img/civara/en/mark-joining-points-w500.jpg)](/img/civara/en/mark-joining-points-orig.jpg)
 
 </figure>
+
+<!-- latex
+\end{multicols}
+-->
 
 Make a pencil mark where the kusis are going to meet. The cloth may move or strech along the cut
 line, and the ends will be trimmed off at the squaring stage, but the kusis have to stay in line.
@@ -290,6 +356,10 @@ The kusis must remain in the pinned positions. If there is an extra or missing f
 between the two kusis, or a difference between the upper and lower layer, the cloth has to be
 streched or gathered up to absorb the difference.
 
+<!-- latex
+\clearpage
+-->
+
 ## Joining: first sewing
 
 Start sewing from one end of the kusi, across the kusi and moving outward.
@@ -327,13 +397,23 @@ direction.
 
 (If you start sewing from the outside in, the kusis will not necessary meet.)
 
+<!-- latex
+\clearpage
+-->
+
 ## Joining: folding and second sewing
+
+The following photos show the above joining method on the civara cloth.
 
 <figure>
 
 [![join-iron-civara](/img/civara/en/join-iron-civara-w500.jpg)](/img/civara/en/join-iron-civara-orig.jpg)
 
 </figure>
+
+<!-- latex
+\setlength{\nextPhotoWidth}{0.5\textwidth}
+-->
 
 <figure>
 
@@ -401,6 +481,10 @@ direction.
 
 </figure>
 
+<!-- latex
+\clearpage
+-->
+
 ## Squaring
 
 Lay out the joined cloth, top side facing down. You should see the two threads of the back, or inner side.
@@ -409,21 +493,35 @@ Tape the cloth to the floor. You only want it to lie flat, not streched. If the 
 is distorted, the trimming lines will be wavy. Attach the tape at the sewn lines, where the cloth
 doesn't strech as much.
 
+Use the short side as the base and align the rulers at 90 degrees.
+
+Find the line which you can cut straight along the edge without gaps.
+
+<!-- latex
+\begin{multicols}{2}
+\setlength{\nextPhotoWidth}{\linewidth}
+-->
+
 <figure>
 
 [![squaring-civara-lay-out](/img/civara/en/squaring-civara-lay-out-w500.jpg)](/img/civara/en/squaring-civara-lay-out-orig.jpg)
 
 </figure>
 
-Use the short side as the base and align the rulers at 90 degrees.
-
-Find the line which you can cut straight along the edge without gaps.
+<!-- latex
+\columnbreak
+\setlength{\nextPhotoWidth}{\linewidth}
+-->
 
 <figure>
 
 [![squaring-civara-rulers](/img/civara/en/squaring-civara-rulers-w500.jpg)](/img/civara/en/squaring-civara-rulers-orig.jpg)
 
 </figure>
+
+<!-- latex
+\end{multicols}
+-->
 
 Mark the line with a pencil.
 

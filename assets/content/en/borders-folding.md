@@ -19,7 +19,16 @@ The outside is the one with a single sewing line visible.
 
 Start the sewing at about 10-15 cm from the corner, to allow working on the corner later.
 
+<!-- latex
+\clearpage
+-->
+
 Sew the edge while keeping the main cloth aligned with the border strip.
+
+<!-- latex
+\begin{multicols}{2}
+\setlength{\nextPhotoWidth}{\linewidth}
+-->
 
 <figure>
 
@@ -27,11 +36,20 @@ Sew the edge while keeping the main cloth aligned with the border strip.
 
 </figure>
 
+<!-- latex
+\columnbreak
+\setlength{\nextPhotoWidth}{\linewidth}
+-->
+
 <figure>
 
 [![sew the edge 2](/img/borders/photos/borders-folding-sew-the-edge-2-w500.jpg)](/img/borders/photos/borders-folding-sew-the-edge-2.jpg)
 
 </figure>
+
+<!-- latex
+\end{multicols}
+-->
 
 <figure>
 
@@ -49,11 +67,21 @@ Continue with sewing the other border strips on the outer edges. Remember to lea
 
 After attaching all the border strips, lay out the cloth.
 
+<!-- latex
+\begin{multicols}{2}
+\setlength{\nextPhotoWidth}{\linewidth}
+-->
+
 <figure>
 
 [![lay out the cloth](/img/borders/photos/borders-folding-layout-cloth-w500.jpg)](/img/borders/photos/borders-folding-layout-cloth.jpg)
 
 </figure>
+
+<!-- latex
+\columnbreak
+\setlength{\nextPhotoWidth}{\linewidth}
+-->
 
 <figure>
 
@@ -61,7 +89,15 @@ After attaching all the border strips, lay out the cloth.
 
 </figure>
 
-Align the layers at the corner so that the edges are flush.
+<!-- latex
+\end{multicols}
+-->
+
+Align the layers at the corner so that the edges are flush, and mark the diagonal on the top and bottom border layers.
+
+<!-- latex
+\setlength{\nextPhotoWidth}{0.6\textwidth}
+-->
 
 <figure>
 
@@ -69,13 +105,15 @@ Align the layers at the corner so that the edges are flush.
 
 </figure>
 
-Mark the diagonal on the top and bottom border layers.
-
 <figure>
 
 [![mark the diagonal](/img/borders/photos/borders-folding-corner-details-3-w500.jpg)](/img/borders/photos/borders-folding-corner-details-3.jpg)
 
 </figure>
+
+<!-- latex
+\clearpage
+-->
 
 To help finding the position later, make a pencil mark in inner the corner on the main cloth.
 
@@ -90,6 +128,11 @@ To help finding the position later, make a pencil mark in inner the corner on th
 [![pencil mark](/img/borders/photos/borders-folding-corner-details-5-w500.jpg)](/img/borders/photos/borders-folding-corner-details-5.jpg)
 
 </figure>
+
+<!-- latex
+\clearpage
+\enlargethispage*{\baselineskip}
+-->
 
 Cut the border strips at a distance on the outer side of the diagonal.
 
@@ -118,6 +161,11 @@ Align and pin the corner layers, then sew along the marked line to join.
 [![pin before joining](/img/borders/photos/borders-folding-corner-join-1-w500.jpg)](/img/borders/photos/borders-folding-corner-join-1.jpg)
 
 </figure>
+
+<!-- latex
+\setlength{\nextPhotoWidth}{0.6\textwidth}
+\enlargethispage*{\baselineskip}
+-->
 
 <figure>
 
@@ -149,6 +197,10 @@ Trim the very corners at a low angle, to reduce the cloth material which will be
 
 </figure>
 
+<!-- latex
+\clearpage
+-->
+
 Fold over to reverse out the corners. Use a blunt point, for example the tip of a pencil, to arrange the inside of the tip of the corner.
 
 <figure>
@@ -164,6 +216,10 @@ Open the inner side of the border and iron the edge to make the edge sharply cre
 [![flatten the inner side](/img/borders/photos/borders-folding-corner-flattened-w500.jpg)](/img/borders/photos/borders-folding-corner-flattened.jpg)
 
 </figure>
+
+<!-- latex
+\clearpage
+-->
 
 Lay out the cloth and pin the loose inner edges.
 
