@@ -11,4 +11,5 @@ Downloads:
 - [Dyeing Manual (PDF)](https://ticivara.github.io/dyeing-manual/Dyeing-Manual.pdf)
 - [Spreadsheet (MS Excel)](https://ticivara.github.io/dyeing-manual/Dyeing-Manual-Excel.xlsx)
 - [Spreadsheet (LibreOffice)](https://ticivara.github.io/dyeing-manual/Dyeing-Manual.ods)
+- [Dyeing with Washing Machine Instructions (PDF)](https://ticivara.github.io/dyeing-manual/Dyeing-Instructions.pdf)
 
