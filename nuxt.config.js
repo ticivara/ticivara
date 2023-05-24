@@ -42,7 +42,7 @@ export default {
     */
     '@nuxtjs/stylelint-module',
     ['@nuxtjs/google-analytics', {
-      id: 'UA-3557338-12'
+      id: 'G-W3YJCKE1R9'
     }]
   ],
   /*
