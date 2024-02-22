@@ -154,6 +154,7 @@ export function calcShrinkingLengths(robe, khandhas) {
   const final_width = Number(robe.width);
   const final_height = Number(robe.height);
   const edge_buffer = Number(robe.edge_buffer);
+  const height_stitch_buffer = Number(robe.height_stitch_buffer);
   const vertical_buffer_width = Number(robe.vertical_buffer_width);
   const kusi_width = Number(robe.kusi_width);
   const orig_border_width = Number(robe.border_width);
@@ -163,11 +164,11 @@ export function calcShrinkingLengths(robe, khandhas) {
   let inner_width, inner_height;
   if (robe.border_type === 0) {
     inner_width = final_width * (1 + robe.shrink_percent_width / 100);
-    inner_height = final_height * (1 + robe.shrink_percent_height / 100);
+    inner_height = final_height * (1 + robe.shrink_percent_height / 100) + height_stitch_buffer;
   } else {
     // joined border are not included in the scaled inner size
     inner_width = (final_width - 2 * orig_border_width) * (1 + robe.shrink_percent_width / 100);
-    inner_height = (final_height - 2 * orig_border_width) * (1 + robe.shrink_percent_height / 100);
+    inner_height = (final_height - 2 * orig_border_width) * (1 + robe.shrink_percent_height / 100) + height_stitch_buffer;
   }
 
   // cut width includes the edge buffers and kusi buffers

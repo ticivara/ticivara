@@ -38,6 +38,7 @@ function drawGuide(ctx, canvasWidth, canvasHeight, img, robe) {
     pattern_scale: 12.0,
     // calcualted size values to display, these could be user inputs
     val_edge_buffer: Number(robe.edge_buffer),
+    val_height_stitch_buffer: Number(robe.height_stitch_buffer),
     val_vertical_buffer_width: Number(robe.vertical_buffer_width),
     val_kusi_cutting_buffer: Number(robe.kusi_cutting_buffer),
     val_vertical_kusi_buffer: Number(robe.vertical_kusi_buffer),
@@ -78,12 +79,13 @@ function drawGuide(ctx, canvasWidth, canvasHeight, img, robe) {
   text(ctx, D, 'vertical cutting buffer: ' + numPad(D.val_vertical_buffer_width), 5, 118);
   text(ctx, D, 'kusi cutting buffer: ' + numPad(D.val_kusi_cutting_buffer), 5, 114);
   text(ctx, D, 'vertical kusi buffer: ' + numPad(D.val_vertical_kusi_buffer), 5, 110);
+  text(ctx, D, 'height stitch buffer: ' + numPad(D.val_height_stitch_buffer), 5, 106);
 
-  text(ctx, D, 'a, border width: ' + numPad(D.val_border_width), 5, 102);
-  text(ctx, D, 'b, border height: ' + numPad(D.val_border_height), 5, 98);
-  text(ctx, D, 'k, kusi width: ' + numPad(D.val_kusi_width), 5, 94);
-  text(ctx, D, 'm, middle section width: ' + numPad(D.val_mandala_width), 5, 90);
-  text(ctx, D, 'd, middle section height: ' + numPad(D.val_mandala_height), 5, 86);
+  text(ctx, D, 'a, border width: ' + numPad(D.val_border_width), 5, 98);
+  text(ctx, D, 'b, border height: ' + numPad(D.val_border_height), 5, 94);
+  text(ctx, D, 'k, kusi width: ' + numPad(D.val_kusi_width), 5, 90);
+  text(ctx, D, 'm, middle section width: ' + numPad(D.val_mandala_width), 5, 86);
+  text(ctx, D, 'd, middle section height: ' + numPad(D.val_mandala_height), 5, 82);
 
   textNum(ctx, D, D.val_cut_width, 245, 164);
   textNum(ctx, D, D.val_cut_height, 255, 155);

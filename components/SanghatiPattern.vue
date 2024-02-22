@@ -153,6 +153,19 @@
               />
             </div>
           </div>
+
+          <div v-show="show_more_controls" class="field">
+            <label class="label">Height stitch buffer:</label>
+            <div class="control">
+              <input
+                v-model="robe.height_stitch_buffer"
+                class="input"
+                type="number"
+                step="1"
+                min="0"
+              />
+            </div>
+          </div>
         </div>
       </div>
 
@@ -216,6 +229,7 @@ const D = {
     width: 355,
     height: 214,
     edge_buffer: 1,
+    height_stitch_buffer: 4,
     // vertical_buffer_width used only in civara and sanghati
     vertical_buffer_width: 15,
     border_width: 16,

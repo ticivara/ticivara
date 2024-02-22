@@ -46,6 +46,7 @@ function drawPanels(ctx, canvasWidth, canvasHeight, img, robe) {
     pattern_scale: 14.0,
     // calcualted size values to display, these could be user inputs
     val_edge_buffer: Number(robe.edge_buffer),
+    val_height_stitch_buffer: Number(robe.height_stitch_buffer),
     val_vertical_buffer_width: Number(robe.vertical_buffer_width),
     val_inner_width: Number(robe.width),
     val_inner_height: Number(robe.height),
@@ -89,6 +90,14 @@ function drawPanels(ctx, canvasWidth, canvasHeight, img, robe) {
     'Cut Width: ' + numPad(D.val_cut_width) + ', Cut Height: ' + numPad(D.val_cut_height),
     0,
     -22.0
+  );
+
+  text(
+    ctx,
+    D,
+    'Height stitch buffer: ' + numPad(D.val_height_stitch_buffer),
+    0,
+    -25.0
   );
 
   text(ctx, D, 'a, border width: ' + numPad(D.val_border_width), 40.0, -19.0);

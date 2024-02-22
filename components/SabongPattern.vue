@@ -172,6 +172,27 @@
         </div>
 
         <div class="column">
+          <div v-show="show_more_controls" class="field is-horizontal">
+            <div class="field-label">
+              <label class="label">Height stitch buffer:</label>
+            </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+                  <input
+                    v-model="robe.height_stitch_buffer"
+                    class="input"
+                    type="number"
+                    step="1"
+                    min="0"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
           <div class="field is-pulled-right">
             <div class="control">
               <button
@@ -441,6 +462,7 @@ const D = {
     width: 228,
     height: 99,
     edge_buffer: 1,
+    height_stitch_buffer: 2,
     // in the sabong, vertical_buffer_width is the same as edge_buffer
     vertical_buffer_width: 1,
     border_width: 12,
