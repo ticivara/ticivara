@@ -26,7 +26,6 @@
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/pwa": "^3.0.0-0",
     "@nuxtjs/style-resources": "^1.0.0",
-    "js-base64": "^2.5.2",
     "nuxt": "^2.0.0",
     "pdfjs": "^2.3.5"
   },

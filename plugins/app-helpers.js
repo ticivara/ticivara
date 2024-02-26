@@ -1,5 +1,4 @@
 import Markdown from '@nuxt/markdown';
-import { Base64 } from 'js-base64';
 
 import all from 'mdast-util-to-hast/lib/all';
 import normalize from 'mdurl/encode';
@@ -18,6 +17,17 @@ function linkHandler(h, node) {
   return h(node, tagName, props, all(h, node));
 }
 
+function decode_base64(text) {
+  // First characters of text may be the type identifier
+  // data:text/markdown;charset=utf-8;base64,...
+  if (text.startsWith('data:')) {
+    const needle = 'base64,';
+    const pos_needle_end = text.indexOf(needle) + needle.length;
+    text = text.substring(pos_needle_end);
+  }
+  return Buffer.from(text, 'base64').toString('utf-8');
+}
+
 const appHelpers = (_context, inject) => {
   const md = new Markdown({
     toc: true,
@@ -30,10 +40,7 @@ const appHelpers = (_context, inject) => {
   });
 
   const mdParse = (text) => {
-    // First 26 characters of text are the type identifier
-    // data:text/markdown;base64,...
-    // NOTE: atob() can't decode utf8 (Thai)
-    let mdtext = Base64.decode(text.substring(26));
+    let mdtext = decode_base64(text);
 
     // Find the lvl1 page title.
     let title = '';
@@ -57,7 +64,7 @@ const appHelpers = (_context, inject) => {
   };
 
   const mdTitle = (text) => {
-    const s = Base64.decode(text.substring(26));
+    const s = decode_base64(text);
     const m = s.match(/^# (.*)$/m);
     if (m != null && m.length > 1) {
       return m[1];
