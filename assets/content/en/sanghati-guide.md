@@ -22,34 +22,18 @@ degree corner. Crease the corners of the fold to create a mark.
 Fold out and use the creased marks to measure where the edge of the drawing is
 going to start.
 
-Mark the bottom edge above the holes of the salvage on the edge. Use this as the
+Mark the bottom edge above the holes of the selvage on the edge. Use this as the
 bottom side of the drawing.
-
-<!-- latex
-\setlength{\nextPhotoWidth}{0.4\textwidth}
-
-\begin{wrapfigure}[5]{r}{0.4\textwidth}
--->
-
-<figure>
-
-![fold over](/img/sanghati/figures/fold-over-for-top-bottom.jpg)
-
-</figure>
-
-<!-- latex
-\end{wrapfigure}
--->
-
-Identify the top and bottom side of the cloth. The top side is slightly more
-reflective, and the bottom is more matt. When a corner is folded over, the
-difference should be possible to tell when looking at the cloth at a low angle.
-
-Draw the marks on the top side.
 
 <!-- latex
 \clearpage
 -->
+
+## Marking the cloth
+
+Lay out the cloth with the **top side facing up**. (See how to [determine the top and bottom side](/en/sabong-guide#determine-the-top-and-bottom-side).)
+
+For a **sanghati**, draw the marks on the **top side**.
 
 Mark the lenghts and draw the pattern.
 

@@ -2,14 +2,9 @@
 
 ## Marking the cloth
 
-Lay out the cloth with the top side facing down.
+Lay out the cloth with the **bottom side facing up**. (See how to [determine the top and bottom side](/en/sabong-guide#determine-the-top-and-bottom-side).)
 
-One way to determine the top side is to identity the shinier (top) side.
-
-Another way is to look at the needle marks on the salvage edge, left by the machnie when they
-produced the cloth.
-
-The needle marks should be seen with the conical depression mark narrowing toward the floor.
+For a **civara**, draw the marks on the **bottom side**.
 
 <!-- latex
 \begin{multicols}{2}
@@ -282,8 +277,6 @@ When you look at the front side, the kusi is lower than the area next to it on t
 
 If you compare it to rice paddies, the kusis are the paths between the fields of rice. When the rice
 has grown and is ready to be harvested, the field is higher than the path.
-
-
 
 ## Joining: marking the position
 
