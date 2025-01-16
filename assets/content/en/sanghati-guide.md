@@ -117,6 +117,21 @@ cross and lock it.
 
 </figure>
 
+The purpose of the short vertical line is to create an already stiched area
+under the horizontal kusi, which will not have to be joined.
+
+See further down on the see-through image of the joined cloth.
+
+The joining line will follow the same short vertical line, but not all the way
+to the corner.
+
+The vertical join would create a stressed bundle in the cloth at the corner
+where the kusi lines meet in a T, and so it is better to avoid sewing the last
+few centimeters.
+
+Hence the vertical lines don't have a first and second sewing, unlike with a
+*civara*.
+
 ## Joining the Layers
 
 Start with the middle khandha, take both layers and arrange them with the sewing inside.
@@ -254,6 +269,15 @@ Join the vertical lines in the same manner, but stop at 2mm from the horizontal 
 
 \clearpage
 -->
+
+The vertical joining line doesn't go all the way up to the T cross of the
+horizontal line, to avoid stressing the cloth into a bundle.
+
+<figure>
+
+[![join sew short line see through](/img/sanghati/photos/join-sew-short-line-see-through-w500.jpg)](/img/sanghati/photos/join-sew-short-line-see-through-orig.jpg)
+
+</figure>
 
 ## Joining the Khandhas
 
