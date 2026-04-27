@@ -132,6 +132,17 @@ few centimeters.
 Hence the vertical lines don't have a first and second sewing, unlike with a
 *civara*.
 
+**⚠️ NOTE ⚠️** You can complete the first sewing on all the panels, but when joining the
+layers, you have to progress one by one.
+
+1. First sewing on all layers
+2. Joining **only** the middle khandha (panel) layers
+3. Khandha-join a side panel to the middle panel
+4. Joining the layers on that panel
+5. Khandha-join another panel
+6. Joining the layers on that panel
+7. ... and so on.
+
 ## Joining the Layers
 
 Start with the middle khandha, take both layers and arrange them with the sewing inside.
@@ -279,6 +290,8 @@ horizontal line, to avoid stressing the cloth into a bundle.
 
 </figure>
 
+**⚠️ NOTE ⚠️** Don't join all panel layers separately. Join **only** the middle panel layers first, then join a side panel, join those layers, and so on.
+
 ## Joining the Khandhas
 
 Join one of the side khandhas to the middle khandha.
@@ -299,7 +312,11 @@ visible kusi width on the cloth.
 
 When joining the side khandha, allow 1cm from the edge for sewing.
 
-To get a 5.5cm kusi, mark the cloth at 6.5cm and trim the egde.
+To get a 5.5cm kusi, either:
+
+**(a)** mark the cloth at 6.5cm, trim the egde, pin and sew 1cm from the edge, and trim the excess, or
+
+**(b)** arrange and pin the layers, draw the 5.5cm line from the visible kusi line, sew the kusi, trim the excess.
 
 <!-- latex
 \setlength{\nextPhotoWidth}{0.4\textwidth}
